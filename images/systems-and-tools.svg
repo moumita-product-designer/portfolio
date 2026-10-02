@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<rect width="1600" height="1000" fill="#151517"/>
+<rect x="24" y="24" width="1552" height="952" rx="24" fill="none" stroke="#3A3A40" stroke-width="3" stroke-dasharray="14 12"/>
+<g fill="none" stroke="#5E5D62" stroke-width="6" stroke-linejoin="round"><rect x="730" y="380" width="140" height="110" rx="12"/><path d="M742 478l38-42 30 30 22-20 26 32"/></g>
+<circle cx="840" cy="410" r="12" fill="#5E5D62"/>
+<text x="800" y="560" fill="#F2F1EE" font-family="Helvetica, Arial, sans-serif" font-size="44" font-weight="600" text-anchor="middle">(04) Curie Design System · Claude Design</text>
+<text x="800" y="614" fill="#8E8D92" font-family="Menlo, monospace" font-size="24" letter-spacing="3" text-anchor="middle">THUMBNAIL PLACEHOLDER · 1600 × 1000</text>
+</svg>
