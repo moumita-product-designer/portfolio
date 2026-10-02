@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curie · Moumita Roy Chowdhury</title>
+<meta name="description" content="How ZoomRx turned 50,000 survey-takers into an audience, from a two-week podcast MVP to a multi-format medical media platform, and the brand and UX decisions that shaped it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html">m.rc/</a>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#work">Works</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+    </ul>
+    <a class="btn" href="#contact">Let's talk</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap case-head">
+    <a class="back mono" href="index.html#work">← All works</a>
+    <figure class="case-thumb"><img src="images/curie.webp" alt="Tablet showing the Curie Briefs page with a featured brief, specialty filters and a newsletter prompt"></figure>
+    <span class="mono" style="display:block">CASE STUDY · CURIE BY ZOOMRX</span>
+    <h1 class="long">Curie: building a daily habit for doctors out of a market research panel</h1>
+    <p class="lede">How ZoomRx turned 50,000 survey-takers into an audience, from a two-week podcast MVP to a multi-format medical media platform, and the brand and UX decisions that shaped it.</p>
+  </section>
+
+  <article class="wrap case-page"><div class="case">
+        <section class="cs-sec prose-block">
+          <span class="mono sec-label">The problem</span><h3>How Curie began as an idea</h3>
+          <p>By 2024, ZoomRx had more than 50,000 healthcare professionals in its market research panel, but only about 20% took part at any given time. FY24 was the first year since FY16 that bookings grew faster than the panel. A $20M oncology business depended on roughly 500 active oncologists, and 65–70% of oncologists interacted with ZoomRx ten times a month or less.</p>
+          <p>The planning documents named the root cause plainly: ZoomRx “provides little to no value to its Community beyond monetary compensation.” Doctors heard from ZoomRx only when a paid survey arrived, sometimes about ten emails a week, so there was no reason to engage between surveys.</p>
+          <div class="quote"><p>“ZoomRx's Community represents a very large source of untapped revenue, with potential future value on the order of 100s of millions or more.”</p><cite class="mono">Community Engagement Beyond MR, L0 Brief FY25</cite></div>
+          <p>Leadership looked at companies that had built businesses on physician audiences, including Doximity (about $420M revenue in 2023), WebMD and Medscape (acquired for $2.8B) and Lasso (acquired by IQVIA for $450M). They shared four value drivers: precise targeting, accurate measurement, unique channels, and frequent engagement. ZoomRx had the first three. The missing one was a reason for doctors to come back often.</p>
+          <p>The idea first sat inside the Community team as a content strategy for oncologists, aiming to grow monthly active oncologists from 350 to 3,000. It was then spun out as “Community Engagement Beyond MR” under Andrew Yukawa and treated as “a new startup business incubated by ZoomRx,” modelled on Y Combinator. Its north star was “Build a better Doximity.”</p>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <span class="mono sec-label">The product</span><h3>What Curie is and how it works</h3>
+          <div class="prose">
+            <p>Curie is a free medical media platform for healthcare professionals, at curie.md, on mobile and inside the ZoomRx Community app. It turns the daily flood of medical news into a few things a busy clinician can take in between patients.</p>
+          </div>
+          <ol class="how">
+            <li><b>Briefs</b><span>Short, AI-assisted summaries of the latest medical news, filtered to each doctor's specialty.</span></li>
+            <li><b>Podcasts</b><span>Newscasts, conference recaps and case studies for the moments when reading isn't possible.</span></li>
+            <li><b>Editorial &amp; Games</b><span>Original features that only Curie owns, and quick medical word games that give doctors a reason to come back daily.</span></li>
+            <li><b>Weekly Dose</b><span>A weekly newsletter with only the few updates worth a clinician's attention.</span></li>
+          </ol>
+          <div class="prose">
+            <p>Doctors read, listen and play for free. Each bookmark, like and specialty choice tells Curie what they care about, so content gets more relevant over time. Behind that, a small team uses generative AI to publish at a pace an editorial-staffed competitor can't match, and the engaged, verified audience it builds is what ZoomRx can later offer to advertisers.</p>
+          </div>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <span class="mono sec-label">Why it matters</span><h3>Why ZoomRx needed to build Curie</h3>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Need</th><th>How Curie answers it</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Need">Panel health</td><td data-label="How Curie answers it">Bookings were outgrowing the panel. A reason to visit ZoomRx beyond surveys builds familiarity and loyalty, and Curie is now built into the Community app.</td></tr>
+                <tr><td data-label="Need">The missing value driver</td><td data-label="How Curie answers it">ZoomRx already had targeting, measurement and channels. Curie supplies frequent, habit-forming engagement, which ZoomRx had never offered.</td></tr>
+                <tr><td data-label="Need">A new revenue line</td><td data-label="How Curie answers it">Pharma spends about $50B a year on HCP marketing. An engaged, verified audience can be sold to advertisers, with a target of $5M a year by FY30.</td></tr>
+                <tr><td data-label="Need">A fresh brand</td><td data-label="How Curie answers it">Many HCPs already had opinions of ZoomRx, which the brief described as “not always positive.” A separate brand focused only on giving value starts clean.</td></tr>
+                <tr><td data-label="Need">Compliance</td><td data-label="How Curie answers it">Market research and marketing must be kept apart. A separate brand, finances and team make that firewall real.</td></tr>
+                <tr><td data-label="Need">AI advantage</td><td data-label="How Curie answers it">Generative AI lets a small team produce briefs, podcasts and games at a pace competitors built on editorial staff can't match.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="cs-sec">
+          <div class="facts">
+            <div><span class="mono">Product</span><p>Curie (curie.md): Briefs, Podcasts, Editorial, Games and the “Curie's Weekly Dose” newsletter for healthcare professionals</p></div>
+            <div><span class="mono">My role</span><p>Product designer: Curie web platform pages, Curie Design System v1.0, homepage redesign concepts</p></div>
+            <div><span class="mono">Team</span><p>Curie (Andrew Yukawa, lead), with Tech, Community and Content</p></div>
+            <div><span class="mono">Timeline</span><p>Idea Sep–Oct 2024 · MVP Nov 2024 · Curie 2.0 website spring 2025 · FY26 monetization</p></div>
+            <div><span class="mono">Headline results</span><p>Monthly active users grew from 242 (Dec 2024) to 16.3K (Aug 2025); newsletter reached 17K verified HCPs with a 33% open rate</p></div>
+          </div>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <h3>Shaping it into an MVP</h3>
+          <p>The first brief asked for a proof of concept shipped to real HCPs, with engagement measured, by January 1. The team chose a narrow, testable idea: a personalized medical podcast app for oncologists, built in two weeks.</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>MVP element</th><th>What was built</th></tr></thead>
+              <tbody>
+                <tr><td data-label="MVP element">Core product</td><td data-label="What was built">Mobile app delivering personalized medical news podcasts, with topics, therapeutic areas and frequency chosen by the user</td></tr>
+                <tr><td data-label="MVP element">Onboarding</td><td data-label="What was built">Invite email from Community → download → intro podcast → invite code → pick interests → hear a first “personalized” episode immediately</td></tr>
+                <tr><td data-label="MVP element">Personalization shortcut</td><td data-label="What was built">255 possible topic combinations mapped to 8 pre-made podcasts; early episodes curated from Medscape and generated with NotebookLM</td></tr>
+                <tr><td data-label="MVP element">Measurement from day one</td><td data-label="What was built">Reach, retention (share of each episode heard), completion rate, unique weekly listeners</td></tr>
+                <tr><td data-label="MVP element">Rollout</td><td data-label="What was built">Alpha with ZoomRx employees (Nov 11–15, 2024) · Beta with selected oncologists (Nov 18–29) · General availability Dec 2, 2024</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>The onboarding was designed around three problems: asking people to sign up before they had experienced anything, making the “magic” of a custom podcast visible, and avoiding a UX that felt like “another podcast app.” Scope was cut into three sprints to hit the Nov 8 launch, and automated personalization was postponed because it could be done by hand at first.</p>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <h3>The name: why “Curie”</h3>
+          <p>On Oct 1, 2024 the team brainstormed names: Velix, Veridex, Curix (“cure”), Curio (“curiosity and discovery”) and Curate (“the act of curation”). By Oct 24, the product had become Curie, on the domain curie.md.</p>
+          <div class="quote"><p>“Curie = curation + Marie Curie: a trusted curator of medical knowledge, carrying the spirit of discovery.”</p><cite class="mono">The naming idea behind the brand</cite></div>
+          <p>The name holds both halves of the product's promise. Curation is what Curie does every day: sorting a flood of medical news into the few stories that matter to each clinician. Marie Curie stands for discovery and scientific rigor, and she is a figure every physician recognizes and respects. The name keeps the “curate” and “curio” threads from the brainstorm and adds a human, credible face. The .md domain reads as “M.D.,” signalling to doctors that the site is made for them.</p>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <h3>From podcast app to media platform</h3>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>When</th><th>What changed</th><th>Why</th></tr></thead>
+              <tbody>
+                <tr><td data-label="When">Nov–Dec 2024</td><td data-label="What changed">Podcast MVP ships; a browser version is requested</td><td data-label="Why">Tech bandwidth was the bottleneck; web lowers the barrier compared with an app download</td></tr>
+                <tr><td data-label="When">Jan 2025</td><td data-label="What changed">Weekly show cadence: “Your Curated Dose” (Mon), “Under the Microscope” (Wed), “Ask Curie” (Fri)</td><td data-label="Why">Week-one retention was the core problem; “consistency builds habits”</td></tr>
+                <tr><td data-label="When">Mar 2025</td><td data-label="What changed">Games launch: Strands, Connections, Myth or Medicine</td><td data-label="Why">Short, repeatable reasons to return daily, despite internal debate about fit with the brand</td></tr>
+                <tr><td data-label="When">May 2025</td><td data-label="What changed">Curie 2.0 website with Briefs; newsletter</td><td data-label="Why">1,000 users in 10 days; “Users can experience content easily with the new UI”</td></tr>
+                <tr><td data-label="When">Jun 2025</td><td data-label="What changed">“No new pillars; relentless optimization”</td><td data-label="Why">Only 61 of 1,000 users were returning; focus shifts to retention and habit</td></tr>
+                <tr><td data-label="When">Aug 2025</td><td data-label="What changed">FY26 strategy: find the “fastest path to first dollar”</td><td data-label="Why">“Curie brand and content pillars firmly established”</td></tr>
+                <tr><td data-label="When">Sep 2025</td><td data-label="What changed">Homepage redesign concepts: Curie Daily, intent-driven entry, Focus and Explore modes</td><td data-label="Why">Move the homepage “from content discovery to delivering clarity and deep insight”</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <h3>The Curie brand and the reasoning behind it</h3>
+          <p>Curie positions itself as “a digital media company made for Healthcare Professionals.” Its promise is signal over noise for clinicians with little time, summed up in the tagline “The smartest 3-minute read in medicine.” The voice is set as “calm confidence with clinical precision.”</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Brand rule</th><th>What it means</th><th>Reasoning</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Brand rule">Dark canvas, always</td><td data-label="What it means">Every page sits on a deep purple-black background; panels float dark-on-dark</td><td data-label="Reasoning">Sets Curie apart from the white, clinical look of EHRs and journals. Easier on the eyes on night shifts and between patients, and reads as premium media.</td></tr>
+                <tr><td data-label="Brand rule">Purple is the brand</td><td data-label="What it means">Purple leads; teal, cyan, blue, green and pink are rare accents</td><td data-label="Reasoning">Purple is uncommon in healthcare, which is dominated by blues and greens, so Curie is recognizable at a glance. The few accents mark content types without competing.</td></tr>
+                <tr><td data-label="Brand rule">Two fonts</td><td data-label="What it means">Manrope for everything; Playfair Display only for a hero headline, pull quote or single number</td><td data-label="Reasoning">Manrope stays readable at small sizes on phones. A touch of Playfair adds editorial authority, like a trusted journal masthead.</td></tr>
+                <tr><td data-label="Brand rule">A text-opacity ladder</td><td data-label="What it means">Hierarchy comes from stepping down text brightness, not new colors</td><td data-label="Reasoning">Keeps pages calm. Readers see what matters first without the page getting louder.</td></tr>
+                <tr><td data-label="Brand rule">Restraint</td><td data-label="What it means">One strong accent per view</td><td data-label="Reasoning">Doctors are overloaded; a quiet page that makes one clear point builds trust.</td></tr>
+                <tr><td data-label="Brand rule">Frosted-glass cards</td><td data-label="What it means">Translucent panels, soft blur, faint purple edge, low shadow</td><td data-label="Reasoning">Gives depth on a dark canvas and a modern, media-app feel while every card stays consistent.</td></tr>
+                <tr><td data-label="Brand rule">Hover on everything clickable</td><td data-label="What it means">Every card, tag and button responds</td><td data-label="Reasoning">Makes it obvious what is interactive on dense content pages.</td></tr>
+                <tr><td data-label="Brand rule">Reuse over invention</td><td data-label="What it means">New pages are built from the existing component catalog</td><td data-label="Reasoning">Keeps the brand consistent as a small team ships quickly. This became the Curie Design System v1.0.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <h3>UX case study: every page and feature, and why it is designed that way</h3>
+          <p>Curie is used in the gaps of a clinician's day: between patients, on a commute, at the end of a shift. That one fact drives almost every decision below. Each page is designed to deliver value in seconds, to show why the content can be trusted, and to give the reader a reason to come back.</p>
+          <h4 class="sub">How the product is organized</h4>
+          <p>Every page belongs to one of four types, and each type has one job. This keeps pages predictable: once a doctor has used one list page, they already know how every other list page works.</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Page type</th><th>The user's question</th><th>Curie pages</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Page type">Home</td><td data-label="The user's question">“What's new, and where should I go?”</td><td data-label="Curie pages">Home</td></tr>
+                <tr><td data-label="Page type">List</td><td data-label="The user's question">“Show me everything of this kind so I can pick one.”</td><td data-label="Curie pages">Briefs, Podcasts, Editorial, Games</td></tr>
+                <tr><td data-label="Page type">Detail</td><td data-label="The user's question">“Let me read, listen to or play this one thing fully.”</td><td data-label="Curie pages">Brief detail, Editorial detail, Podcast player</td></tr>
+                <tr><td data-label="Page type">Form</td><td data-label="The user's question">“Let me give you something, quickly.”</td><td data-label="Curie pages">Newsletter signup</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">Patterns used across the whole product</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Pattern</th><th>Where it appears</th><th>Why</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Pattern">Freshness signals</td><td data-label="Where it appears">Relative times on Briefs (“about 17 hours ago,” “5 days ago”); dates on Podcasts, Editorial and Home</td><td data-label="Why">Doctors want to know how new information is before they trust it. Relative time is faster to read than a date.</td></tr>
+                <tr><td data-label="Pattern">Evidence signals</td><td data-label="Where it appears">Source counts (“8 Sources”) or the source name (“Medscape,” “Reuters”) on every brief</td><td data-label="Why">Clinicians are trained to check evidence. Showing sources up front builds trust and sets Curie apart from a single-outlet feed.</td></tr>
+                <tr><td data-label="Pattern">A personalization loop</td><td data-label="Where it appears">Bookmark, like and dislike on every brief; “For You” feed; specialty filters; specialty in the newsletter signup</td><td data-label="Why">Each small signal teaches Curie what a doctor cares about, which answers the early finding that content was “not always relevant.”</td></tr>
+                <tr><td data-label="Pattern">A subscription ladder</td><td data-label="Where it appears">Newsletter bar on every page, inline prompts, the signup page, “Subscribe to Curie” on editorial</td><td data-label="Why">Moves casual visitors toward subscribing, the audience that can later be monetized.</td></tr>
+                <tr><td data-label="Pattern">One clear action per item</td><td data-label="Where it appears">Read Now, Listen Now, Play Now, Dive in, Play, Read more</td><td data-label="Why">A specific verb tells people exactly what happens when they click, which removes hesitation.</td></tr>
+                <tr><td data-label="Pattern">Helpful empty states</td><td data-label="Where it appears">“No saved Briefs yet. Tap the bookmark icon on any Brief to save it for later.”</td><td data-label="Why">A blank screen feels broken. An empty state that teaches the feature turns it into onboarding.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">Home</h4>
+          <figure class="page-shot"><div class="ps-frame" tabindex="0" role="region" aria-label="Page screenshot, scrollable"><img loading="lazy" src="images/curie/home.webp" alt="Full Curie home page: hero carousel, Curie Briefs, Podcasts and Games rows, tools, conferences, FAQ and closing call to action"></div><figcaption><span class="mono ps-hint">Scroll inside to see the full page</span><a class="mono" href="images/curie/home.webp" target="_blank" rel="noopener">Open image ↗</a></figcaption></figure>
+          <p><b>Purpose: </b>Turns five content types into one daily starting point and shows the range of Curie in the first few seconds.</p>
+          <p><b>When it's used: </b>The first visit, and daily returns when the reader has no specific goal.</p>
+          <span class="mono walk-label">Page walkthrough (top to bottom)</span>
+          <ol class="walk">
+            <li>Newsletter banner: “Stay current in minutes. All the week's key medical news in one email,” with an email field and “Subscribe free.”</li>
+            <li>Hero carousel with three slides: a PODCAST (“What an Active Shooter Taught an Oncologist,” Listen Now), a BRIEF (“Two surgical approaches for bone metastases…,” Read Now) and a GAME (“Daily Connections Puzzle,” Play Now), with thumbnail navigation.</li>
+            <li>Curie Briefs section: six compact items, each with date, shortened title and source or “2 Sources.”</li>
+            <li>Curie Podcasts row: recent episodes with dates and “View All.”</li>
+            <li>Curie Games row: Curie Connections, Curie Pinpoint and Curie Strands, each with Play.</li>
+            <li>Frequently asked questions: “What is Curie and who is it for?”, “How do I sign up for Curie?”, “What are Curie Briefs?”, “Can I customize the topics I see in my Curie Briefs?”, and “See More FAQs.”</li>
+            <li>Closing call to action: “Turn spare minutes into clinical confidence. Join thousands of clinicians who rely on Curie's quick news, podcasts, and games to stay ahead in their field,” with “Download Now” and an illustration.</li>
+          </ol>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Feature</th><th>What it does</th><th>Why it's designed this way</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Feature">Hero carousel of three content types</td><td data-label="What it does">Features one podcast, one brief and one game, each with a type label, date, title and short excerpt</td><td data-label="Why it's designed this way">Shows at once that Curie is more than news. Each pillar gets front-page space without one crowding out the others.</td></tr>
+                <tr><td data-label="Feature">Verbs matched to the content</td><td data-label="What it does">Listen Now, Read Now, Play Now</td><td data-label="Why it's designed this way">The button tells the user what kind of experience comes next, so there are no surprises.</td></tr>
+                <tr><td data-label="Feature">Type labels (PODCAST, BRIEF, GAME)</td><td data-label="What it does">Small uppercase tag above each hero title</td><td data-label="Why it's designed this way">Helps people tell formats apart at a glance in a mixed carousel.</td></tr>
+                <tr><td data-label="Feature">Compact brief list</td><td data-label="What it does">Shortened titles with date and source</td><td data-label="Why it's designed this way">Invites scanning. The reader sees what's new without committing to a full story.</td></tr>
+                <tr><td data-label="Feature">Horizontal podcast and game rows</td><td data-label="What it does">Swipeable rows with “View All”</td><td data-label="Why it's designed this way">A familiar streaming-app pattern that shows many items in little vertical space.</td></tr>
+                <tr><td data-label="Feature">FAQ</td><td data-label="What it does">Answers four common questions in expandable form</td><td data-label="Why it's designed this way">New visitors arrive from ads and newsletters without context. The FAQ explains what Curie is, who it's for and how to personalize it, without a separate help page.</td></tr>
+                <tr><td data-label="Feature">Closing call to action</td><td data-label="What it does">Restates the promise and offers the app</td><td data-label="Why it's designed this way">Catches readers who scrolled to the end, the most engaged visitors, with a clear next step.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><b>States and edge cases: </b>Newsletter and carousel content change daily; the carousel can be navigated by thumbnail.</p>
+          <p><b>What this page should move: </b>Click-through from Home to any pillar, newsletter signups, and return visits. The Sep 2025 redesign concepts push further toward a two-minute personal “Curie Daily” briefing.</p>
+          <h4 class="sub">The shared frame: navigation, newsletter bar, account and footer</h4>
+          <figure class="page-shot short"><div class="ps-frame"><img loading="lazy" src="images/curie/frame.webp" alt="Curie podcasts page showing the shared frame: side navigation, newsletter bar across the top, page header with the user name"></div><figcaption><span class="mono ps-hint">Scroll inside to see the full page</span><a class="mono" href="images/curie/frame.webp" target="_blank" rel="noopener">Open image ↗</a></figcaption></figure>
+          <p><b>Purpose: </b>Holds five very different content types together so Curie feels like one product, not five apps.</p>
+          <p><b>When it's used: </b>On every visit, on every page.</p>
+          <span class="mono walk-label">Page walkthrough (top to bottom)</span>
+          <ol class="walk">
+            <li>Side navigation with the Curie logo, then Home, Briefs, Podcasts, Editorial, Games and Newsletter, each with an icon.</li>
+            <li>Personal shortcuts under the navigation: Saved and History.</li>
+            <li>A newsletter bar across the top of the page, with an email field or a “Subscribe free” button.</li>
+            <li>The page header: the section's icon and title on the left, the user's initials and name on the right.</li>
+            <li>A user menu with “Profile &amp; Preferences” and “Logout.”</li>
+            <li>A footer with “All rights reserved ZoomRx” and a Privacy Policy link.</li>
+          </ol>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Feature</th><th>What it does</th><th>Why it's designed this way</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Feature">Side navigation</td><td data-label="What it does">Lists every content pillar with an icon and label; highlights the current page</td><td data-label="Why it's designed this way">Icons speed up recognition and labels remove guesswork. A fixed position means users never have to hunt for a way back.</td></tr>
+                <tr><td data-label="Feature">Saved and History</td><td data-label="What it does">Keep bookmarked briefs and recently read items</td><td data-label="Why it's designed this way">Give returning users a personal space, which is one of the few reasons to create an account. Accounts were a stated FY26 goal (15%+ of monthly users).</td></tr>
+                <tr><td data-label="Feature">Newsletter bar with page-specific copy</td><td data-label="What it does">Invites a subscription, worded for each page: “Prefer the summary version?” (Briefs), “Short on time this week?” (Podcasts), “Want the weekly summary?” (Editorial), “Play here. Catch up once a week.” (Games), “Stay current in minutes” (Home)</td><td data-label="Why it's designed this way">The same offer is framed as the answer to what the reader is doing right now. That feels helpful rather than like an ad, and the newsletter is Curie's most engaged channel.</td></tr>
+                <tr><td data-label="Feature">User menu</td><td data-label="What it does">Profile &amp; Preferences, Logout</td><td data-label="Why it's designed this way">Preferences sit one click away because specialty and interests power personalization.</td></tr>
+                <tr><td data-label="Feature">Identical frame on every page</td><td data-label="What it does">Header, sidebar and footer never change</td><td data-label="Why it's designed this way">Consistency builds trust and lets the team add new pages without redesigning the shell.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><b>States and edge cases: </b>The active page is highlighted in the navigation. Every link and button has a hover state so it is clear what can be clicked.</p>
+          <p><b>What this page should move: </b>Movement between pillars (sessions that visit more than one content type) and newsletter signups from every page.</p>
+          <h4 class="sub">Briefs (list)</h4>
+          <figure class="page-shot"><div class="ps-frame" tabindex="0" role="region" aria-label="Page screenshot, scrollable"><img loading="lazy" src="images/curie/briefs.webp" alt="Curie Briefs page with For You and Latest toggle, specialty and indication filters, a featured brief and a grid of brief cards"></div><figcaption><span class="mono ps-hint">Scroll inside to see the full page</span><a class="mono" href="images/curie/briefs.webp" target="_blank" rel="noopener">Open image ↗</a></figcaption></figure>
+          <p><b>Purpose: </b>Curie's core product: short, AI-assisted summaries of the latest medical news, filtered to each doctor's specialty.</p>
+          <p><b>When it's used: </b>Several times a week, often in two-to-five-minute gaps.</p>
+          <span class="mono walk-label">Page walkthrough (top to bottom)</span>
+          <ol class="walk">
+            <li>Newsletter bar: “Prefer the summary version? Stay updated in minutes with Curie's Weekly Dose.”</li>
+            <li>Page header: “Curie Briefs.”</li>
+            <li>A segmented toggle: “For You” and “Latest.”</li>
+            <li>Two filters: Specialty (All, Cardiology, Primary Care, Hematology/Oncology, Neurology) and Indication (for example All Indications, Cardiomyopathy, Coronary Artery Disease, Heart Failure, Hypertension).</li>
+            <li>For You view: one large featured brief, a stack of smaller cards beside it, a wide card, then a grid of cards.</li>
+            <li>A newsletter prompt in the middle of the feed.</li>
+            <li>“View More Briefs — Explore all the latest healthcare news and insights.”</li>
+            <li>Latest view: a list of briefs in time order, each with a two-line excerpt and a “Dive in” link.</li>
+            <li>Saved and History views, with their own empty states.</li>
+          </ol>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Feature</th><th>What it does</th><th>Why it's designed this way</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Feature">For You / Latest toggle</td><td data-label="What it does">Switches between a personalized feed and a chronological one</td><td data-label="Why it's designed this way">Doctors come with two mindsets: “what matters to me” (habit) and “what just happened” (news). One control serves both.</td></tr>
+                <tr><td data-label="Feature">Specialty filter</td><td data-label="What it does">Narrows briefs to one specialty</td><td data-label="Why it's designed this way">Relevance is the top reason doctors stay. Specialty is how clinicians already organize their reading.</td></tr>
+                <tr><td data-label="Feature">Indication filter</td><td data-label="What it does">Narrows further to a disease area</td><td data-label="Why it's designed this way">Specialists care about specific diseases. A cardiologist focused on heart failure shouldn't have to scroll past hypertension news.</td></tr>
+                <tr><td data-label="Feature">Featured brief</td><td data-label="What it does">One large card with title, time, source count and a short excerpt</td><td data-label="Why it's designed this way">Gives the page a clear lead story, like a newspaper front page, so the eye knows where to start.</td></tr>
+                <tr><td data-label="Feature">Card sizes (featured, horizontal, wide, grid)</td><td data-label="What it does">Mixes card shapes down the page</td><td data-label="Why it's designed this way">Varied rhythm keeps a long feed from feeling like a spreadsheet and signals which stories matter most.</td></tr>
+                <tr><td data-label="Feature">Time and sources on every card</td><td data-label="What it does">“about 17 hours ago · 8 Sources” or a single outlet name</td><td data-label="Why it's designed this way">Freshness and evidence are the two things a clinician checks first, so both are visible before clicking.</td></tr>
+                <tr><td data-label="Feature">Bookmark, like and dislike on every card</td><td data-label="What it does">Save for later, or give quick feedback without opening the brief</td><td data-label="Why it's designed this way">Saving supports people with no time now. Likes and dislikes improve the For You feed and give the content team a quality signal.</td></tr>
+                <tr><td data-label="Feature">“Dive in” with excerpt (Latest view)</td><td data-label="What it does">Previews each story in two lines</td><td data-label="Why it's designed this way">Lets readers decide quickly whether a story is worth their time.</td></tr>
+                <tr><td data-label="Feature">Mid-feed newsletter prompt</td><td data-label="What it does">“Prefer the summary version?”</td><td data-label="Why it's designed this way">Reaches readers who like the content but won't visit daily, offering a weekly digest instead.</td></tr>
+                <tr><td data-label="Feature">View More Briefs</td><td data-label="What it does">Loads additional stories</td><td data-label="Why it's designed this way">Keeps the first screen fast and focused while leaving more available.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><b>States and edge cases: </b>Empty states: “No saved Briefs yet. Tap the bookmark icon on any Brief to save it for later.” and “No reading history yet. Briefs you read will appear here for easy reference.” Filters show the current selection (for example “Specialty: Cardiology”).</p>
+          <p><b>What this page should move: </b>Briefs opened per visit, return visits, bookmarks and likes. FY26 targets: 5+ views per user and 60+ seconds on page.</p>
+          <h4 class="sub">Brief detail</h4>
+          <figure class="page-shot"><div class="ps-frame" tabindex="0" role="region" aria-label="Page screenshot, scrollable"><img loading="lazy" src="images/curie/brief-detail.webp" alt="Curie brief detail page with headline, sources, summary box, full story, key takeaways, why it matters and related stories"></div><figcaption><span class="mono ps-hint">Scroll inside to see the full page</span><a class="mono" href="images/curie/brief-detail.webp" target="_blank" rel="noopener">Open image ↗</a></figcaption></figure>
+          <p><b>Purpose: </b>Delivers one story in about three minutes, in layers, so a clinician can stop as soon as they have what they need.</p>
+          <p><b>When it's used: </b>Right after tapping a brief from the list, the newsletter, Home or a shared link.</p>
+          <span class="mono walk-label">Page walkthrough (top to bottom)</span>
+          <ol class="walk">
+            <li>A sticky header with a back arrow, a shortened title and a reading progress bar.</li>
+            <li>The headline, for example “Lower cholesterol targets cut heart events by one-third in landmark study.”</li>
+            <li>Meta row: relative time (“about 17 hours ago”) and “9 Sources,” with the source list (Medscape, Professional Heart Daily, Healio, TCTMD, ScienceDaily…).</li>
+            <li>Action row: bookmark, like, dislike.</li>
+            <li>Summary box: the finding in two sentences.</li>
+            <li>The full story in a few short paragraphs.</li>
+            <li>Key Takeaways: three or four points, each led by a number (for example “33% reduction…”, “59% of intensive-target patients…”).</li>
+            <li>“Why it matters”: what the finding means for clinical practice.</li>
+            <li>Related stories: “Recommended reads based on this brief,” each with source and time.</li>
+            <li>Floating actions at the side and a newsletter box at the end.</li>
+          </ol>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Feature</th><th>What it does</th><th>Why it's designed this way</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Feature">Summary box</td><td data-label="What it does">States the core finding in about two sentences</td><td data-label="Why it's designed this way">Many readers only need the headline finding. They can stop here and still leave informed.</td></tr>
+                <tr><td data-label="Feature">Key Takeaways led by numbers</td><td data-label="What it does">Lists the essential data points</td><td data-label="Why it's designed this way">Clinicians think in effect sizes and outcomes. Leading with numbers respects that and makes the page easy to scan.</td></tr>
+                <tr><td data-label="Feature">“Why it matters”</td><td data-label="What it does">Explains the clinical relevance</td><td data-label="Why it's designed this way">Turns news into insight. This is where Curie adds value beyond other news feeds.</td></tr>
+                <tr><td data-label="Feature">Source list</td><td data-label="What it does">Shows every outlet the brief draws on</td><td data-label="Why it's designed this way">Lets a skeptical reader verify the story, which builds the trust a medical audience requires.</td></tr>
+                <tr><td data-label="Feature">Reading progress bar</td><td data-label="What it does">Shows how far the reader is through the story</td><td data-label="Why it's designed this way">Makes the “3-minute read” promise visible and helps people decide whether to finish now.</td></tr>
+                <tr><td data-label="Feature">Bookmark, like and dislike</td><td data-label="What it does">Save the story, or rate it</td><td data-label="Why it's designed this way">Feeds the Saved list and the For You feed, and tells the team which briefs work.</td></tr>
+                <tr><td data-label="Feature">Related stories</td><td data-label="What it does">Suggests similar briefs</td><td data-label="Why it's designed this way">Keeps a session going with relevant reading, supporting the retention goal.</td></tr>
+                <tr><td data-label="Feature">Newsletter box at the end</td><td data-label="What it does">Offers the weekly digest</td><td data-label="Why it's designed this way">The end of a good read is the moment of highest trust, and the best time to ask for a subscription.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><b>States and edge cases: </b>The header stays in place while scrolling so the back button and progress bar are always visible.</p>
+          <p><b>What this page should move: </b>Scroll depth and read completion, time on page, related-story clicks, bookmarks and newsletter signups.</p>
+          <h4 class="sub">Podcasts</h4>
+          <figure class="page-shot"><div class="ps-frame" tabindex="0" role="region" aria-label="Page screenshot, scrollable"><img loading="lazy" src="images/curie/podcasts.webp" alt="Curie Podcasts page with rows for Featured, Conferences, By Curie, Case Studies and Newscasts"></div><figcaption><span class="mono ps-hint">Scroll inside to see the full page</span><a class="mono" href="images/curie/podcasts.webp" target="_blank" rel="noopener">Open image ↗</a></figcaption></figure>
+          <p><b>Purpose: </b>Serves the moments when reading isn't possible, such as commuting or walking between wards, and builds a voice-led relationship with the brand.</p>
+          <p><b>When it's used: </b>Commutes, breaks and focused learning sessions; conference seasons.</p>
+          <span class="mono walk-label">Page walkthrough (top to bottom)</span>
+          <ol class="walk">
+            <li>Newsletter bar: “Short on time this week? Get the week's key medical updates in one concise email.”</li>
+            <li>Page header: “Curie Podcasts.”</li>
+            <li>Rows of episodes, each with “View All”: Featured, Conferences, By Curie, Case Studies and Newscasts.</li>
+            <li>Episode cards with artwork, a play button over the artwork, date and title.</li>
+            <li>A persistent audio player bar with episode title, description, date, elapsed and total time (for example 00:05 / 15:22), a 10-second skip and a full-screen button.</li>
+            <li>A full-screen player with a back button and “Get the App.”</li>
+          </ol>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Feature</th><th>What it does</th><th>Why it's designed this way</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Feature">Rows by format (Featured, Conferences, By Curie, Case Studies, Newscasts)</td><td data-label="What it does">Groups episodes by the kind of listening they suit</td><td data-label="Why it's designed this way">Listeners choose by mood and time: a quick “Morning Minute” newscast, a conference recap, or a longer case study. Rows make the choice obvious.</td></tr>
+                <tr><td data-label="Feature">Conference row (ASCO, AACR, AAN, ASCO GI)</td><td data-label="What it does">Collects previews, recaps and highlights</td><td data-label="Why it's designed this way">Conference coverage is timely, high-value content that doctors actively seek, so it gets its own shelf.</td></tr>
+                <tr><td data-label="Feature">Case Studies row</td><td data-label="What it does">Episodes on care models, such as team-based primary care</td><td data-label="Why it's designed this way">Practical stories that doctors can apply, which gives Curie depth beyond the news.</td></tr>
+                <tr><td data-label="Feature">Play button on the artwork</td><td data-label="What it does">Starts playback in one tap</td><td data-label="Why it's designed this way">Removes a step between wanting to listen and listening.</td></tr>
+                <tr><td data-label="Feature">Persistent player bar</td><td data-label="What it does">Keeps playing while the user browses</td><td data-label="Why it's designed this way">Listening shouldn't stop because someone wants to look at something else.</td></tr>
+                <tr><td data-label="Feature">10-second skip and time display</td><td data-label="What it does">Quick navigation within an episode</td><td data-label="Why it's designed this way">Standard controls that match the podcast apps doctors already use.</td></tr>
+                <tr><td data-label="Feature">Full-screen player and “Get the App”</td><td data-label="What it does">A focused listening view that points to the mobile app</td><td data-label="Why it's designed this way">Full screen suits deliberate listening. The app link serves people who want offline or background playback.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><b>States and edge cases: </b>The player bar stays visible across the page once an episode starts.</p>
+          <p><b>What this page should move: </b>Episode starts, completion rate (FY26 target 50%+) and monthly downloads (from ~0.5K to 2K).</p>
+          <h4 class="sub">Editorial (list)</h4>
+          <figure class="page-shot"><div class="ps-frame" tabindex="0" role="region" aria-label="Page screenshot, scrollable"><img loading="lazy" src="images/curie/editorial.webp" alt="Curie Editorial page with a grid of feature cards, each with image, title, description and byline"></div><figcaption><span class="mono ps-hint">Scroll inside to see the full page</span><a class="mono" href="images/curie/editorial.webp" target="_blank" rel="noopener">Open image ↗</a></figcaption></figure>
+          <p><b>Purpose: </b>Collects Curie's original, in-depth pieces, content that only Curie owns.</p>
+          <p><b>When it's used: </b>When a reader wants perspective rather than the latest headline, often from a newsletter feature.</p>
+          <span class="mono walk-label">Page walkthrough (top to bottom)</span>
+          <ol class="walk">
+            <li>Newsletter bar: “Want the weekly summary? Get Curie's Weekly Dose — concise medical updates, delivered once a week.”</li>
+            <li>Header: “Curie Editorial.”</li>
+            <li>A grid of editorial cards, for example “Rising Voices in Oncology,” “Rising Voices in Neurology,” “The Fellowship That Stopped Teaching Oncologists to Memorize,” and “The Backbone of American Cancer Care is Breaking.”</li>
+            <li>Each card: thumbnail, title, a short description, byline (“By Curie Team” or “By Ekaterina Ripp, MD”) and “Read more.”</li>
+          </ol>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Feature</th><th>What it does</th><th>Why it's designed this way</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Feature">Large cards with images</td><td data-label="What it does">Give each piece more room than a brief</td><td data-label="Why it's designed this way">Signals that these are features worth slowing down for, not quick news.</td></tr>
+                <tr><td data-label="Feature">Bylines, including MDs</td><td data-label="What it does">Credit the author on every card</td><td data-label="Why it's designed this way">Authorship, especially by physicians, adds authority and marks the work as original.</td></tr>
+                <tr><td data-label="Feature">Short descriptions</td><td data-label="What it does">Two lines that set up the story</td><td data-label="Why it's designed this way">Editorial topics need a hook. The description explains why the reader should care.</td></tr>
+                <tr><td data-label="Feature">“Read more”</td><td data-label="What it does">One clear action per card</td><td data-label="Why it's designed this way">Keeps the grid clean and the next step obvious.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><b>What this page should move: </b>Click-through to editorial pieces, and shares. Editorial also answers the May 2025 concern about “lack of moat,” since Curie had relied almost entirely on other sources.</p>
+          <h4 class="sub">Editorial detail (example: “Rising Voices in Oncology”)</h4>
+          <figure class="page-shot"><div class="ps-frame" tabindex="0" role="region" aria-label="Page screenshot, scrollable"><img loading="lazy" src="images/curie/editorial-detail.webp" alt="Rising Voices in Oncology editorial page with hero, methodology note and ten oncologist profile cards"></div><figcaption><span class="mono ps-hint">Scroll inside to see the full page</span><a class="mono" href="images/curie/editorial-detail.webp" target="_blank" rel="noopener">Open image ↗</a></figcaption></figure>
+          <p><b>Purpose: </b>Presents a curated feature in a format that is credible, easy to scan and easy to share.</p>
+          <p><b>When it's used: </b>Reading a feature piece end to end, often after a newsletter or social post.</p>
+          <span class="mono walk-label">Page walkthrough (top to bottom)</span>
+          <ol class="walk">
+            <li>A full-width hero with a background image and overlay, the “Curie Editorial” tag and date (March 2026).</li>
+            <li>The title with one word accented in Playfair italics: “Rising Voices in Oncology.”</li>
+            <li>Subtitle: “A curated look at the oncologists shaping the next era of cancer care…”</li>
+            <li>Two actions: “Subscribe to Curie” and “Share This List.”</li>
+            <li>Meta: “5 min read” and “10 Voices Featured.”</li>
+            <li>“How We Chose This List,” with a methodology note stating the list is directional and non-exhaustive, not a ranking.</li>
+            <li>“The 2026 List — Oncologists to Watch”: ten profile cards.</li>
+            <li>Each profile card: avatar, name, institution (for example UCLA Health, Princess Margaret Cancer Centre), social link, specialty tag (for example Breast Oncology, Hematologic Oncology) and a short bio.</li>
+            <li>A closing call to action and newsletter signup.</li>
+          </ol>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Feature</th><th>What it does</th><th>Why it's designed this way</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Feature">Hero with Playfair accent</td><td data-label="What it does">Gives the piece a magazine-style opening</td><td data-label="Why it's designed this way">This is the one place Curie's accent font takes the stage, so the page reads as a feature and feels premium.</td></tr>
+                <tr><td data-label="Feature">Read time and item count</td><td data-label="What it does">“5 min read · 10 Voices Featured”</td><td data-label="Why it's designed this way">Sets expectations before the reader commits, which respects their time.</td></tr>
+                <tr><td data-label="Feature">“How We Chose This List” and methodology note</td><td data-label="What it does">Explains the selection criteria and limits</td><td data-label="Why it's designed this way">In healthcare, any list can look like an endorsement. Being open about method builds credibility and avoids implying a ranking.</td></tr>
+                <tr><td data-label="Feature">Profile cards</td><td data-label="What it does">Standard layout for each person: name, institution, specialty, bio, social link</td><td data-label="Why it's designed this way">The same structure for every entry makes ten people easy to compare and scan.</td></tr>
+                <tr><td data-label="Feature">Specialty tags</td><td data-label="What it does">Labels each person's field</td><td data-label="Why it's designed this way">Lets readers find the voices most relevant to them.</td></tr>
+                <tr><td data-label="Feature">“Share This List”</td><td data-label="What it does">Shares the feature</td><td data-label="Why it's designed this way">Featured physicians and their colleagues are likely to share, which brings Curie new readers at no cost.</td></tr>
+                <tr><td data-label="Feature">“Subscribe to Curie” in the hero</td><td data-label="What it does">A subscription entry point at the top</td><td data-label="Why it's designed this way">Captures readers who arrived through a share and may not return otherwise.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><b>What this page should move: </b>Shares, time on page, and subscriptions from editorial traffic.</p>
+          <h4 class="sub">Games</h4>
+          <figure class="page-shot"><div class="ps-frame" tabindex="0" role="region" aria-label="Page screenshot, scrollable"><img loading="lazy" src="images/curie/games.webp" alt="Curie Games page with Curie Connections, Curie Pinpoint and Curie Strands cards"></div><figcaption><span class="mono ps-hint">Scroll inside to see the full page</span><a class="mono" href="images/curie/games.webp" target="_blank" rel="noopener">Open image ↗</a></figcaption></figure>
+          <p><b>Purpose: </b>Short, medical word games that give doctors a reason to come back every day.</p>
+          <p><b>When it's used: </b>Quick breaks between patients or during downtime; daily puzzles.</p>
+          <span class="mono walk-label">Page walkthrough (top to bottom)</span>
+          <ol class="walk">
+            <li>Newsletter bar: “Play here. Catch up once a week. All the week's key medical news in one email.”</li>
+            <li>Page header: “Curie Games.”</li>
+            <li>Introduction: “In between patients? Tap into quick, brain-tingling games designed for healthcare minds.”</li>
+            <li>Three game cards, each with a title, icon, one-line description and a Play button: Curie Connections (“Find the hidden connections among this mix of medical terms”), Curie Pinpoint (“Use clues to pinpoint the medical theme that ties them all together”) and Curie Strands (“Connect the dots between medical concepts in this word-linking challenge”).</li>
+          </ol>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Feature</th><th>What it does</th><th>Why it's designed this way</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Feature">Familiar game formats</td><td data-label="What it does">Modelled on well-known word puzzles, rewritten with medical terms</td><td data-label="Why it's designed this way">No instructions needed, so the game starts in seconds. Medical content keeps it relevant and professional.</td></tr>
+                <tr><td data-label="Feature">“Curie” in every game name</td><td data-label="What it does">Curie Connections, Curie Pinpoint, Curie Strands</td><td data-label="Why it's designed this way">Keeps games part of the brand. In Mar 2025 the team debated whether games should be a separate brand, and this keeps them inside Curie.</td></tr>
+                <tr><td data-label="Feature">“In between patients?” framing</td><td data-label="What it does">Positions games as a smart micro-break</td><td data-label="Why it's designed this way">Addresses the internal concern that games could seem trivial to HCPs, by making them feel earned and relevant.</td></tr>
+                <tr><td data-label="Feature">One Play button per card</td><td data-label="What it does">Starts the game immediately</td><td data-label="Why it's designed this way">The shortest path from interest to play.</td></tr>
+                <tr><td data-label="Feature">Games on Home too</td><td data-label="What it does">A compact row of the same games</td><td data-label="Why it's designed this way">Daily players land on Home and see the rest of Curie on the way to their puzzle.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><b>What this page should move: </b>Daily returns, session time (FY26 target 45+ seconds) and game users (from ~100 to 1K per month).</p>
+          <h4 class="sub">Newsletter signup: “Curie's Weekly Dose”</h4>
+          <figure class="page-shot short"><div class="ps-frame"><img loading="lazy" src="images/curie/newsletter.webp" alt="Curie&#x27;s Weekly Dose signup page with the pitch on the left and a name, email and specialty form on the right"></div><figcaption><span class="mono ps-hint">Scroll inside to see the full page</span><a class="mono" href="images/curie/newsletter.webp" target="_blank" rel="noopener">Open image ↗</a></figcaption></figure>
+          <p><b>Purpose: </b>Convinces a busy clinician that the newsletter is worth their inbox, then lets them subscribe in seconds.</p>
+          <p><b>When it's used: </b>Arriving from a “Subscribe free” button anywhere on Curie, or from an ad or link.</p>
+          <span class="mono walk-label">Page walkthrough (top to bottom)</span>
+          <ol class="walk">
+            <li>Header: “Curie's Weekly Dose — A weekly newsletter that saves you time.”</li>
+            <li>The pitch on the left: “Stay current in minutes, every week. Curie's Weekly Dose is a concise weekly newsletter for healthcare professionals — only the few updates worth your attention, summarized so you can skim fast.”</li>
+            <li>The signup card on the right: “Get Curie's Weekly Dose,” with “Free. Weekly. Quick to read.”</li>
+            <li>Three fields: Name, Email and Specialty (Cardiology, Oncology, Neurology, Primary Care, Hematology, Endocrinology, Other).</li>
+            <li>One button: “Subscribe Free.”</li>
+          </ol>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Feature</th><th>What it does</th><th>Why it's designed this way</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Feature">Pitch beside the form</td><td data-label="What it does">The reason and the action are visible together</td><td data-label="Why it's designed this way">People decide and act on the same screen, without scrolling or clicking away.</td></tr>
+                <tr><td data-label="Feature">“Free. Weekly. Quick to read.”</td><td data-label="What it does">Three short promises</td><td data-label="Why it's designed this way">Answers a busy doctor's three questions: what does it cost, how often, and how long will it take?</td></tr>
+                <tr><td data-label="Feature">“Only the few updates worth your attention”</td><td data-label="What it does">States the curation promise</td><td data-label="Why it's designed this way">Newsletter fatigue is real. Promising less, not more, is what makes it appealing, and it is the “curation” in Curie's name.</td></tr>
+                <tr><td data-label="Feature">Only three fields</td><td data-label="What it does">Name, email and specialty</td><td data-label="Why it's designed this way">Each extra field loses signups. Specialty is the one worth asking for because it personalizes content and makes the audience valuable to advertisers.</td></tr>
+                <tr><td data-label="Feature">Named product: “Curie's Weekly Dose”</td><td data-label="What it does">Gives the newsletter a medical-sounding identity</td><td data-label="Why it's designed this way">A dose is small, regular and good for you, which is exactly the promise.</td></tr>
+                <tr><td data-label="Feature">“Subscribe Free” button</td><td data-label="What it does">One clear action</td><td data-label="Why it's designed this way">Repeats “free” at the moment of decision to remove the last hesitation.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><b>States and edge cases: </b>The signup page has no page header, so nothing competes with the form.</p>
+          <p><b>What this page should move: </b>Signup conversion rate and subscriber growth (FY26 target from 17K to 25K), with an open rate held above 30%.</p>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <h3>Outcomes</h3>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Metric</th><th>Value</th><th>When / source</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Metric">MVP test users</td><td data-label="Value">33 app downloads, 255 podcast listens</td><td data-label="When / source">Jan 2025 CrossTalk</td></tr>
+                <tr><td data-label="Metric">Monthly active users</td><td data-label="Value">242 → 805 → 1,618 → 2,850</td><td data-label="When / source">Dec 2024 → Apr → May → Jun 2025 (townhalls)</td></tr>
+                <tr><td data-label="Metric">Curie 2.0 website</td><td data-label="Value">1,000 active users in its first 10 days</td><td data-label="When / source">May 2025 townhall</td></tr>
+                <tr><td data-label="Metric">Monthly active users</td><td data-label="Value">16.3K, about 10× in three months</td><td data-label="When / source">Aug 2025 (FY26 briefs)</td></tr>
+                <tr><td data-label="Metric">Newsletter</td><td data-label="Value">17K verified HCPs · 33% open rate · ~12% click-to-site</td><td data-label="When / source">FY26 briefs</td></tr>
+                <tr><td data-label="Metric">Content volume</td><td data-label="Value">~250 Briefs, ~21 Games, ~1 Podcast per week</td><td data-label="When / source">FY26 briefs</td></tr>
+                <tr><td data-label="Metric">Brand</td><td data-label="Value">“Curie brand and content pillars firmly established”</td><td data-label="When / source">Aug 2025 townhall</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Challenges remain and are part of the story: retention (61 of the first 1,000 website users came back), relevance, about 35% of Briefs readers being unverified, and no advertising revenue yet as of FY26.</p>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <h3>What I learned</h3>
+          <p>Launch narrow, then widen. A two-week podcast app taught the team more than months of planning would have, including that the web and short reads were a better fit for doctors' days than a new app.</p>
+          <p>For busy professionals, the design problem is about respecting their time as much as delivering content. Every Curie decision, from the three-part brief structure to the three-field signup, comes back to that.</p>
+          <p>Build the system, not only the screens. A strict brand and a reusable component library let a small team ship five content types that still feel like one product.</p>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <h3>Sources</h3>
+          <ul class="sources">
+            <li>Community Engagement Beyond MR – L0 Brief FY25; Community L1 Brief – Content Based Engagement FY25 (Oct 2024); Community L1 Backbrief FY25 (Sep 2024)</li>
+            <li>Curie – Requirements for 2-Week MVP (Oct 24, 2024); Srivathsan Briefing Doc (Nov 7, 2024); Curie – Notes &amp; Ideas Q1'25 (name brainstorm, Oct 1, 2024)</li>
+            <li>Curie + Tech Alignment Pre-Read (Dec 2024); PDM CrossTalk – Curie (Jan 2025); Curie Townhalls (Jan, Feb, Mar, May, Jun, Aug 2025)</li>
+            <li>2025 Offsite – Ferma and Curie; Curie Briefs Launch Video Storyboard; Product Brief – Curie</li>
+            <li>Curie Design System golden templates and brand principles; Curie Homepage Redesign Toolkit (Sep 2025)</li>
+            <li>teams/team-curie.md (FY26 L0/L1 briefs)</li>
+          </ul>
+        </section>
+  </div></article>
+
+  <section class="wrap">
+    <a class="next" href="brand-asset-pipeline.html">
+      <div><span class="mono">Next project</span><h2>Brand Asset Pipeline →</h2></div>
+      <span class="mono">(03)</span>
+    </a>
+  </section>
+</main>
+
+<footer class="footer" id="contact">
+  <div class="wrap">
+    <div class="f-top">
+      <h2>Let's work<br>together.</h2>
+      <div class="f-cta">
+        <span class="mono">Drop me a line</span>
+        <span class="mail" id="email">moumita.product.designer@<br>gmail.com</span>
+        <button class="copy" id="copyBtn" type="button">Copy email</button>
+      </div>
+    </div>
+    <div class="f-grid">
+      <div><span class="mono">Location</span><p>Kolkata, India</p></div>
+      <div><span class="mono">Socials</span><ul><li><a href="https://www.linkedin.com/in/moumita-roy-chowdhury-359798179/" target="_blank" rel="noopener">LinkedIn ↗</a></li><li><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></li><li><a href="https://www.behance.net/" target="_blank" rel="noopener">Behance ↗</a></li></ul></div>
+      <div><span class="mono">Menu</span><ul><li><a href="index.html">Home</a></li><li><a href="index.html#work">Works</a></li><li><a href="index.html#skills">Skills</a></li><li><a href="index.html#experience">Experience</a></li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <span class="mono">©2026 Moumita Roy Chowdhury, all rights reserved</span>
+      <a class="mono" href="#top" style="text-decoration:none">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.querySelector('.nav'),mb=document.querySelector('.menu-btn');
+  if(nav&&mb){
+    function setMenu(o){nav.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'Close menu':'Open menu')}
+    mb.addEventListener('click',function(){setMenu(!nav.classList.contains('open'))});
+    nav.querySelectorAll('ul a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+  }
+  var btn=document.getElementById('copyBtn'),el=document.getElementById('email');
+  btn.addEventListener('click',function(){
+    var t=el.textContent.trim();
+    function done(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy email'},1800)}
+    function fb(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected, press Ctrl+C'}
+    try{navigator.clipboard.writeText(t).then(done,fb)}catch(e){fb()}
+  });
+})();
+</script>
+
+</body>
+</html>

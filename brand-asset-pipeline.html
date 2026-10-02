@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand Asset Pipeline · Moumita Roy Chowdhury</title>
+<meta name="description" content="Getting the design team's icons and illustrations out of Figma and into every internal AI tool.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html">m.rc/</a>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#work">Works</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+    </ul>
+    <a class="btn" href="#contact">Let's talk</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap case-head">
+    <a class="back mono" href="index.html#work">← All works</a>
+    <figure class="case-thumb"><img src="images/brand-asset-pipeline.webp" alt="Figma, Claude, GitHub and AWS icons connected in a row beside a tilted grid of the design team's illustrations"></figure>
+    <span class="mono" style="display:block">(03) · Case study · 2026</span>
+    <h1>Brand Asset Pipeline</h1>
+    <p class="lede">Getting the design team's icons and illustrations out of Figma and into every internal AI tool.</p>
+  </section>
+
+  <article class="wrap case-page"><div class="case">
+          <div class="facts">
+            <div><span class="mono">Role</span><p>Designed, built and run end to end</p></div>
+            <div><span class="mono">For</span><p>Visual design team and every internal tool that needs brand assets</p></div>
+            <div><span class="mono">Stack</span><p>Figma, GitHub, a Claude skill, AWS, an MCP asset server</p></div>
+            <div><span class="mono">Status</span><p>Live and in production</p></div>
+          </div>
+
+          <div class="big-nums">
+            <div><b>1,037</b><span>approved assets, live</span></div>
+            <div><b>732</b><span>icons</span></div>
+            <div><b>305</b><span>illustrations</span></div>
+            <div><b>18</b><span>subject categories</span></div>
+          </div>
+
+          <div class="two">
+            <div class="prose">
+              <h3>The problem</h3>
+              <p>A Figma file is the right place to draw and hold assets, and the wrong place for anything other than Figma to read them from. More and more work at ZoomRx is produced with AI-assisted tools, and they can't open, search or pull from a Figma file.</p>
+              <p>So every asset the design team made was <b>invisible to those tools</b>, and to anyone who doesn't live in Figma. People either went without, or used something generic.</p>
+            </div>
+            <div class="prose">
+              <h3>The goal</h3>
+              <p>Figma stays where assets are made. Every approved asset also lives somewhere tools can reach: <b>one library, one name and one permanent address per asset</b>, and a person, not a system, deciding what gets in.</p>
+              <p>An asset added to the library becomes available to every tool at once, with nobody asked to update anything.</p>
+            </div>
+          </div>
+
+          <div>
+            <h3>How it works</h3>
+            <div class="flow">
+              <div><b>Designer places the asset</b><span>Into a staging frame in the library file. No naming or prep needed.</span></div>
+              <div><b>Designer tags me</b><span>One comment on the file. That's the only ask of the design team.</span></div>
+              <div><b>Claude reads and checks</b><span>Exports, measures and compares each asset against the library to catch duplicates.</span></div>
+              <div class="gate"><b>Claude proposes, I approve</b><span>Name, category, description, tags. Nothing moves without my approval.</span></div>
+              <div><b>Published on schedule</b><span>Four runs a day push approved assets to a permanent web address.</span></div>
+            </div>
+          </div>
+
+          <div>
+            <h3>Decisions worth explaining</h3>
+            <ul class="decisions">
+              <li><b>A human gate</b><span>Automated checks are good at catching near-copies. A name and a category are judgements about meaning, so a person confirms them.</span></li>
+              <li><b>Zero prep for designers</b><span>Layer names like “Group 1234” are fine. Removing that work is what makes the team actually use it.</span></li>
+              <li><b>Publish on a clock</b><span>Assets arrive a few times a week, so four scheduled runs a day are fast enough, cheap, and leave a log that answers “did it run?” at a glance.</span></li>
+              <li><b>The repo is the record</b><span>Nothing is edited in the bucket, only written to it. The whole library can be rebuilt from version control.</span></li>
+            </ul>
+          </div>
+
+        <section class="cs-sec prose-block doc-intro">
+          <span class="mono sec-label">CASE STUDY  ·  ZOOMRX VISUAL ASSET PIPELINE</span>
+          <h3>From a Figma frame to a permanent URL: how ZoomRx turned its icons and illustrations into a library every tool can reach</h3>
+          <p>A technical case study of <code>ZoomRx/zoomrx-visual-asset-pipeline</code>: the problem it solves, the architecture behind it, how each phase works step by step, and why every folder and file in the repository exists.</p>
+          <div class="facts facts-3">
+            <div><span class="mono">Product</span><p>The ZoomRx brand asset library and the two-phase pipeline that keeps it current — a Claude Code skill (Figma → GitHub) and a scheduled publisher (GitHub → S3).</p></div>
+            <div><span class="mono">Repository</span><p><a href="https://github.com/ZoomRx/zoomrx-visual-asset-pipeline" target="_blank" rel="noopener">github.com/ZoomRx/zoomrx-visual-asset-pipeline</a> (branch <code>main</code>)</p></div>
+            <div><span class="mono">Designed and built by</span><p>Moumita Roy Chowdhury, Product Experience team</p></div>
+            <div><span class="mono">Hosting</span><p>Publisher deployed by the ZoomRx tech team on the shared AWS VM that already serves the brand assets</p></div>
+            <div><span class="mono">Timeline</span><p>Initial import 9 Sep 2026 · VM publisher 11 Sep · single-skill redesign 17 Sep · repository reconciled with the deployment review 23 Sep · fingerprint tiers 23–25 Sep · production bucket named 28 Sep 2026</p></div>
+            <div><span class="mono">Status</span><p>Live. 1,037 assets (732 icons, 305 illustrations) in 18 categories, published to <code>zrx-brand-assets</code> and served by the asset server behind brand-asset.zoomrx.com.</p></div>
+          </div>
+          <div class="big-nums"><div><b>1,037</b><span>assets in the library</span></div><div><b>18</b><span>subject categories</span></div><div><b>1</b><span>human gate</span></div><div><b>6 h</b><span>publish interval</span></div><div><b>0</b><span>deletes, ever</span></div></div>
+          <nav class="toc" aria-label="Contents"><span class="mono">Contents</span><ol>
+            <li><a href="#s1">1. Executive summary</a></li>
+            <li><a href="#s2">2. The problem statement</a></li>
+            <li><a href="#s3">3. Design principles</a></li>
+            <li><a href="#s4">4. Architecture</a></li>
+            <li><a href="#s5">5. Phase 1 in detail: Figma to GitHub</a></li>
+            <li><a href="#s6">6. Phase 2 in detail: GitHub to S3</a></li>
+            <li><a href="#s7">7. Quality gates and testing</a></li>
+            <li><a href="#s8">8. Repository tour: every folder and file, and why it exists</a></li>
+            <li><a href="#s9">9. How the pipeline evolved</a></li>
+            <li><a href="#s10">10. Results</a></li>
+            <li><a href="#s11">11. Known limits and open questions</a></li>
+            <li><a href="#s12">12. Lessons learned</a></li>
+          </ol></nav>
+        </section>
+
+        <section class="cs-sec prose-block" id="s1">
+          <h3>1. Executive summary</h3>
+          <p>ZoomRx's icons and illustrations are drawn and kept in Figma. That is the right place to make them, and the wrong place for anything other than Figma to read them from. A growing share of ZoomRx work is now produced with AI-assisted tools — the whitepaper generator, Claude skills and plugins, internal page builders — and none of them can open a Figma file, search it, or take an asset out of it. The same is true for most people at ZoomRx who do not work in Figma every day.</p>
+          <p>This repository is the answer. It is the <b>operational source of truth</b> for every approved ZoomRx brand asset, and it contains the machinery that moves an asset from a designer's Figma frame to a permanent web address:</p>
+          <ul class="doc-list">
+            <li><span><b>Phase 1 — Figma → GitHub.</b> A Claude Code skill, <code>update-library</code>, reads the Figma staging frames over the Figma MCP, exports and measures each new drawing, checks whether it has been seen before, proposes a name and metadata, and stops at a person <b>once</b>. Only what the person approves is written into <code>library/</code>, validated, and pushed to <code>main</code>.</span></li>
+            <li><span><b>Phase 2 — GitHub → S3.</b> A small Python publisher on the ZoomRx VM wakes every six hours, fetches <code>main</code>, re-runs the repository's own checks, uploads only the drawings that changed since the last successful publish, and uploads <code>manifest.json</code> last. The asset server behind brand-asset.zoomrx.com reads the same bucket, so a publish is visible to every connected tool without a second step.</span></li>
+          </ul>
+          <p>The design rests on one sentence from the README: <b>"We decide here. S3 just hands things out."</b> The arrow points one way. Nothing is ever changed directly on S3, a published name never changes, nothing is ever deleted, and if the bucket were wiped it could be rebuilt from this repository.</p>
+          <div class="callout"><b>Why it is a useful case study</b><p>It is a small system — roughly 2,500 lines of Python plus one long skill file — but nearly every line exists because a real run failed in a specific, measurable way. The repository documents those failures in its comments and commit messages, so the reasoning behind each design choice can be traced to evidence: a 70-icon run that died of context exhaustion, a duplicate check that reported 0 of 285 staged drawings as published when 183 were, a sandbox bucket that silently received 1,025 objects.</p></div>
+        </section>
+
+        <section class="cs-sec prose-block" id="s2">
+          <h3>2. The problem statement</h3>
+          <h4 class="sub">2.1 The core problem: assets that only Figma can see</h4>
+          <p>Every icon and illustration the visual design team has produced lives in a Figma file. For designers, that is exactly where it belongs. But a Figma file can only be reached by someone with Figma open in front of them. AI-assisted tools cannot use it directly, so the team's assets are invisible to them however well the file is organised. Whoever uses those tools is left with two poor options: produce the work with no assets at all, or substitute something generic that did not come from the design team.</p>
+          <h4 class="sub">2.2 What made it hard</h4>
+          <p>Putting files in a bucket is easy. Putting them there in a way that stays correct for years is not. The problem broke down into a set of concrete constraints:</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Constraint</th><th>Why it matters</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Constraint">Permanent addresses</td><td data-label="Why it matters">Once an asset's URL is pasted into a deck or a generated document, it must keep resolving. Renaming or deleting an asset silently breaks work that has already shipped.</td></tr>
+                <tr><td data-label="Constraint">One trustworthy source</td><td data-label="Why it matters">Before this repo, the live library existed only as objects in S3 (<code>zrx-brand-assets-test</code>, last written April). There was no reviewable record of what was there, why, or who decided.</td></tr>
+                <tr><td data-label="Constraint">Search-quality metadata</td><td data-label="Why it matters">Tools find assets by text. A drawing is only useful if it carries an accurate name, category, description and tags — and naming is a judgement, not a fact.</td></tr>
+                <tr><td data-label="Constraint">Duplicates are invisible</td><td data-label="Why it matters">The 1,013 assets migrated from S3 had been run through an SVG optimiser. A fresh Figma export of the same drawing is never byte-identical to its published copy, so a naive hash check calls every one of them new.</td></tr>
+                <tr><td data-label="Constraint">Messy inputs</td><td data-label="Why it matters">The staging frames hold auto-generated layer names (<code>Group 40019</code>), trailing spaces, typos (<code>AI chating </code>) and at least one drawing staged twice.</td></tr>
+                <tr><td data-label="Constraint">AI context limits</td><td data-label="Why it matters">Figma MCP responses are capped at 20 KB; reading the 915 KB manifest whole costs about 234,000 tokens. A 70-icon run on 23 Sep 2026 died of context exhaustion before proposing anything.</td></tr>
+                <tr><td data-label="Constraint">Infrastructure rules</td><td data-label="Why it matters">The ZoomRx org shares a 3,000 GitHub Actions-minute monthly cap across 290+ repositories, and AWS credentials are not stored in GitHub secrets. Publishing could not run in Actions.</td></tr>
+                <tr><td data-label="Constraint">Shared machine</td><td data-label="Why it matters">The VM also runs the ZoomRx.com blog and the brand-asset MCP server. Any credential placed there must be as narrow as possible.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">2.3 The objective</h4>
+          <p>Figma remains where assets are made. Every approved asset is also placed somewhere internal tools can reach: <b>one library, one name per asset, one permanent address per asset, and a person — not a system — deciding what is admitted.</b></p>
+        </section>
+
+        <section class="cs-sec prose-block" id="s3">
+          <h3>3. Design principles</h3>
+          <p>Five rules are repeated in the README, the skill and the code. They are the contract every component is built around.</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Rule</th><th>What it means in practice</th><th>Where it is enforced</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Rule">1. A published name never changes</td><td data-label="What it means in practice">The URL is already in somebody's deck. A better name is added alongside; the old one is marked <code>retired</code>.</td><td data-label="Where it is enforced"><code>validate.py</code> check 7 against <code>deploy/published-names.json</code></td></tr>
+                <tr><td data-label="Rule">2. Nothing is ever deleted</td><td data-label="What it means in practice">Retiring stops an asset being offered in search; the file stays forever.</td><td data-label="Where it is enforced">IAM policy has no <code>DeleteObject</code>; <code>delete_on_sync: false</code>; git delta uses <code>--diff-filter=ACMR</code> (no D); test fake raises if delete is called</td></tr>
+                <tr><td data-label="Rule">3. <code>file_path</code> is derived, never typed</td><td data-label="What it means in practice">Always <code>{type}s/{category}/{name}.svg</code>.</td><td data-label="Where it is enforced"><code>measure_asset.derive_file_path</code>; <code>validate.py</code> check 3</td></tr>
+                <tr><td data-label="Rule">4. Files upload before the manifest</td><td data-label="What it means in practice">Otherwise search could hand out a URL that 404s.</td><td data-label="Where it is enforced"><code>publish.publish()</code> uploads SVGs, then the manifest, unconditionally</td></tr>
+                <tr><td data-label="Rule">5. The proposal table is the only gate</td><td data-label="What it means in practice">Claude only suggests. Whatever the person approves reaches S3 within six hours.</td><td data-label="Where it is enforced">Skill Step 5; nothing is written to <code>library/</code> before the answer</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Three further ideas shape the architecture:</p>
+          <ul class="doc-list">
+            <li><span><b>Facts and judgements are separated.</b> Every field on an asset is labelled by provenance — MEASURED, SUGGESTED, COPIED, DERIVED or LIFECYCLE. Scripts compute facts; Claude proposes judgements; a person approves them. Only SUGGESTED fields are ever Claude's to fill.</span></li>
+            <li><span><b>Deterministic tools, probabilistic assistant.</b> Anything that can be computed — hashes, sizes, fingerprints, paths, validation — lives in a Python script with tests. Claude is used only for what genuinely needs reading a picture and choosing words.</span></li>
+            <li><span><b>Report, never refuse.</b> Duplicate and precedent tools surface evidence and exit 0. Deciding whether a repeat is a mistake or a deliberate re-export is the human's job at the gate.</span></li>
+          </ul>
+        </section>
+
+        <section class="cs-sec prose-block" id="s4">
+          <h3>4. Architecture</h3>
+          <h4 class="sub">4.1 The end-to-end picture</h4>
+          <figure class="doc-fig"><a href="images/brand-asset-pipeline/architecture.webp" target="_blank" rel="noopener"><img src="images/brand-asset-pipeline/architecture.webp" width="2400" height="2434" loading="lazy" alt="The two halves of the pipeline, the repository between them, and the consumers downstream"></a><figcaption><em>Figure 1. The two halves of the pipeline, the repository between them, and the consumers downstream.</em></figcaption></figure>
+          <h4 class="sub">4.2 Components and responsibilities</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Component</th><th>Runs where</th><th>Responsibility</th><th>Credentials it holds</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Component">Figma staging frames</td><td data-label="Runs where">Figma file <code>lYxdTv4HjpMZAVhFILeGFJ</code>, page "MCP Server Assets"</td><td data-label="Responsibility">Where designers drop new drawings. Two frames: <code>icons</code> and <code>illustrations</code>. The frame decides an asset's <code>type</code>.</td><td data-label="Credentials it holds">—</td></tr>
+                <tr><td data-label="Component"><code>update-library</code> skill</td><td data-label="Runs where">Claude Code on the librarian's laptop</td><td data-label="Responsibility">The whole Figma → GitHub half: scope check, triage, export, measure, dedupe, propose, gate, write, validate, commit.</td><td data-label="Credentials it holds">The person's own Figma seat (Dev/Full) and <code>gh</code> login</td></tr>
+                <tr><td data-label="Component"><code>scripts/</code></td><td data-label="Runs where">Laptop, CI and the VM</td><td data-label="Responsibility">Deterministic tools: measure, fingerprint, precedent lookup, manifest build, validation.</td><td data-label="Credentials it holds">None</td></tr>
+                <tr><td data-label="Component">GitHub repository (<code>main</code>)</td><td data-label="Runs where">GitHub</td><td data-label="Responsibility">Source of truth: <code>library/</code>, <code>manifest.json</code>, schema, config, ledger.</td><td data-label="Credentials it holds">—</td></tr>
+                <tr><td data-label="Component"><code>validate.yml</code></td><td data-label="Runs where">GitHub Actions</td><td data-label="Responsibility">The one workflow: validates every push and pull request. A few minutes a month.</td><td data-label="Credentials it holds">None</td></tr>
+                <tr><td data-label="Component">VM publisher (<code>vm/</code>)</td><td data-label="Runs where">Shared ZoomRx AWS VM, cron every 6 h</td><td data-label="Responsibility">The GitHub → S3 half: fetch, re-check, delta upload, manifest last.</td><td data-label="Credentials it holds">Read-only git token; scoped IAM user key in <code>.env</code> (no delete)</td></tr>
+                <tr><td data-label="Component">S3 <code>zrx-brand-assets</code></td><td data-label="Runs where">AWS us-east-1</td><td data-label="Responsibility">Hands assets out. Never edited directly.</td><td data-label="Credentials it holds">—</td></tr>
+                <tr><td data-label="Component">Asset server / MCP</td><td data-label="Runs where">brand-asset.zoomrx.com</td><td data-label="Responsibility">Reads <code>manifest.json</code> and serves search and URLs to tools.</td><td data-label="Credentials it holds">—</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">4.3 Trust boundaries and why they sit where they do</h4>
+          <ul class="doc-list">
+            <li><span><b>No AWS credential on a laptop, and none in the repository.</b> The skill only commits to git. Only the VM can write to S3.</span></li>
+            <li><span><b>No Figma credential on the VM.</b> The publisher never talks to Figma; it publishes what is already on <code>main</code>.</span></li>
+            <li><span><b>No AWS credential in GitHub.</b> Publishing via Actions would need AWS↔GitHub OIDC federation, which has not been proven, and would burn the shared minute cap. The <code>deploy.yml</code> workflow that once did this was deleted on 23 Sep 2026; reintroducing it is described in the repo as "a regression, not an improvement".</span></li>
+            <li><span><b>The bucket is the repository's decision.</b> The publisher reads <code>deploy/config.json</code> from the checkout it is publishing. There is no built-in default bucket anywhere in the code.</span></li>
+          </ul>
+          <h4 class="sub">4.4 The data model: one asset = two files</h4>
+          <p>Each asset is a drawing plus an index card, side by side:</p>
+          <pre class="code"><code>library/illustrations/healthcare/hcp-doctor-white.svg    the drawing
+library/illustrations/healthcare/hcp-doctor-white.json   the index card (sidecar)</code></pre>
+          <p>Sidecars were chosen over one big file so that a five-asset batch appears as five new files in a commit rather than a four-thousand-line diff. Reviewing a change — or working out six months later what a run did — only works if the diff is readable. <code>manifest.json</code> is then <b>generated</b> from the sidecars and never edited by hand.</p>
+          <p>Every sidecar field belongs to exactly one provenance group, labelled in <code>schema/asset.schema.json</code>:</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Group</th><th>Fields</th><th>Who fills it</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Group">MEASURED</td><td data-label="Fields"><code>content_hash</code> (SHA-256), <code>bytes</code>, <code>drawable_count</code>, <code>complexity</code>, <code>aspect</code>, <code>size_class</code>, <code>mime_type</code></td><td data-label="Who fills it"><code>measure_asset.py</code>. Facts — nothing to disagree with.</td></tr>
+                <tr><td data-label="Group">SUGGESTED</td><td data-label="Fields"><code>name</code>, <code>category</code>, <code>description</code> (≥ 20 chars), <code>tags</code> (≥ 2), <code>color_variant</code>, <code>family_id</code>, <code>placement</code>, <code>use_case</code></td><td data-label="Who fills it">Claude proposes; a person approves at the gate. The only judgements.</td></tr>
+                <tr><td data-label="Group">COPIED</td><td data-label="Fields"><code>original_name</code> (Figma layer), <code>figma_node_id</code>, <code>figma_file_key</code>, <code>release_id</code>, and <code>type</code></td><td data-label="Who fills it">Copied from Figma for traceability. <code>type</code> comes from the frame the asset sat in.</td></tr>
+                <tr><td data-label="Group">DERIVED</td><td data-label="Fields"><code>file_path</code>, <code>source_folder</code></td><td data-label="Who fills it">Computed from type + category + name; never typed.</td></tr>
+                <tr><td data-label="Group">LIFECYCLE</td><td data-label="Fields"><code>status</code> (active / retired), <code>superseded_by</code>, <code>added_at</code>, <code>notes</code></td><td data-label="Who fills it">Humans, over the asset's life.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">4.5 Storage layout mirrors the bucket</h4>
+          <p><code>library/</code> is laid out <b>exactly</b> as S3 is: <code>icons/&lt;category&gt;/&lt;name&gt;.svg</code> and <code>illustrations/&lt;category&gt;/&lt;name&gt;.svg</code>. Publishing therefore copies and never rearranges, and an object's S3 key is simply its path relative to <code>library/</code>. Category is part of the URL, which is why the 18 categories in <code>schema/taxonomy.json</code> can be added to cheaply but can no longer be renamed or removed without retiring and republishing everything beneath them.</p>
+        </section>
+
+        <section class="cs-sec prose-block" id="s5">
+          <h3>5. Phase 1 in detail: Figma to GitHub</h3>
+          <p>Phase 1 is a single Claude Code skill, <code>.claude/skills/update-library/SKILL.md</code>, triggered by phrases like "update the library", "publish the new icons" or a pasted Figma node URL. Its opening line sets the tone: "You are the whole pipeline… you decide nothing but propose everything, a human answers once." It runs in seven steps.</p>
+          <h4 class="sub">Step 0 — Read the staging frames, and check the file</h4>
+          <ol class="walk">
+            <li><span>Read <code>deploy/figma-sources.json</code> and confirm <code>staging.file_key</code> appears in the <code>file_keys</code> allow-list. If not, <b>stop</b> and name the key. This matters because the Figma MCP can address any file the user has access to by key; without the check the skill would publish just as willingly from the wrong file.</span></li>
+            <li><span>Resolve each staging frame by its node id (<code>3130:14070</code> icons, <code>3130:13673</code> illustrations) and list its children. If a frame id does not resolve, stop — a recreated frame has a new id and a person must update the config. The skill never guesses which frame was meant.</span></li>
+            <li><span><b>Propose only what is new.</b> The frames are cumulative (285 children). The skill reads <code>deploy/staged-index.json</code> via <code>staged_index.py --show</code> to see which nodes already draw something published.</span></li>
+            <li><span>For unknown nodes, compute a fingerprint <b>inside Figma</b> with JavaScript and return 16 hex characters rather than the drawing. <code>staged_index.py --match</code> updates the index and reports what is genuinely new.</span></li>
+            <li><span>Take at most ~150 KB of raw SVG into one run (about 15 icons, 5 median illustrations or 2 large ones), finish the run, then start the next batch.</span></li>
+          </ol>
+          <figure class="doc-fig"><a href="images/brand-asset-pipeline/step0-triage.webp" target="_blank" rel="noopener"><img src="images/brand-asset-pipeline/step0-triage.webp" width="2400" height="934" loading="lazy" alt="Step 0 triage on 25 Sep 2026: of 285 staged nodes, only one was genuinely new"></a><figcaption><em>Figure 2. Step 0 triage on 25 Sep 2026: of 285 staged nodes, only one was genuinely new.</em></figcaption></figure>
+          <p>The in-Figma fingerprint is what makes a whole-frame sweep three MCP calls instead of 265. It uses <b>FNV-1a</b>, not SHA-256, because the Figma plugin sandbox has no <code>crypto.subtle</code> and no <code>TextEncoder</code> (probed 23 Sep 2026); FNV-1a is a few lines of arithmetic that runs identically in JavaScript and Python. Each node gets two keys: <code>fnv</code> (dimensions + colour sequence with repeated runs collapsed) and <code>fnv_pal</code> (dimensions + the sorted set of colours). <b>Only an </b><b><code>fnv</code></b><b> match may skip an export</b>; a palette match still goes to the gate, pre-flagged.</p>
+          <p>A fourth, non-hash tier matches the staged layer name against <code>original_name</code> on published sidecars, normalised by <code>staged_index.layer_key()</code>. It exists because two common kinds of change — optimiser-rewritten gradient stops (1,020 of 1,037 assets use them) and raster assets wrapped in <code>&lt;pattern&gt;</code> — leave no colour tokens to hash. A name is evidence, not proof, so this tier never skips an export either.</p>
+          <h4 class="sub">Step 1 — Export</h4>
+          <p>Each candidate node is exported with four fixed settings — <code>SVG_STRING</code>, <code>svgIdAttribute: false</code>, <code>svgOutlineText: true</code>, <code>svgSimplifyStroke: true</code> — the same ones the retired plugin used, so new assets render consistently with the 1,026 already in the library. Batches are sized to the 20 KB response cap: one illustration per call, at most three icons. Every returned string must end in <code>&lt;/svg&gt;</code> before it is written to disk, because a truncated response looks like a file rather than an error. Files go to a temporary directory <b>outside</b> the repository so <code>git add</code> can never sweep them up.</p>
+          <h4 class="sub">Step 2 — Measure</h4>
+          <p><code>scripts/measure_asset.py</code> computes every MEASURED field: SHA-256 hash, byte size, drawable element count (skipping <code>defs</code>, <code>clipPath</code>, <code>mask</code>, <code>symbol</code>), complexity bucket, aspect (square within 10%), and size class from the longest edge. Unreadable files are dropped and the batch continues.</p>
+          <h4 class="sub">Step 3 — Fingerprint for duplicates</h4>
+          <p><code>scripts/check_duplicates.py</code> answers two questions: is this drawing already published under another name, and is it staged twice in this batch? (The second exists because a drawing was once exported twice, two minutes apart, and both copies were reported as new.) It reports four tiers of match, strongest first, and the label always says which one matched:</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Reported as</th><th>Means</th><th>How much to trust it</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Reported as"><code>byte-for-byte</code></td><td data-label="Means">Identical SHA-256</td><td data-label="How much to trust it">Settled</td></tr>
+                <tr><td data-label="Reported as"><code>same size and palette, different bytes</code></td><td data-label="Means">Same dimensions and colour sequence</td><td data-label="How much to trust it">Strong — look, then act</td></tr>
+                <tr><td data-label="Reported as"><code>…once repeats are merged</code></td><td data-label="Means">Same after collapsing runs of one colour (the optimiser merges adjacent same-coloured paths)</td><td data-label="How much to trust it">Weak — look hard</td></tr>
+                <tr><td data-label="Reported as"><code>…the SAME SET of colours, any order</code></td><td data-label="Means">Same canvas and palette, order ignored (the optimiser also reorders and deduplicates)</td><td data-label="How much to trust it">Weakest — verify both ways</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Hashes are read from the sidecars, not from <code>manifest.json</code>, which deliberately ships only what the asset server needs. Paths are required: a default glob that silently matched nothing would exit 0 and call every drawing new.</p>
+          <h4 class="sub">Step 4 — Ground, then propose</h4>
+          <p>Before choosing anything, the skill runs <code>scripts/precedent.py --digest</code> (every category with sample names, about 1,800 tokens) and then <code>--category &lt;name&gt;</code> for the two or three likely categories. <b>Category comes from precedent</b>: the skill finds the closest existing assets and follows what they use; the taxonomy is only a validity check afterwards. In hand testing, category guesses disagreed with the library five times in one sample, and every wrong guess was still a legal category — a taxonomy-only check would have passed all five. The digest is 130× cheaper than reading the manifest, and <code>test_precedent.py</code> asserts it stays that way.</p>
+          <p>The Figma layer name seeds the proposed name but does not become it: it is recorded verbatim in <code>original_name</code>, then trimmed, lowercased, hyphenated, checked against <code>^[a-z0-9]+(-[a-z0-9]+)*$</code>, and corrected for typos — because under rule 1 a misspelling published once is a misspelling forever. Auto-generated names like <code>Group 40019</code> are flagged, not used.</p>
+          <h4 class="sub">Step 5 — The gate</h4>
+          <p>The person sees one row per asset: proposed name, type, category, description, tags, source layer, and a one-line reason naming the precedent followed. Flagged assets are listed separately with the conflict stated plainly:</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Flag</th><th>Trigger</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Flag">Duplicate fingerprint</td><td data-label="Trigger">Matches <code>library/</code> at any tier, or is staged twice in this batch</td></tr>
+                <tr><td data-label="Flag">Category contradicts precedent</td><td data-label="Trigger">The pick disagrees with the nearest comparable assets</td></tr>
+                <tr><td data-label="Flag">Name already published</td><td data-label="Trigger">Collides with <code>deploy/published-names.json</code> or <code>library/</code></td></tr>
+                <tr><td data-label="Flag">Layer name auto-generated</td><td data-label="Trigger"><code>Group 40019</code>-shaped — the designer never named it</td></tr>
+                <tr><td data-label="Flag">Layer name corrected</td><td data-label="Trigger">A typo or spelling was changed; both versions are shown</td></tr>
+                <tr><td data-label="Flag">Doesn't look finished</td><td data-label="Trigger">Contains <code>draft</code>, <code>wip</code>, <code>copy</code>, <code>final</code>, or <code>v</code> + digits; or no honest 20-character description exists</td></tr>
+                <tr><td data-label="Flag">Size unreadable</td><td data-label="Trigger"><code>measure_asset.py</code> returned no aspect or size class</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Unflagged assets proceed; one ambiguous asset never holds up a batch. <b>Nothing is written to </b><b><code>library/</code></b><b> until the person answers</b> — a dirty <code>library/</code> at this point is described as "the one thing this skill must never do".</p>
+          <h4 class="sub">Step 6 — Write, verify, commit</h4>
+          <ol class="walk">
+            <li><span>Write the SVG and sidecar to <code>library/{type}s/{category}/{name}.svg</code>.</span></li>
+            <li><span>Rebuild <code>manifest.json</code> with <code>build_manifest.py</code>.</span></li>
+            <li><span>Run <code>validate.py</code> <b>before</b> committing. If it fails, stop with the tree dirty and report — never "fix" an error by changing what was written to make it go away.</span></li>
+            <li><span>Add accepted names to <code>deploy/published-names.json</code>.</span></li>
+            <li><span>Stage only the touched paths, commit, and push to <code>main</code>.</span></li>
+          </ol>
+          <p>Because there is no pull request and no delivery receipt any more, <b>the commit message is the entire audit trail.</b> It follows a fixed template: source file, frame and node ids; accepted assets with their source layers; flagged assets with what the person decided; and rejected layers with why. A run where everything is rejected commits nothing but still reports all three sections.</p>
+        </section>
+
+        <section class="cs-sec prose-block" id="s6">
+          <h3>6. Phase 2 in detail: GitHub to S3</h3>
+          <p>The publisher in <code>vm/</code> is deliberately boring: a one-shot Python program that cron starts every six hours under a service user. The whole schedule is one line:</p>
+          <pre class="code"><code>0 */6 * * * cd /opt/zoomrx-brand-publisher/repo &amp;&amp; /usr/bin/python3 -m vm.publisher.run --once &gt;/dev/null</code></pre>
+          <h4 class="sub">6.1 One run, in order</h4>
+          <ol class="walk">
+            <li><span><b>Lock.</b> Take an exclusive <code>fcntl</code> lock (<code>ZRX_LOCK_FILE</code>). If another run holds it, log and exit 0 — overlap is the scheduler working, not a fault. The guarantee lives in the program, not a <code>flock</code> wrapper, so it survives a move to Jenkins.</span></li>
+            <li><span><b>Fetch.</b> Reset the publisher's own worktree to <code>origin/main</code>. Code runs from <code>/opt/zoomrx-brand-publisher/repo</code>; assets are published from <code>/opt/zoomrx-brand-publisher/worktree</code>, which is reset and cleaned every run. <code>.env</code> sits outside both.</span></li>
+            <li><span><b>Re-check.</b> Run the repository's own <code>build_manifest.py --check</code> and <code>validate.py</code> as subprocesses — called, not reimplemented, so the VM and CI can never disagree about what "valid" means.</span></li>
+            <li><span><b>Resolve the target.</b> Read bucket, region and manifest key from <code>deploy/config.json</code> in the fetched tree. If <code>ZRX_BUCKET</code> overrides it, print both values loudly. Warn on any test-named bucket and refuse unless explicitly allowed.</span></li>
+            <li><span><b>Compute the delta.</b> <code>git diff --name-only --diff-filter=ACMR &lt;last-published sha&gt;..HEAD -- library/</code>, keeping only <code>.svg</code> paths. No previous sha, or a sha the repository does not contain, means a full publish rather than a guess.</span></li>
+            <li><span><b>Upload the changed SVGs</b>, then <b>upload </b><b><code>manifest.json</code></b><b> last, on every run</b> — the manifest moves for reasons that touch no SVG (a retirement, an edited description).</span></li>
+            <li><span><b>Record success.</b> Only now write <code>last-published.json</code>. A failed run does not advance it, so the next tick retries the same delta.</span></li>
+          </ol>
+          <p>A typical run log is legible on its own:</p>
+          <pre class="code"><code>[2026-09-11 02:00:01Z] INFO  ─── publish run started ───
+[2026-09-11 02:00:01Z] INFO  checkout a1b2c3d4 → e5f6a7b8 (main)
+[2026-09-11 02:00:03Z] INFO  target: s3://zrx-brand-assets/  (manifest.json)
+[2026-09-11 02:00:03Z] INFO  delta since a1b2c3d4: 5 asset(s) changed
+[2026-09-11 02:00:05Z] INFO  uploaded 5 asset(s)
+[2026-09-11 02:00:05Z] INFO  uploaded manifest.json (1037 assets, 1037 active)
+[2026-09-11 02:00:05Z] INFO  ─── run OK in 4.2s ───</code></pre>
+          <h4 class="sub">6.2 Safety mechanisms</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Mechanism</th><th>What it prevents</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Mechanism">IAM policy with <code>PutObject</code>, <code>PutObjectAcl</code>, <code>GetObject</code>, <code>ListBucket</code>, <code>GetBucketLocation</code> — and no Delete</td><td data-label="What it prevents">Any deletion from the bucket, by bug or by mistake. Overwrite is the only destructive path, which bucket versioning covers.</td></tr>
+                <tr><td data-label="Mechanism">Scoped IAM user key in <code>.env</code> (<code>chmod 600</code>), <code>ZRX_REQUIRE_INSTANCE_ROLE=false</code></td><td data-label="What it prevents">On a shared VM, an instance role would grant S3 write to every process — the blog and MCP server included. A one-bucket key is the narrower grant.</td></tr>
+                <tr><td data-label="Mechanism"><code>identity.py</code> STS check</td><td data-label="What it prevents">When enabled, refuses to publish with static keys or a personal IAM user, so a stray <code>AWS_ACCESS_KEY_ID</code> cannot upload a thousand assets under someone's own name.</td></tr>
+                <tr><td data-label="Mechanism"><code>is_test_bucket()</code> guard</td><td data-label="What it prevents">Publishing to a sandbox. It matches <code>-test</code> and trailing counters (<code>-test-2</code>) — tightened after <code>zrx-brand-assets-test-2</code> slipped past a bare <code>endswith("-test")</code> and received 1,025 objects silently.</td></tr>
+                <tr><td data-label="Mechanism"><code>override_warning()</code></td><td data-label="What it prevents">An environment variable quietly overruling the repository. That exact failure hid a wrong bucket for about 28 cron ticks in September 2026.</td></tr>
+                <tr><td data-label="Mechanism">Empty-library refusal</td><td data-label="What it prevents">Publishing an empty <code>library/</code> over a populated bucket.</td></tr>
+                <tr><td data-label="Mechanism">Lock file + state file</td><td data-label="What it prevents">Overlapping runs, and skipping past a failed upload.</td></tr>
+                <tr><td data-label="Mechanism">stderr not redirected in cron</td><td data-label="What it prevents">Silent failure before logging is configured — cron mail is the fallback.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">6.3 Configuration</h4>
+          <p>Every open decision is an environment variable with a conservative default, documented in <code>vm/settings.py</code> and listed empty in <code>vm/deploy/env.example</code>. Settings come from <code>.env</code> because cron provides almost no environment, but anything set in the real environment wins — so <code>ZRX_DRY_RUN=true python3 -m vm.publisher.run --once</code> is a safe one-off rehearsal. Other notable switches: <code>ZRX_FULL_PUBLISH</code> (first publish or repair), <code>ZRX_TRIGGER_MODE</code> (<code>manual</code> today; <code>poll</code> and <code>webhook</code> exist but are unused), and <code>ZRX_WRITE_PUBLISHED_NAMES</code> (off — writing the ledger back would make the publisher need a GitHub write credential).</p>
+          <h4 class="sub">6.4 Why not GitHub Actions, and what comes next</h4>
+          <p>Two independent infrastructure reasons rule Actions out: the shared 3,000-minute monthly cap across 290+ repositories, and the policy that AWS credentials do not live in GitHub secrets. The planned version two is a Jenkins pipeline triggered by a merge webhook, with git credentials from Jenkins and AWS credentials from Vault. The code is already shaped for it: it never reads AWS credentials itself (boto3's default chain finds them), and an unset git token simply means "inject nothing".</p>
+        </section>
+
+        <section class="cs-sec prose-block" id="s7">
+          <h3>7. Quality gates and testing</h3>
+          <h4 class="sub">7.1 validate.py — the checker</h4>
+          <p>Runs locally at Step 6, in CI on every push and pull request, and again on the VM before any upload. It answers, in order:</p>
+          <ol class="walk">
+            <li><span>Does every <code>.svg</code> have a sidecar, and every sidecar an <code>.svg</code>?</span></li>
+            <li><span>Does every sidecar match <code>schema/asset.schema.json</code>?</span></li>
+            <li><span>Does <code>file_path</code> agree with type + category + name, and is the file in that folder?</span></li>
+            <li><span>Is the category in <code>schema/taxonomy.json</code>?</span></li>
+            <li><span>Does any name break the naming rule or contain a placeholder segment (<code>final</code>, <code>copy</code>, <code>new</code>, <code>old</code>, <code>untitled</code>, <code>frame</code>, <code>group</code>, <code>v2</code>)? Matched as whole hyphen segments — as substrings the list once rejected sixteen good names like <code>golden</code> and <code>newsletter</code>. Already-published names only warn, since rule 1 forbids fixing them.</span></li>
+            <li><span>Is a name reused within the same type? (An icon and an illustration may share a name, because type is part of the URL.)</span></li>
+            <li><span>Does each <code>content_hash</code> match its file, and has the same drawing been filed under two names?</span></li>
+            <li><span>Has any published name disappeared from the library?</span></li>
+          </ol>
+          <p>Errors fail the build; search-quality issues (descriptions under 40 characters, fewer than three tags) are warnings. Today it reports <code>1037 entries · 1037 files · 0 errors · 173 warnings</code>.</p>
+          <h4 class="sub">7.2 CI: validate.yml</h4>
+          <p>The only GitHub workflow. On every push to <code>main</code> and every pull request it installs <code>jsonschema</code> and runs: <code>validate.py</code>, <code>build_manifest.py --check</code>, and the four script test suites. Two of those steps guard non-obvious regressions: <code>test_precedent.py</code> asserts the <b>size</b> of the digest (so a change cannot quietly reintroduce the context blow-up), and <code>test_staged_index.py</code> checks known-good vectors so the JavaScript and Python fingerprints cannot drift apart — if they did, nothing would error, every node would just report as new.</p>
+          <h4 class="sub">7.3 The publisher&#x27;s test suite</h4>
+          <p><code>vm/tests/test_publish.py</code> (about 90 tests) needs no AWS, no GitHub token, no network, and never imports boto3. The S3 client is a recording fake that <b>has</b> a <code>delete_object</code> method and raises if it is ever called — proving the publisher never asks, not merely that it does not crash. Delta tests run against a real git repository, because the rules being checked (<code>--diff-filter=ACMR</code>, rename detection) live in git's own behaviour.</p>
+        </section>
+
+        <section class="cs-sec prose-block" id="s8">
+          <h3>8. Repository tour: every folder and file, and why it exists</h3>
+          <figure class="doc-fig repo-shot">
+            <a href="https://github.com/ZoomRx/zoomrx-visual-asset-pipeline" target="_blank" rel="noopener"><img src="images/brand-asset-pipeline/github-repo.webp" width="2850" height="1334" loading="lazy" alt="The zoomrx-visual-asset-pipeline repository on GitHub, marked Private, showing the main branch with 33 commits and the folders .claude/skills/update-library, .github/workflows, deploy, library, schema, scripts and vm"></a>
+            <figcaption><a class="repo-link" href="https://github.com/ZoomRx/zoomrx-visual-asset-pipeline" target="_blank" rel="noopener">github.com/ZoomRx/zoomrx-visual-asset-pipeline ↗</a><span class="repo-note">This is a private repository under the ZoomRx GitHub organisation's account, so the link may show you an error (usually a 404 page) unless you are a member with access.</span></figcaption>
+          </figure>
+          <p>The tree below is everything tracked in git (2,109 files, of which 2,074 are the asset library itself). Local-only items — <code>.venv/</code> (a Python virtual environment) and <code>.env</code> (local settings) — are ignored by <code>.gitignore</code> and are not part of the repository.</p>
+          <pre class="code"><code>zoomrx-visual-asset-pipeline/
+├── README.md                      what this is, the two halves, the rules
+├── manifest.json                  generated index the asset server reads
+├── .gitignore
+├── .claude/skills/update-library/SKILL.md     Phase 1, the skill
+├── .github/workflows/validate.yml             the only CI workflow
+├── library/                       every accepted asset (= the S3 layout)
+│   ├── icons/&lt;18 categories&gt;/&lt;name&gt;.svg + .json
+│   └── illustrations/&lt;18 categories&gt;/&lt;name&gt;.svg + .json
+├── schema/   asset.schema.json · taxonomy.json
+├── deploy/   config.json · figma-sources.json · published-names.json · staged-index.json
+├── scripts/  measure_asset · check_duplicates · staged_index · precedent
+│             build_manifest · validate · test_*.py
+└── vm/       Phase 2, the publisher
+    ├── README.md · settings.py
+    ├── publisher/  __init__ · run · publish · identity
+    ├── deploy/     crontab.example · env.example · iam-policy-publisher.json/.md
+    │               zoomrx-brand-publisher.service
+    └── tests/test_publish.py</code></pre>
+          <h4 class="sub">8.1 Root files</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>File</th><th>What it does</th><th>Why it exists</th></tr></thead>
+              <tbody>
+                <tr><td data-label="File"><code>README.md</code></td><td data-label="What it does">Explains the pipeline, the two halves, setup, costs, the five rules, known limits and the production bucket.</td><td data-label="Why it exists">The entry point for anyone new. It also records decisions (production bucket chosen 28 Sep 2026) and the reasoning behind constraints, so they are not re-litigated.</td></tr>
+                <tr><td data-label="File"><code>manifest.json</code></td><td data-label="What it does">One JSON index of all 1,037 assets with only the fields the asset server reads (name, type, category, description, tags, file_path, …).</td><td data-label="Why it exists">The asset server needs one file to load. It is generated by <code>build_manifest.py</code> and never hand-edited; CI fails if it is stale.</td></tr>
+                <tr><td data-label="File"><code>.gitignore</code></td><td data-label="What it does">Ignores <code>__pycache__/</code>, <code>*.pyc</code>, <code>.venv/</code>, <code>.DS_Store</code>, <code>.env</code>.</td><td data-label="Why it exists">Keeps local environments and secrets out of git — important because Step 6 stages files explicitly and the publisher cleans its worktree.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">8.2 .claude/skills/update-library/</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>File</th><th>What it does</th><th>Why it exists</th></tr></thead>
+              <tbody>
+                <tr><td data-label="File"><code>SKILL.md</code></td><td data-label="What it does">The ~480-line instruction set Claude follows for Phase 1: Steps 0–6, the in-Figma fingerprint JavaScript, export settings, batching budgets, flag table, commit template and rules.</td><td data-label="Why it exists">It <b>is</b> the Figma → GitHub half. It replaced an earlier Figma plugin, a folder watcher and an <code>incoming/</code> delivery tray (all deleted 17 Sep 2026). Living in the repo means anyone who opens Claude Code in this directory gets the same, versioned procedure.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">8.3 .github/workflows/</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>File</th><th>What it does</th><th>Why it exists</th></tr></thead>
+              <tbody>
+                <tr><td data-label="File"><code>validate.yml</code></td><td data-label="What it does">On push to <code>main</code> and on pull requests: install <code>jsonschema</code>, run <code>validate.py</code>, <code>build_manifest.py --check</code> and the four script test suites.</td><td data-label="Why it exists">The agreed exception to the no-Actions rule — a few minutes a month and the last automated check before the VM publishes. It is intentionally the only workflow.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">8.4 library/</h4>
+          <p>Every accepted asset, one SVG plus one JSON sidecar, filed as <code>{type}s/{category}/{name}</code>. It exists because the repository — not S3 — is the source of truth, and because its layout matches the bucket exactly. Empty <code>.gitkeep</code> files keep <code>icons/</code> and <code>illustrations/</code> present in git. Most sidecars carry <code>"notes": "Migrated from the live S3 library…"</code> because 1,013 assets were imported from the old bucket on 8 Sep 2026.</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Category</th><th>Icons</th><th>Illustrations</th><th>Total</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Category"><code>abstract-shapes</code></td><td data-label="Icons">49</td><td data-label="Illustrations">57</td><td data-label="Total">106</td></tr>
+                <tr><td data-label="Category"><code>achievement</code></td><td data-label="Icons">23</td><td data-label="Illustrations">7</td><td data-label="Total">30</td></tr>
+                <tr><td data-label="Category"><code>actions</code></td><td data-label="Icons">84</td><td data-label="Illustrations">22</td><td data-label="Total">106</td></tr>
+                <tr><td data-label="Category"><code>business</code></td><td data-label="Icons">43</td><td data-label="Illustrations">19</td><td data-label="Total">62</td></tr>
+                <tr><td data-label="Category"><code>communication</code></td><td data-label="Icons">42</td><td data-label="Illustrations">21</td><td data-label="Total">63</td></tr>
+                <tr><td data-label="Category"><code>content</code></td><td data-label="Icons">66</td><td data-label="Illustrations">10</td><td data-label="Total">76</td></tr>
+                <tr><td data-label="Category"><code>data-analytics</code></td><td data-label="Icons">83</td><td data-label="Illustrations">37</td><td data-label="Total">120</td></tr>
+                <tr><td data-label="Category"><code>education</code></td><td data-label="Icons">5</td><td data-label="Illustrations">7</td><td data-label="Total">12</td></tr>
+                <tr><td data-label="Category"><code>finance</code></td><td data-label="Icons">13</td><td data-label="Illustrations">3</td><td data-label="Total">16</td></tr>
+                <tr><td data-label="Category"><code>healthcare</code></td><td data-label="Icons">61</td><td data-label="Illustrations">15</td><td data-label="Total">76</td></tr>
+                <tr><td data-label="Category"><code>marketing</code></td><td data-label="Icons">13</td><td data-label="Illustrations">4</td><td data-label="Total">17</td></tr>
+                <tr><td data-label="Category"><code>nature</code></td><td data-label="Icons">17</td><td data-label="Illustrations">6</td><td data-label="Total">23</td></tr>
+                <tr><td data-label="Category"><code>navigation</code></td><td data-label="Icons">29</td><td data-label="Illustrations">4</td><td data-label="Total">33</td></tr>
+                <tr><td data-label="Category"><code>people</code></td><td data-label="Icons">102</td><td data-label="Illustrations">39</td><td data-label="Total">141</td></tr>
+                <tr><td data-label="Category"><code>security</code></td><td data-label="Icons">29</td><td data-label="Illustrations">2</td><td data-label="Total">31</td></tr>
+                <tr><td data-label="Category"><code>technology</code></td><td data-label="Icons">37</td><td data-label="Illustrations">17</td><td data-label="Total">54</td></tr>
+                <tr><td data-label="Category"><code>values</code></td><td data-label="Icons">35</td><td data-label="Illustrations">33</td><td data-label="Total">68</td></tr>
+                <tr><td data-label="Category"><code>workplace</code></td><td data-label="Icons">1</td><td data-label="Illustrations">2</td><td data-label="Total">3</td></tr>
+                <tr><td data-label="Category">All 18</td><td data-label="Icons"><b>732</b></td><td data-label="Illustrations"><b>305</b></td><td data-label="Total"><b>1,037</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">8.5 schema/</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>File</th><th>What it does</th><th>Why it exists</th></tr></thead>
+              <tbody>
+                <tr><td data-label="File"><code>asset.schema.json</code></td><td data-label="What it does">JSON Schema (draft-07) for one sidecar. Every field is labelled MEASURED, SUGGESTED, COPIED, DERIVED or LIFECYCLE; required fields, name pattern, path pattern and enums are enforced; no extra properties allowed.</td><td data-label="Why it exists">Defines what an asset is, and draws the line between facts and judgements. The skill is told to read it rather than recall it, so its idea of the groupings cannot drift.</td></tr>
+                <tr><td data-label="File"><code>taxonomy.json</code></td><td data-label="What it does">The 18 legal categories, read directly off the live asset server.</td><td data-label="Why it exists">Category is part of every URL, so the list is effectively frozen for renames and removals. Adding a category is still cheap and is the design team's call.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">8.6 deploy/</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>File</th><th>What it does</th><th>Why it exists</th></tr></thead>
+              <tbody>
+                <tr><td data-label="File"><code>config.json</code></td><td data-label="What it does">Bucket <code>zrx-brand-assets</code>, region <code>us-east-1</code>, manifest key, <code>delete_on_sync: false</code>.</td><td data-label="Why it exists">Makes the publish target a reviewed, versioned decision in the repo rather than a VM setting. The publisher reads it from the checkout it publishes.</td></tr>
+                <tr><td data-label="File"><code>figma-sources.json</code></td><td data-label="What it does">Allow-listed Figma file keys and the staging page and frame ids, each mapped to a <code>type</code>.</td><td data-label="Why it exists">Scopes which Figma nodes can feed the library. The skill checks it at Step 0 — re-enforced on 17 Sep 2026 after a gap where nothing checked the file key.</td></tr>
+                <tr><td data-label="File"><code>published-names.json</code></td><td data-label="What it does">The ledger of every name ever published (seeded 8 Sep 2026 from the live manifest; 1,023 names today).</td><td data-label="Why it exists">Makes rule 1 enforceable: <code>validate.py</code> fails if any of these names disappears. Step 6 appends accepted names.</td></tr>
+                <tr><td data-label="File"><code>staged-index.json</code></td><td data-label="What it does">Cache mapping staging node ids to <code>fnv</code>/<code>fnv_pal</code> fingerprints, the published assets they match, and which tier matched.</td><td data-label="Why it exists">Lets Step 0 skip already-published nodes without exporting them. Explicitly a cache, not provenance — it says "draws the same thing as", never "was the source of".</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">8.7 scripts/</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>File</th><th>What it does</th><th>Why it exists</th></tr></thead>
+              <tbody>
+                <tr><td data-label="File"><code>measure_asset.py</code></td><td data-label="What it does">Computes MEASURED fields for an SVG; provides <code>derive_file_path()</code> and a <code>--stub</code> sidecar generator.</td><td data-label="Why it exists">Facts must come from code, not from Claude. Thresholds are marked provisional, to be re-derived from the real distribution.</td></tr>
+                <tr><td data-label="File"><code>check_duplicates.py</code></td><td data-label="What it does">Four-tier duplicate detection against the library and within the batch (byte, structural, merged, palette-set). Reports, never refuses.</td><td data-label="Why it exists">The optimised S3 library defeats plain hashing; on 18 Sep 2026 a hash-only check found 0 of 285 staged nodes published when 183 were.</td></tr>
+                <tr><td data-label="File"><code>staged_index.py</code></td><td data-label="What it does"><code>--fingerprint-library</code>, <code>--match</code>, <code>--show</code>. FNV-1a fingerprints mirroring the in-Figma JavaScript; layer-name matching via <code>layer_key()</code>.</td><td data-label="Why it exists">Turns a 265-call export sweep into 3 calls, and keeps the cache and the gate on one definition of "same drawing" by reusing <code>check_duplicates</code> helpers.</td></tr>
+                <tr><td data-label="File"><code>precedent.py</code></td><td data-label="What it does"><code>--digest</code> (all categories, sample names) and <code>--category NAME</code> (descriptions and tags). Deliberately no "read everything" flag.</td><td data-label="Why it exists">Replaces reading the 915 KB manifest, which killed a 70-icon run. 130× cheaper, and better answers because the nearest assets are not buried.</td></tr>
+                <tr><td data-label="File"><code>build_manifest.py</code></td><td data-label="What it does">Folds every sidecar into <code>manifest.json</code> with only server-read fields; <code>--check</code> fails if stale.</td><td data-label="Why it exists">One generated index for the server; sidecars stay the source of truth and diffs stay small.</td></tr>
+                <tr><td data-label="File"><code>validate.py</code></td><td data-label="What it does">The seven-point checker described in section 7.1.</td><td data-label="Why it exists">Runs in three places — laptop, CI, VM — and is the only thing between a bad commit and a publish.</td></tr>
+                <tr><td data-label="File"><code>test_measure_asset.py</code></td><td data-label="What it does">Asserts measurement and path-derivation rules.</td><td data-label="Why it exists">Measured fields must stay stable or new assets stop matching the library.</td></tr>
+                <tr><td data-label="File"><code>test_check_duplicates.py</code></td><td data-label="What it does">Asserts all four duplicate tiers and in-batch detection on fixtures, including real cases like <code>rocket</code>/<code>rocket-boost</code>.</td><td data-label="Why it exists">Each tier was added after a real miss; the tests keep those misses fixed.</td></tr>
+                <tr><td data-label="File"><code>test_precedent.py</code></td><td data-label="What it does">Asserts grouping, retired marking, and that the digest stays small.</td><td data-label="Why it exists">A size regression would not break correctness, only runs — so size itself is tested.</td></tr>
+                <tr><td data-label="File"><code>test_staged_index.py</code></td><td data-label="What it does">Known-good fingerprint vectors shared with the JavaScript.</td><td data-label="Why it exists">JS/Python drift fails silently (every node looks new); vectors are the only catch.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">8.8 vm/ — the publisher</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>File</th><th>What it does</th><th>Why it exists</th></tr></thead>
+              <tbody>
+                <tr><td data-label="File"><code>vm/README.md</code></td><td data-label="What it does">Hosting layout on the VM, run modes, settings table, identity, ledger, what is deliberately not built, open questions.</td><td data-label="Why it exists">Operational handbook for the tech team and whoever is on call; records why each infrastructure choice was made.</td></tr>
+                <tr><td data-label="File"><code>vm/settings.py</code></td><td data-label="What it does">Parses <code>.env</code>, merges with the real environment (environment wins), exposes typed settings with conservative defaults.</td><td data-label="Why it exists">Under cron there is no shell profile; every open decision becomes one named variable.</td></tr>
+                <tr><td data-label="File"><code>publisher/__init__.py</code></td><td data-label="What it does">Package marker.</td><td data-label="Why it exists">Lets cron run <code>python3 -m vm.publisher.run</code>.</td></tr>
+                <tr><td data-label="File"><code>publisher/run.py</code></td><td data-label="What it does">Entry point: logging (UTC, file + stdout), lock, state file, <code>publish_once()</code>, trigger modes (manual, poll, signed webhook), <code>--check</code> and <code>--once</code>.</td><td data-label="Why it exists">Orchestrates one legible, retry-safe run and keeps the scheduler outside the code.</td></tr>
+                <tr><td data-label="File"><code>publisher/publish.py</code></td><td data-label="What it does">Git worktree handling, repo checks as subprocesses, target resolution and override/test-bucket warnings, git-based delta, uploads (assets then manifest), optional ledger write.</td><td data-label="Why it exists">All publishing decisions live here as small, testable functions with an injectable S3 client.</td></tr>
+                <tr><td data-label="File"><code>publisher/identity.py</code></td><td data-label="What it does">Resolves which AWS credential boto3 found via STS and rejects static keys or IAM users when the instance-role check is on.</td><td data-label="Why it exists">Prevents uploads under someone's personal credentials; makes the move to an instance role a config change.</td></tr>
+                <tr><td data-label="File"><code>deploy/crontab.example</code></td><td data-label="What it does">The one-line six-hour schedule for the service user.</td><td data-label="Why it exists">Documents exactly how production invokes the publisher.</td></tr>
+                <tr><td data-label="File"><code>deploy/env.example</code></td><td data-label="What it does">Every <code>ZRX_*</code> setting, empty, with <code>[VM]</code> notes.</td><td data-label="Why it exists">Template for <code>/opt/zoomrx-brand-publisher/.env</code>.</td></tr>
+                <tr><td data-label="File"><code>deploy/iam-policy-publisher.json</code></td><td data-label="What it does">Least-privilege policy: put/get objects and list the bucket, no delete. Only <code>BUCKET_NAME</code> needs editing.</td><td data-label="Why it exists">Enforces rule 2 at the AWS level, independent of the code.</td></tr>
+                <tr><td data-label="File"><code>deploy/iam-policy-publisher.md</code></td><td data-label="What it does">Explains each permission.</td><td data-label="Why it exists">IAM rejects unknown keys in a policy, so the explanation cannot live in the JSON.</td></tr>
+                <tr><td data-label="File"><code>deploy/zoomrx-brand-publisher.service</code></td><td data-label="What it does">A systemd unit for poll/webhook mode.</td><td data-label="Why it exists">Not used today; kept ready for a move to a dedicated instance.</td></tr>
+                <tr><td data-label="File"><code>tests/test_publish.py</code></td><td data-label="What it does">~90 offline tests of the publisher's decisions.</td><td data-label="Why it exists">Proves the safety properties (no delete, delta rules, retry behaviour) without touching AWS.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="cs-sec prose-block" id="s9">
+          <h3>9. How the pipeline evolved</h3>
+          <p>The git history (33 commits, 9–28 Sep 2026) shows the design converging through measured failures rather than up-front speculation.</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Date</th><th>Change</th><th>What drove it</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Date">9 Sep</td><td data-label="Change">Initial import: library migrated from S3, schema, scripts.</td><td data-label="What drove it">The live library existed only as bucket objects with no reviewable record.</td></tr>
+                <tr><td data-label="Date">11 Sep</td><td data-label="Change">VM publisher added and hosted on the shared VM under cron.</td><td data-label="What drove it">No Actions minutes and no AWS secrets in GitHub; the VM already served the assets.</td></tr>
+                <tr><td data-label="Date">11–16 Sep</td><td data-label="Change">Deliveries arrive through a Figma plugin, folder watcher and <code>incoming/</code> branches with pull-request review.</td><td data-label="What drove it">The first working end-to-end route — but four moving parts for a few assets a week.</td></tr>
+                <tr><td data-label="Date">17 Sep</td><td data-label="Change"><code>update-library</code> skill replaces the plugin, watcher and tray; <code>figma-sources.json</code> enforced again.</td><td data-label="What drove it">The Figma MCP made a single human-gated skill possible; scope had silently stopped being checked.</td></tr>
+                <tr><td data-label="Date">18 Sep</td><td data-label="Change"><code>check_duplicates</code> matches on structure, not just bytes.</td><td data-label="What drove it">0 of 285 staged nodes matched by hash; 183 were already published.</td></tr>
+                <tr><td data-label="Date">23 Sep</td><td data-label="Change">Repo reconciled with the 21 Sep deployment review: <code>vm/</code> restored, <code>deploy.yml</code> deleted, one-off migrations and docs removed.</td><td data-label="What drove it">Production truth had to match the repo; history is the archive.</td></tr>
+                <tr><td data-label="Date">23 Sep</td><td data-label="Change">Stop reading <code>manifest.json</code> whole; <code>precedent.py</code>; byte budget; staged-index cache; merged and palette-set tiers.</td><td data-label="What drove it">A 70-icon run died of context exhaustion; <code>rocket</code>/<code>rocket-boost</code> and five more published icons were missed.</td></tr>
+                <tr><td data-label="Date">25 Sep</td><td data-label="Change">Layer-name tier in <code>staged_index</code>.</td><td data-label="What drove it">"44 new" was really 1 — hashes cannot see optimised gradients or raster patterns.</td></tr>
+                <tr><td data-label="Date">28 Sep</td><td data-label="Change"><code>zrx-brand-assets</code> named production; environment overrides announced loudly.</td><td data-label="What drove it">A sandbox bucket had received publishes unnoticed; the asset server reads the production bucket.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="cs-sec prose-block" id="s10">
+          <h3>10. Results</h3>
+          <div class="big-nums"><div><b>1,037</b><span>assets live, 0 validation errors</span></div><div><b>3</b><span>MCP calls to sweep 285 nodes (was 265)</span></div><div><b>130×</b><span>cheaper precedent lookup</span></div><div><b>1 of 285</b><span>correctly identified as new</span></div></div>
+          <ul class="doc-list">
+            <li><span><b>One library, one name, one permanent address</b> for every approved ZoomRx icon and illustration, readable by any tool connected to brand-asset.zoomrx.com.</span></li>
+            <li><span><b>A single human decision per batch.</b> The designer's only job is to drop a drawing into a staging frame; the librarian's only job is to answer the proposal table.</span></li>
+            <li><span><b>A complete, readable audit trail</b> in git: every asset is two small files, and every batch is one commit explaining what was accepted, flagged and refused.</span></li>
+            <li><span><b>Cheap, quiet operation.</b> A no-change publish uploads only the manifest and takes about a second; four log lines a day answer "did it run?".</span></li>
+            <li><span><b>Safety by construction.</b> Deletion is impossible at three independent layers (code, IAM, tests), and the bucket can be rebuilt from the repository at any time.</span></li>
+          </ul>
+        </section>
+
+        <section class="cs-sec prose-block" id="s11">
+          <h3>11. Known limits and open questions</h3>
+          <h4 class="sub">Accepted limits</h4>
+          <ul class="doc-list">
+            <li><span><b>The commit message is the whole audit trail.</b> There is no pull request body or delivery receipt; the skill is strict about the template for that reason.</span></li>
+            <li><span><b>A run is only as good as the staging frames.</b> Nothing collects assets automatically; a drawing never dropped into a frame does not exist to the pipeline.</span></li>
+            <li><span><b>Pushing to </b><b><code>main</code></b><b> is publishing.</b> There is no second gate behind the proposal table — only up to six hours' delay.</span></li>
+            <li><span><b>Large illustrations.</b> Assets over ~500 KB cannot come back through the Figma MCP in one piece; four library illustrations exceed 2.5 MB.</span></li>
+            <li><span><b>Measurement thresholds are provisional</b> and should be re-derived from the real distribution.</span></li>
+          </ul>
+          <h4 class="sub">Still open (from vm/README.md)</h4>
+          <ul class="doc-list">
+            <li><span>Are the assets public? <code>ZRX_OBJECT_ACL</code> stays empty until settled.</span></li>
+            <li><span>Bucket versioning on the production bucket, since overwrite is the one destructive path.</span></li>
+            <li><span>Confirm the VM's region matches <code>us-east-1</code>.</span></li>
+            <li><span>Should the publisher push <code>published-names.json</code> back (it would then need a GitHub write credential)?</span></li>
+            <li><span>Where a failed publish surfaces and who is called — today only the log and cron mail.</span></li>
+            <li><span>Whether the VM's code checkout tracks <code>main</code>, which would make changes to <code>vm/</code> live on the next pull.</span></li>
+          </ul>
+        </section>
+
+        <section class="cs-sec prose-block" id="s12">
+          <h3>12. Lessons learned</h3>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Lesson</th><th>Evidence from this project</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Lesson">Put a person at exactly one point, and make that point count.</td><td data-label="Evidence from this project">A table nobody reads is not a gate — so batches are capped near twenty rows and flags are stated plainly.</td></tr>
+                <tr><td data-label="Lesson">Let code own facts and let the model own words.</td><td data-label="Evidence from this project">Every measurable field is computed by a tested script; Claude fills only SUGGESTED fields.</td></tr>
+                <tr><td data-label="Lesson">Measure the real failure before designing the fix.</td><td data-label="Evidence from this project">Each duplicate tier, the byte budget and the precedent digest trace to a specific dated run and a number.</td></tr>
+                <tr><td data-label="Lesson">Silent success is the dangerous failure.</td><td data-label="Evidence from this project">Truncated SVGs that look like files; globs that match nothing; JS/Python fingerprint drift; env overrides that hide the real bucket — each now has an explicit check.</td></tr>
+                <tr><td data-label="Lesson">Design for the context window like any other resource.</td><td data-label="Evidence from this project">Fingerprints instead of drawings (16 chars vs. 20 KB), slices instead of the manifest, bytes instead of counts.</td></tr>
+                <tr><td data-label="Lesson">Make irreversible things impossible, not discouraged.</td><td data-label="Evidence from this project">No delete permission, no D in the diff filter, a test fake that explodes on delete, and a ledger that fails CI if a name vanishes.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="source"><em>Source: ZoomRx/zoomrx-visual-asset-pipeline, </em><code>main</code><em> at commit 3188a73 (28 Sep 2026). Figures were read from the repository on 2 Oct 2026.</em></p>
+        </section>
+  </div></article>
+
+  <section class="wrap">
+    <a class="next" href="curie-design-system.html">
+      <div><span class="mono">Next project</span><h2>Curie Design System →</h2></div>
+      <span class="mono">(04)</span>
+    </a>
+  </section>
+</main>
+
+<footer class="footer" id="contact">
+  <div class="wrap">
+    <div class="f-top">
+      <h2>Let's work<br>together.</h2>
+      <div class="f-cta">
+        <span class="mono">Drop me a line</span>
+        <span class="mail" id="email">moumita.product.designer@<br>gmail.com</span>
+        <button class="copy" id="copyBtn" type="button">Copy email</button>
+      </div>
+    </div>
+    <div class="f-grid">
+      <div><span class="mono">Location</span><p>Kolkata, India</p></div>
+      <div><span class="mono">Socials</span><ul><li><a href="https://www.linkedin.com/in/moumita-roy-chowdhury-359798179/" target="_blank" rel="noopener">LinkedIn ↗</a></li><li><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></li><li><a href="https://www.behance.net/" target="_blank" rel="noopener">Behance ↗</a></li></ul></div>
+      <div><span class="mono">Menu</span><ul><li><a href="index.html">Home</a></li><li><a href="index.html#work">Works</a></li><li><a href="index.html#skills">Skills</a></li><li><a href="index.html#experience">Experience</a></li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <span class="mono">©2026 Moumita Roy Chowdhury, all rights reserved</span>
+      <a class="mono" href="#top" style="text-decoration:none">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.querySelector('.nav'),mb=document.querySelector('.menu-btn');
+  if(nav&&mb){
+    function setMenu(o){nav.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'Close menu':'Open menu')}
+    mb.addEventListener('click',function(){setMenu(!nav.classList.contains('open'))});
+    nav.querySelectorAll('ul a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+  }
+  var btn=document.getElementById('copyBtn'),el=document.getElementById('email');
+  btn.addEventListener('click',function(){
+    var t=el.textContent.trim();
+    function done(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy email'},1800)}
+    function fb(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected, press Ctrl+C'}
+    try{navigator.clipboard.writeText(t).then(done,fb)}catch(e){fb()}
+  });
+})();
+</script>
+
+</body>
+</html>

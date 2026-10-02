@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curie Design System · Moumita Roy Chowdhury</title>
+<meta name="description" content="One source of truth for Curie that people, code and AI design tools all build from.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html">m.rc/</a>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#work">Works</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+    </ul>
+    <a class="btn" href="#contact">Let's talk</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap case-head">
+    <a class="back mono" href="index.html#work">← All works</a>
+    <figure class="case-thumb"><img src="images/curie-design-system.webp" alt="Curie and Claude app icons joined by a line beside a tilted list of Curie colour tokens with their hex values"></figure>
+    <span class="mono" style="display:block">(04) · Case study · 2026</span>
+    <h1>Curie Design System</h1>
+    <p class="lede">One source of truth for Curie that people, code and AI design tools all build from.</p>
+  </section>
+
+  <article class="wrap case-page"><div class="case">
+        <section class="cs-sec prose-block doc-intro no-rule">
+          <span class="mono sec-label">CASE STUDY  ·  CURIE DESIGN SYSTEM</span>
+          <h3>One source of truth for Curie: building a design system that people, code and AI design tools all build from</h3>
+          <p>How I turned Curie's visual language — scattered across Figma files and hand-built pages — into a versioned design system with tokens, 68 desktop and 61 mobile components, responsive page templates, charts, an asset library and a generated documentation site, and how the team now uses it inside Claude Design to produce on-brand mockups every week.</p>
+          <div class="facts facts-3">
+            <div><span class="mono">Product</span><p>Curie (curie.md), ZoomRx's dark-themed medical-content platform for healthcare professionals: Briefs, Podcasts, Editorial, Games and the Weekly Dose newsletter</p></div>
+            <div><span class="mono">What I built</span><p>The Curie Design System: the <code>package/</code> source of truth (tokens, CSS, component manifests, golden page templates, brand principles, assets) and the documentation site generated from it</p></div>
+            <div><span class="mono">My role</span><p>Product designer — sole designer and builder of the system, from audit to adoption</p></div>
+            <div><span class="mono">Repository</span><p><a href="https://github.com/moumita-roychowdhury-zoomrx/curie-design-system" target="_blank" rel="noopener">github.com/moumita-roychowdhury-zoomrx/curie-design-system</a></p></div>
+            <div><span class="mono">Live docs</span><p><a href="https://moumita-roychowdhury-zoomrx.github.io/curie-design-system/" target="_blank" rel="noopener">moumita-roychowdhury-zoomrx.github.io/curie-design-system</a></p></div>
+            <div><span class="mono">Timeline</span><p>First commit 8 Jul 2026 · v0.2.0 on 20 Jul · v0.3.0 (responsive) on 21 Jul · team-feedback release on 23 Jul · codebase hand-off prepared 28 Jul 2026</p></div>
+            <div><span class="mono">Outcome</span><p>Used by the team as the basis for building features. Imported into Claude Design, where every new mockup is designed on top of it; faster mockups and final designs, and easier handoffs.</p></div>
+          </div>
+          <div class="big-nums"><div><b>114</b><span>design tokens</span></div><div><b>68 + 61</b><span>desktop + mobile components</span></div><div><b>8</b><span>golden page templates</span></div><div><b>100</b><span>icons &amp; illustrations</span></div><div><b>16 days</b><span>first commit to v0.4 manifest</span></div></div>
+          <nav class="toc" aria-label="Contents"><span class="mono">Contents</span><ol>
+            <li><a href="#s1">1. The problem statement</a></li>
+            <li><a href="#s2">2. Goals and principles</a></li>
+            <li><a href="#s3">3. My process</a></li>
+            <li><a href="#s4">4. The architecture</a></li>
+            <li><a href="#s5">5. Inside the source of truth</a></li>
+            <li><a href="#s6">6. The build and the documentation site</a></li>
+            <li><a href="#s7">7. How the team uses it today: Claude Design</a></li>
+            <li><a href="#s8">8. Outcomes</a></li>
+            <li><a href="#s9">9. What I learned</a></li>
+            <li><a href="#s10">10. What comes next</a></li>
+          </ol></nav>
+        </section>
+
+        <section class="cs-sec prose-block" id="s1">
+          <h3>1. The problem statement</h3>
+          <p>Curie is a small team shipping quickly. In 2026 the product was growing on every surface at once — Briefs, Podcasts, Editorial, Games, the newsletter, and the Play &amp; Learn area — with new features going out almost every week. Curie already had a strong and recognisable look: a dark purple canvas, frosted-glass cards, Manrope with a touch of Playfair Display, purple as the brand colour and teal as a sparing accent. The trouble was that this look only existed <b>implicitly</b>.</p>
+          <h4 class="sub">1.1 Where the visual language lived</h4>
+          <ul class="doc-list">
+            <li><span><b>In Figma files</b>, as screens and a components page — readable by designers, but not by code or by AI tools.</span></li>
+            <li><span><b>In hand-built HTML pages</b>, where values were typed in directly: a purple here, a 9.6px spacing there.</span></li>
+            <li><span><b>In people's heads</b>, as rules nobody had written down: "Playfair only for a hero headline", "one accent per view", "never a white card".</span></li>
+          </ul>
+          <h4 class="sub">1.2 What that cost the team</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Symptom</th><th>What it meant in practice</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Symptom">Every mockup started from scratch</td><td data-label="What it meant in practice">There was no shared kit to design on top of. Each new feature screen meant rebuilding cards, headers and buttons, and re-deciding spacing and colour.</td></tr>
+                <tr><td data-label="Symptom">Brand drift</td><td data-label="What it meant in practice">Values were copied by eye, so they drifted. Later, during the codebase hand-off, I measured three different values for "primary purple" in use at the same time: <code>#6153be</code> (the brand), <code>#6153bd</code> (an internal guide) and <code>#8b5cf6</code> (what the app actually rendered).</td></tr>
+                <tr><td data-label="Symptom">AI design tools produced generic output</td><td data-label="What it meant in practice">The team was starting to use Claude Design for mockups. Without Curie's tokens, components and rules to work from, it produced its own interpretation — competent, but not Curie.</td></tr>
+                <tr><td data-label="Symptom">Unclear handoffs</td><td data-label="What it meant in practice">Developers received screens, not specifications. Hover, focus, disabled and loading states, motion, and mobile behaviour were left to guesswork.</td></tr>
+                <tr><td data-label="Symptom">No mobile specification</td><td data-label="What it meant in practice">Curie was designed desktop-first. There was no agreed answer for how each page should behave on a phone.</td></tr>
+                <tr><td data-label="Symptom">Gaps found late</td><td data-label="What it meant in practice">Common patterns — a systematic button, form states, modals, tabs, charts, everyday UI icons — did not exist as reusable pieces, so each feature invented its own.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout"><b>The problem in one sentence</b><p>Curie had a distinctive design language but no single, machine-readable source of truth for it — so every designer, developer and AI tool had to re-interpret it, and every re-interpretation was a chance for the product to drift off-brand and for work to slow down.</p></div>
+        </section>
+
+        <section class="cs-sec prose-block" id="s2">
+          <h3>2. Goals and principles</h3>
+          <p>I set out to build a system that would serve three kinds of reader equally: <b>designers</b> who need to see and copy, <b>developers</b> who need exact specifications, and <b>AI tools</b> that need structured data rather than pictures. That led to five goals:</p>
+          <ol class="walk">
+            <li><span><b>One source of truth.</b> Every colour, font, radius, space, shadow and timing is defined once, as a token, and everything else refers to it.</span></li>
+            <li><span><b>Grounded in the real product.</b> Nothing invented. Components are lifted from pages that already ship and that the team already agreed on.</span></li>
+            <li><span><b>Readable by machines as well as people.</b> The catalogue is structured JSON with usage guidance, not only a visual gallery.</span></li>
+            <li><span><b>Documentation that cannot drift.</b> The docs site is generated from the source, never written separately.</span></li>
+            <li><span><b>Complete enough to design on.</b> States, mobile layouts, charts, icons and fonts included — so a designer never has to step outside the system to finish a screen.</span></li>
+          </ol>
+          <h4 class="sub">2.1 The eight brand principles</h4>
+          <p>Tokens capture values; they cannot capture judgement. So I wrote down the rules CSS cannot encode in <code>brand-principles.md</code>. It deliberately never repeats a token value — it points to them — and it is written to be read by people and by design agents alike.</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Principle</th><th>The rule</th><th>Why it matters for Curie</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Principle">1. Dark canvas, always</td><td data-label="The rule">Every page sits on <code>--color-bg-primary</code>; panels float dark-on-dark. No white cards, no light sections.</td><td data-label="Why it matters for Curie">Sets Curie apart from clinical white interfaces; easier on the eyes between patients and on night shifts.</td></tr>
+                <tr><td data-label="Principle">2. Two fonts, no more</td><td data-label="The rule">Manrope for everything; Playfair Display only for a hero headline, pull quote or single display number.</td><td data-label="Why it matters for Curie">Manrope stays readable small on phones; a touch of Playfair adds editorial authority.</td></tr>
+                <tr><td data-label="Principle">3. Colour only from tokens</td><td data-label="The rule">Never a raw hex. The <code>--text-*</code> opacity ladder is the hierarchy device. Purple leads; teal, cyan, blue, green, pink are sparing accents.</td><td data-label="Why it matters for Curie">Keeps pages calm and the brand recognisable.</td></tr>
+                <tr><td data-label="Principle">4. Restraint</td><td data-label="The rule">One accent gesture per view.</td><td data-label="Why it matters for Curie">Over-decoration reads as off-brand faster than anything else.</td></tr>
+                <tr><td data-label="Principle">5. Glass via existing components</td><td data-label="The rule">Frosted cards come from reusing <code>.card</code>, <code>.editorial-card</code>, <code>.brief-item</code>… not re-deriving the recipe.</td><td data-label="Why it matters for Curie">Depth on a dark canvas, consistent everywhere.</td></tr>
+                <tr><td data-label="Principle">6. Hover on every interactive</td><td data-label="The rule">Every clickable has a hover state timed by <code>--duration-*</code>.</td><td data-label="Why it matters for Curie">Makes interactivity obvious on dense content pages.</td></tr>
+                <tr><td data-label="Principle">7. Reuse over invention</td><td data-label="The rule">A new layout is an arrangement of existing components plus layout-only CSS.</td><td data-label="Why it matters for Curie">Keeps the brand consistent as a small team ships fast.</td></tr>
+                <tr><td data-label="Principle">8. Chrome is cloned, never redesigned</td><td data-label="The rule">Sidebar, top bar and footer come verbatim from a golden page.</td><td data-label="Why it matters for Curie">Every page feels like the same product.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="cs-sec prose-block" id="s3">
+          <h3>3. My process</h3>
+          <p>The process ran in seven stages. The first five produced the system; the last two are where it met the team and changed because of them. The whole build — 55 commits — took sixteen days, from 8 to 23 July 2026.</p>
+          <figure class="doc-fig"><a href="images/curie-design-system/process.webp" target="_blank" rel="noopener"><img src="images/curie-design-system/process.webp" width="1800" height="850" loading="lazy" alt="The seven stages of the process, and the release timeline"></a><figcaption><em>Figure 1. The seven stages of the process, and the release timeline.</em></figcaption></figure>
+          <h4 class="sub">Stage 1 — Audit what already exists</h4>
+          <p>I started from the product, not from a blank canvas. I went through the Figma files and the live Curie pages side by side, listing every recurring colour, type size, radius, spacing value and component, and noting where Figma and the built pages disagreed. Where they disagreed I reconciled them — the very first commit records fixes to a related-story aspect ratio, the podcasts header padding, the sidebar radius, a game-card icon, per-page header icon sizes and the sign-up card.</p>
+          <h4 class="sub">Stage 2 — Make the golden pages the ground truth</h4>
+          <p>I chose eight real Curie pages as the <b>golden pages</b>: Home, Briefs, Brief detail, Editorial, Editorial detail, Games, Podcasts and Newsletter. These became the reference everything else answers to. This was the most important decision in the project:</p>
+          <ul class="doc-list">
+            <li><span>Component CSS is reconciled to the golden pages, not the other way round.</span></li>
+            <li><span>Every component's documented markup is <b>lifted verbatim</b> from a golden page — never invented.</span></li>
+            <li><span>Every later change is checked against a hard rule: the eight desktop pages must render <b>byte-for-byte identically</b> afterwards. This invariant is repeated in nearly every commit message, and it is what kept the system honest while it grew from 23 to 68 components.</span></li>
+          </ul>
+          <h4 class="sub">Stage 3 — Tokenise every value</h4>
+          <p>I extracted every value into CSS custom properties in <code>tokens.css</code>: 114 tokens across 18 groups, from backgrounds and the purple scale to the text-opacity ladder, motion, z-index, breakpoints and mobile chrome sizes. A small script, <code>build-tokens.js</code>, reads the comment headers in that file and generates <code>tokens.json</code>, so the machine-readable version can never be edited out of step with the CSS.</p>
+          <h4 class="sub">Stage 4 — Catalogue components with usage judgement</h4>
+          <p>For each component I wrote a structured entry in <code>components-manifest.json</code>: not just what it looks like, but <b>when to use it, when not to, its anatomy, how it behaves, which golden page it came from</b>, and a canonical HTML snippet. This is the part that makes the system useful to developers and to AI — it carries the designer's judgement, not only the pixels.</p>
+          <h4 class="sub">Stage 5 — Generate the documentation</h4>
+          <p>I built the documentation site with Eleventy so that it <b>reads</b> the package and generates every page from it: token swatches from <code>tokens.json</code>, one page and one live preview per component from the manifests, the asset gallery from <code>assets-catalog.json</code>. Previews load the real <code>components.css</code>. A GitHub Actions workflow rebuilds and publishes the site on every push. Change the source, and the documentation follows — it cannot drift.</p>
+          <h4 class="sub">Stage 6 — Review, feedback and iteration</h4>
+          <p>Once the system was usable, I put it in front of the people who would depend on it, and most of the growth came from what they asked for:</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Input</th><th>What it asked for</th><th>What I shipped</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Input">Figma components page (20 Jul)</td><td data-label="What it asked for">Components that existed in Figma but not yet in the system</td><td data-label="What I shipped">11 components synced — brief card, almanac card, AI tool card, game mode card, game tile, multiselect, toggle, radio group, form error, toast — plus status, badge, surface and input tokens. v0.2.0.</td></tr>
+                <tr><td data-label="Input">Developer review (21 Jul)</td><td data-label="What it asked for">A systematic button; full interaction states; standard primitives; mobile behaviour</td><td data-label="What I shipped">A Button system grounded in the golden set (pill label buttons, round icon buttons in ghost/solid/glass skins and three sizes, gradient CTA skins, vote and action-bar patterns) and 24 standard primitives — 36 → 60 components, each with a <code>states[]</code> matrix. Responsive golden pages. v0.3.0.</td></tr>
+                <tr><td data-label="Input">Design feedback on mobile (21–22 Jul)</td><td data-label="What it asked for">Real icons not emoji, real thumbnails, consistent side padding</td><td data-label="What I shipped">Mobile layers refined to use system assets, a consistent 22px edge, and the screenshot-accurate mobile designs adopted across all seven responsive pages.</td></tr>
+                <tr><td data-label="Input">Team hand-off gap list (23 Jul)</td><td data-label="What it asked for">Layout scaffolding, interactive controls, data viz, everyday icons, illustrations, fonts</td><td data-label="What I shipped">Layout primitives (container, stack, grid, app shell, app bar), popover, combobox, date picker, tag input; a Charts section (7 charts); 16 UI icons; onboarding and marketing illustrations; self-hosted fonts. A full mobile catalogue mirroring desktop.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>I also cut what turned out to be redundant. A separate Templates section was built, then retired on the same day once it was clear the golden pages already <b>are</b> the reusable templates — each ships a proven desktop layout and its mobile counterpart from one file. A standalone Subscribe button page was folded into the Button page as a variant.</p>
+          <h4 class="sub">Stage 7 — Adoption</h4>
+          <p>The team imported the system into Claude Design and began designing features on top of it. That is described in section 7, and the results in section 8.</p>
+        </section>
+
+        <section class="cs-sec prose-block" id="s4">
+          <h3>4. The architecture</h3>
+          <p>The system is organised in four layers. Each layer only reads from the one above it, and nothing below the first layer holds its own copy of a value. That single rule is what makes it a source of truth rather than one more copy.</p>
+          <figure class="doc-fig"><a href="images/curie-design-system/architecture.webp" target="_blank" rel="noopener"><img src="images/curie-design-system/architecture.webp" width="1800" height="1875" loading="lazy" alt="The four layers: source of truth, build, published surfaces, and consumers"></a><figcaption><em>Figure 2. The four layers: source of truth, build, published surfaces, and consumers.</em></figcaption></figure>
+          <h4 class="sub">4.1 Layer 1 — The source of truth (`package/`)</h4>
+          <p>Everything a consumer needs lives in one folder, and consumers read <b>only</b> this folder. It holds four kinds of thing:</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Kind</th><th>Files</th><th>Role</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Kind">Values</td><td data-label="Files"><code>tokens.css</code> → <code>tokens.json</code></td><td data-label="Role">Every colour, font, radius, space, blur, shadow, motion, z-index and breakpoint. CSS is canonical; JSON is generated.</td></tr>
+                <tr><td data-label="Kind">Styling</td><td data-label="Files"><code>components.css</code>, <code>layout.css</code>, <code>utilities.css</code>, <code>responsive.css</code>, <code>fonts.css</code></td><td data-label="Role">How components look. <code>responsive.css</code> is the only file allowed to contain <code>@media</code> rules.</td></tr>
+                <tr><td data-label="Kind">Knowledge</td><td data-label="Files"><code>components-manifest.json</code>, <code>components-mobile-manifest.json</code>, <code>charts-manifest.json</code>, <code>assets-catalog.json</code>, <code>brand-principles.md</code></td><td data-label="Role">What exists, when to use it, how it is built, and the rules behind it — structured for people and machines.</td></tr>
+                <tr><td data-label="Kind">References</td><td data-label="Files"><code>examples/</code> (8 golden pages), <code>assets/</code> (logos, icons, illustrations, fonts)</td><td data-label="Role">The ground truth every component is lifted from, and the brand's visual assets.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">4.2 Layer 2 — The build</h4>
+          <p>Eleventy turns the package into a website without duplicating any of it. Small data loaders in <code>docs/_data/</code> read the JSON files; Nunjucks templates paginate over the manifests so each component gets its own page and its own preview automatically; and a preview harness renders each specimen in an iframe that loads the real stylesheets. GitHub Actions runs the token build and the site build on every push to <code>main</code> and publishes to GitHub Pages. Each build writes roughly 280 pages.</p>
+          <h4 class="sub">4.3 Layer 3 — Published surfaces</h4>
+          <ul class="doc-list">
+            <li><span><b>The documentation site, for people</b> — foundations, desktop and responsive layouts, desktop and mobile components, charts and the asset gallery.</span></li>
+            <li><span><b>JSON endpoints, for machines</b> — <code>/api/tokens.json</code>, <code>/api/components-manifest.json</code> and <code>/api/assets-catalog.json</code>, republished by every build so tools can fetch the current system over HTTP.</span></li>
+            <li><span><b>The package itself</b> — the CSS, assets and golden pages, which a tool or project can pin to a git tag.</span></li>
+          </ul>
+          <h4 class="sub">4.4 Layer 4 — Consumers</h4>
+          <p>Designers browse specimens and copy golden layouts; the whole system is imported into <b>Claude Design</b>, where the team builds mockups on top of it; AI agents and plugins read the manifests and brand principles directly and are told to carry no copies; and developers receive manifest specifications with purpose, anatomy, snippet and states. Everyone reads from the same source.</p>
+          <h4 class="sub">4.5 Key architectural decisions</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Decision</th><th>Why I made it</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Decision">Golden pages as ground truth</td><td data-label="Why I made it">Grounds the system in what already ships and what the team already agreed on. Prevents invented components and gives a concrete test for every change (byte-identical desktop).</td></tr>
+                <tr><td data-label="Decision">CSS is canonical; JSON is generated</td><td data-label="Why I made it">Designers and developers edit one familiar file; the machine-readable copy is regenerated, so the two cannot disagree.</td></tr>
+                <tr><td data-label="Decision">Manifest entries carry judgement</td><td data-label="Why I made it"><code>whenToUse</code>, <code>whenNotToUse</code>, <code>anatomy</code> and <code>interactions</code> let a developer or an AI tool choose the right component, not just render one.</td></tr>
+                <tr><td data-label="Decision">Snippets are verbatim, never invented</td><td data-label="Why I made it">What the docs show is exactly what ships, so a mockup built from the docs matches the product.</td></tr>
+                <tr><td data-label="Decision">One file, two layouts</td><td data-label="Why I made it">Each golden page carries its desktop layout and a purpose-built mobile view (<code>.m-view</code>). Copy one file and you get both breakpoints.</td></tr>
+                <tr><td data-label="Decision"><code>responsive.css</code> is the only <code>@media</code> file</td><td data-label="Why I made it">Uses only <code>max-width</code> queries, so mobile rules activate below a breakpoint and can never change a desktop pixel.</td></tr>
+                <tr><td data-label="Decision">Docs generated from the package</td><td data-label="Why I made it">Documentation that is derived cannot go out of date.</td></tr>
+                <tr><td data-label="Decision">Machine-readable endpoints</td><td data-label="Why I made it">AI tools get structured data over HTTP instead of screenshots, which is what lets Claude Design design with the real system.</td></tr>
+                <tr><td data-label="Decision">No chart library</td><td data-label="Why I made it">Charts are pure HTML, CSS and inline SVG mapped to brand tokens, so they work anywhere a static page works — including in Claude Design mockups.</td></tr>
+                <tr><td data-label="Decision">Self-hosted fonts</td><td data-label="Why I made it">Manrope and Playfair are vendored as woff2 so pages render correctly offline and in standalone exports.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="cs-sec prose-block" id="s5">
+          <h3>5. Inside the source of truth</h3>
+          <h4 class="sub">5.1 Tokens</h4>
+          <p>114 tokens in 18 groups. The groups mirror how a designer thinks about the brand:</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Group</th><th>Examples</th><th>Purpose</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Group">Backgrounds &amp; gradients</td><td data-label="Examples"><code>--color-bg-primary</code> #140d2c, <code>--color-bg-card</code> #231f41, <code>--gradient-briefs-page</code>, <code>--gradient-accent-text</code></td><td data-label="Purpose">The dark canvas and the few signature gradients</td></tr>
+                <tr><td data-label="Group">Purple</td><td data-label="Examples"><code>--color-purple-primary</code> #6153be, <code>-dark</code>, <code>-hover</code>, <code>-accent</code>, <code>-light</code>, card border, tag tints</td><td data-label="Purpose">The brand colour and its working shades</td></tr>
+                <tr><td data-label="Group">Semantic &amp; status</td><td data-label="Examples">teal #00D4AA, cyan, blue, green, pink; error, warning, success, info</td><td data-label="Purpose">Sparing accents and feedback colours</td></tr>
+                <tr><td data-label="Group">Accent badges &amp; surfaces</td><td data-label="Examples">teal/blue/pink tag tints; white-alpha surfaces 3–22%; divider; input surface</td><td data-label="Purpose">Chips, ghost buttons, tracks and form fields</td></tr>
+                <tr><td data-label="Group">Text</td><td data-label="Examples"><code>--text-primary</code> → <code>--text-bright</code> → <code>--text-body</code> → … → <code>--text-whisper</code></td><td data-label="Purpose">The opacity ladder: hierarchy without new hues</td></tr>
+                <tr><td data-label="Group">Typography</td><td data-label="Examples"><code>--font-primary</code> (Manrope), <code>--font-accent</code> (Playfair Display)</td><td data-label="Purpose">Two families, no more</td></tr>
+                <tr><td data-label="Group">Radius, spacing</td><td data-label="Examples"><code>--radius-xs</code> 6px … <code>--radius-3xl</code> 24px, pill, button; <code>--space-1</code> 6px … <code>--space-11</code> 40px</td><td data-label="Purpose">Consistent shape and rhythm</td></tr>
+                <tr><td data-label="Group">Glass, shadows</td><td data-label="Examples"><code>--blur-sidebar</code> … <code>--blur-subtle</code>; card glow, hover, dropdown, featured shadows</td><td data-label="Purpose">The frosted-glass look</td></tr>
+                <tr><td data-label="Group">Motion, z-index, layout</td><td data-label="Examples"><code>--duration-fast/standard/smooth</code>; z-layers; sidebar widths; banner height</td><td data-label="Purpose">Behaviour and structure</td></tr>
+                <tr><td data-label="Group">Breakpoints, mobile chrome</td><td data-label="Examples"><code>--bp-mobile</code> 600px, <code>--bp-tablet</code> 900px; app bar 56px, tab bar 72px, 44px touch minimum</td><td data-label="Purpose">The responsive contract</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="doc-fig"><a href="images/curie-design-system/foundations.webp" target="_blank" rel="noopener"><img src="images/curie-design-system/foundations.webp" width="1440" height="1000" loading="lazy" alt="The Foundations page, rendered directly from tokens.json"></a><figcaption><em>Figure 3. The Foundations page, rendered directly from tokens.json.</em></figcaption></figure>
+          <h4 class="sub">5.2 Components</h4>
+          <p>Three catalogues, all following the same schema (<code>curie-components-manifest/v1</code>):</p>
+          <div class="big-nums"><div><b>68</b><span>desktop components</span></div><div><b>61</b><span>mobile components</span></div><div><b>7</b><span>charts</span></div><div><b>27</b><span>with a full state matrix</span></div></div>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Category</th><th>Desktop</th><th>Components</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Category">Cards</td><td data-label="Desktop">13</td><td data-label="Components">Editorial card, brief item, brief card, brief detail hero image, podcast card, game card, game mode card, game tile, profile card, related story card, latest card, almanac meeting card, AI tool card</td></tr>
+                <tr><td data-label="Category">Forms</td><td data-label="Desktop">13</td><td data-label="Components">Form field, error input field, field error message, select, search input, checkbox, textarea, multi-select chips, toggle switch, radio group, slider, date picker, tag input</td></tr>
+                <tr><td data-label="Category">Navigation</td><td data-label="Desktop">8</td><td data-label="Components">Side nav, tabs, dropdown menu, popover, combobox, pagination, breadcrumb, stepper</td></tr>
+                <tr><td data-label="Category">Feedback</td><td data-label="Desktop">8</td><td data-label="Components">Toast notification (4 variants), modal, tooltip, progress, spinner, skeleton, empty state, inline alert</td></tr>
+                <tr><td data-label="Category">Chrome</td><td data-label="Desktop">6</td><td data-label="Components">Top banner, page header, editorial header, footer, app shell, app bar</td></tr>
+                <tr><td data-label="Category">Layout</td><td data-label="Desktop">6</td><td data-label="Components">Editorial hero, home hero banner carousel, divider, container, stack, grid</td></tr>
+                <tr><td data-label="Category">Actions &amp; CTA</td><td data-label="Desktop">5</td><td data-label="Components">Button, icon button, link; inline newsletter bar, newsletter signup card</td></tr>
+                <tr><td data-label="Category">Data display, indicators, controls</td><td data-label="Desktop">9</td><td data-label="Components">Accordion, avatar, badge, table; content badge, user avatar, coming soon note; filter dropdown, segmented toggle</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Every manifest entry has the same shape, which is what lets both the docs site and AI tools use it:</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Field</th><th>What it holds</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Field"><code>id</code>, <code>name</code>, <code>category</code>, <code>status</code></td><td data-label="What it holds">Identity</td></tr>
+                <tr><td data-label="Field"><code>purpose</code>, <code>whenToUse</code>, <code>whenNotToUse</code></td><td data-label="What it holds">Usage judgement — the designer's reasoning, in words</td></tr>
+                <tr><td data-label="Field"><code>anatomy</code>, <code>interactions</code></td><td data-label="What it holds">The parts and how it behaves</td></tr>
+                <tr><td data-label="Field"><code>sourcePage</code>, <code>bodyClass</code></td><td data-label="What it holds">Which golden page it was lifted from, and the page context it needs</td></tr>
+                <tr><td data-label="Field"><code>snippet</code></td><td data-label="What it holds">Canonical HTML, verbatim from the golden page, with no inline paint</td></tr>
+                <tr><td data-label="Field"><code>variants[]</code></td><td data-label="What it holds">Labelled specimens (e.g. side-nav with each section active)</td></tr>
+                <tr><td data-label="Field"><code>states[]</code></td><td data-label="What it holds">Default, hover, focus, active, disabled, loading — pinned with <code>.is-*</code> helper classes so every state can be shown at once</td></tr>
+                <tr><td data-label="Field"><code>previewWidth</code>, <code>previewHeight</code></td><td data-label="What it holds">How the docs harness frames the live preview</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="doc-fig"><a href="images/curie-design-system/button.webp" target="_blank" rel="noopener"><img src="images/curie-design-system/button.webp" width="1440" height="1000" loading="lazy" alt="The Button page: every emphasis level shown across its full state set, generated from the manifest"></a><figcaption><em>Figure 4. The Button page: every emphasis level shown across its full state set, generated from the manifest.</em></figcaption></figure>
+          <h4 class="sub">5.3 Golden page templates and responsive design</h4>
+          <p>The eight golden pages double as the reusable page templates. They map onto four archetypes a designer can start from — <b>Home</b> (index), <b>List</b> (briefs), <b>Detail</b> (brief detail) and <b>Form</b> (newsletter) — with Editorial, Editorial detail, Games and Podcasts as further references.</p>
+          <figure class="doc-fig"><a href="images/curie-design-system/home-golden-page.webp" target="_blank" rel="noopener"><img src="images/curie-design-system/home-golden-page.webp" width="1440" height="900" loading="lazy" alt="The Home golden page — dark canvas, frosted chrome, one strong accent per view"></a><figcaption><em>Figure 5. The Home golden page — dark canvas, frosted chrome, one strong accent per view.</em></figcaption></figure>
+          <p>Seven of the eight pages are responsive. The model is simple and strict: each page ships its untouched desktop content <b>and</b> a hand-built mobile view in the same file. At 600px and below, the desktop content is hidden and the mobile layer is shown, with its own chrome — a top app bar, a bottom tab bar, a drawer, a bottom sheet and floating action buttons. Because all of this lives in <code>responsive.css</code> behind <code>max-width</code> queries, the desktop render stays byte-for-byte identical. The merged mobile pages were verified pixel-identical to the source mobile designs at 390px.</p>
+          <h4 class="sub">5.4 Assets, charts and fonts</h4>
+          <ul class="doc-list">
+            <li><span><b>100 catalogued assets</b> — 78 icons (navigation, content-type, game, form and 16 general UI glyphs) and 22 illustrations (podcasts, games, onboarding, marketing, empty and success states). Each catalogue entry has a description, tags, the pages it is used on, its context and dimensions.</span></li>
+            <li><span><b>7 on-brand charts</b> — bar, stacked bar, donut, radial gauge, radial progress, line and sparkline. They follow familiar chart patterns but are rebuilt in pure HTML and inline SVG, with the series palette mapped to brand tokens and Curie-specific example data (briefs read, weekly reading goal, CME credits).</span></li>
+            <li><span><b>Self-hosted fonts</b> — Manrope (400–800) and Playfair Display (500–600, italic) in latin and latin-ext, so exported pages render correctly anywhere.</span></li>
+          </ul>
+        </section>
+
+        <section class="cs-sec prose-block" id="s6">
+          <h3>6. The build and the documentation site</h3>
+          <h4 class="sub">6.1 Repository structure</h4>
+          <figure class="doc-fig repo-shot">
+            <a href="https://github.com/moumita-roychowdhury-zoomrx/curie-design-system" target="_blank" rel="noopener"><img src="images/curie-design-system/github-repo.webp" width="2848" height="1378" loading="lazy" alt="The public curie-design-system repository on GitHub, showing the main branch with 55 commits, the folders .github/workflows, docs, package and scripts, and 53 GitHub Pages deployments"></a>
+            <figcaption><a class="repo-link" href="https://github.com/moumita-roychowdhury-zoomrx/curie-design-system" target="_blank" rel="noopener">github.com/moumita-roychowdhury-zoomrx/curie-design-system ↗</a></figcaption>
+          </figure>
+          <pre class="code"><code>curie-design-system/
+├── package/                     THE SOURCE OF TRUTH (consumers read only this)
+│   ├── tokens.css  tokens.json  brand-principles.md
+│   ├── components.css  layout.css  utilities.css  responsive.css  fonts.css
+│   ├── components-manifest.json  components-mobile-manifest.json
+│   ├── charts-manifest.json  assets-catalog.json
+│   ├── assets/                  logo, icons (+ ui/), illustrations, fonts
+│   └── examples/                the 8 golden pages = reusable page templates
+├── docs/                        Eleventy templates that READ package/
+│   ├── _data/                   loads package/*.json into templates
+│   ├── _includes/base.njk       page shell: sidebar nav + main column
+│   └── *.njk                    overview, foundations, layouts, components,
+│                                mobile, charts, assets, previews
+├── scripts/build-tokens.js      tokens.css → tokens.json
+├── eleventy.config.js           passthrough copies, /api endpoints, subpath
+└── .github/workflows/deploy.yml build + publish to GitHub Pages</code></pre>
+          <h4 class="sub">6.2 What each part does</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>File or folder</th><th>Why it exists</th></tr></thead>
+              <tbody>
+                <tr><td data-label="File or folder"><code>package/tokens.css</code></td><td data-label="Why it exists">The canonical values. Edit here, never in the JSON.</td></tr>
+                <tr><td data-label="File or folder"><code>scripts/build-tokens.js</code></td><td data-label="Why it exists">Parses the section comments in <code>tokens.css</code> into named groups and writes <code>tokens.json</code>. Runs before every build.</td></tr>
+                <tr><td data-label="File or folder"><code>package/components.css</code> (≈5,000 lines)</td><td data-label="Why it exists">All component styling, using <code>var(--token)</code> throughout.</td></tr>
+                <tr><td data-label="File or folder"><code>package/responsive.css</code></td><td data-label="Why it exists">The only file with <code>@media</code>: mobile chrome and per-page mobile views.</td></tr>
+                <tr><td data-label="File or folder"><code>package/*-manifest.json</code></td><td data-label="Why it exists">The component catalogues that drive the docs and that AI tools read.</td></tr>
+                <tr><td data-label="File or folder"><code>package/brand-principles.md</code></td><td data-label="Why it exists">The eight rules tokens cannot express, for people and design agents.</td></tr>
+                <tr><td data-label="File or folder"><code>package/examples/</code></td><td data-label="Why it exists">The golden pages: ground truth for components and the starting point for new pages.</td></tr>
+                <tr><td data-label="File or folder"><code>docs/_data/*.js</code></td><td data-label="Why it exists">One-line loaders that hand each package file to the templates.</td></tr>
+                <tr><td data-label="File or folder"><code>docs/component.njk</code>, <code>preview.njk</code> and their mobile/chart twins</td><td data-label="Why it exists">Paginate the manifests into a documentation page and an isolated live preview per entry.</td></tr>
+                <tr><td data-label="File or folder"><code>eleventy.config.js</code></td><td data-label="Why it exists">Copies CSS and assets into the site, mirrors them for the golden pages, publishes the <code>/api/</code> JSON, watches <code>package/</code> for live reload, and rewrites URLs for the GitHub Pages subpath.</td></tr>
+                <tr><td data-label="File or folder"><code>.github/workflows/deploy.yml</code></td><td data-label="Why it exists">Builds tokens and site on every push to <code>main</code> and deploys to GitHub Pages.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">6.3 The editing workflow</h4>
+          <ul class="doc-list">
+            <li><span><b>Change a token</b> → edit <code>tokens.css</code>, run <code>npm run build</code>.</span></li>
+            <li><span><b>Add or edit a component</b> → edit <code>components.css</code>, add or update its manifest entry with a snippet copied from a golden page. The docs page, nav link and preview are generated automatically.</span></li>
+            <li><span><b>Change mobile behaviour</b> → edit <code>responsive.css</code> only.</span></li>
+            <li><span><b>Add an icon or illustration</b> → drop the file into <code>assets/</code> and add a catalogue entry; it appears in the gallery.</span></li>
+            <li><span><b>Release</b> → bump the version and tag; the site header shows which version it was built from.</span></li>
+          </ul>
+          <h4 class="sub">6.4 The documentation site</h4>
+          <p>The site's navigation follows how people look for things: Overview, Foundations, Desktop layouts, Responsive layouts, Desktop components, Mobile components, Charts and Assets, with direct links to the JSON endpoints. Component groups collapse and remember their state. Every component page shows its purpose, a live preview, its variants and states, and its snippet. I built the site in Curie's own visual language, so the documentation is itself a demonstration of the system.</p>
+        </section>
+
+        <section class="cs-sec prose-block" id="s7">
+          <h3>7. How the team uses it today: Claude Design</h3>
+          <p>The clearest sign that the system works is how the team uses it day to day. <b>Everyone on the team has the Curie Design System imported into Claude Design.</b> When a new feature needs designing, they start a mockup in Claude Design on top of the system, rather than from a blank canvas or from a generic AI layout.</p>
+          <h4 class="sub">7.1 Why this works</h4>
+          <p>Claude Design can only be as on-brand as what it is given. The architecture was built for exactly this kind of reader:</p>
+          <ul class="doc-list">
+            <li><span><b>Tokens</b> give it Curie's exact colours, fonts, radii, spacing and motion — so it never guesses a purple.</span></li>
+            <li><span><b>Component manifests</b> give it a catalogue of real components with usage guidance and verbatim markup — so it composes from Curie's cards, buttons and headers instead of inventing new ones.</span></li>
+            <li><span><b>Golden pages</b> give it complete, proven page layouts on desktop and mobile to start from.</span></li>
+            <li><span><b>Brand principles</b> give it the judgement: dark canvas, two fonts, one accent per view, reuse over invention, chrome cloned not redesigned.</span></li>
+            <li><span><b>Assets, charts and fonts</b> mean the mockup can be finished entirely inside the system.</span></li>
+          </ul>
+          <h4 class="sub">7.2 The workflow</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Before the system</th><th>With the system in Claude Design</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Before the system">Rebuild cards, headers and buttons for each new screen</td><td data-label="With the system in Claude Design">Start from the imported system; compose existing components</td></tr>
+                <tr><td data-label="Before the system">AI tools produce a generic interpretation of "dark and purple"</td><td data-label="With the system in Claude Design">Mockups match Curie's design aesthetic and design language from the first draft</td></tr>
+                <tr><td data-label="Before the system">Re-decide states and mobile behaviour each time</td><td data-label="With the system in Claude Design">States and mobile layouts are already defined</td></tr>
+                <tr><td data-label="Before the system">Developers receive screens and guess the details</td><td data-label="With the system in Claude Design">Mockups are built from components that already have a specification</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>This is what lets the team keep pace with a weekly release rhythm: the design work starts at the level of composing a feature rather than re-drawing the brand.</p>
+        </section>
+
+        <section class="cs-sec prose-block" id="s8">
+          <h3>8. Outcomes</h3>
+          <p>I asked a product designer on the Curie team, who has owned the Play &amp; Learn surface for the last two weeks, four questions about the system. Their answers are below in their own words.</p>
+          <h5 class="q">Is the team actively using the design system?</h5>
+          <div class="callout"><b>Adoption</b><p>“Yeah, the team is using it regularly — we use this as the basis on which we build features.”</p></div>
+          <h5 class="q">How has it helped the team in terms of design or development?</h5>
+          <div class="callout"><b>Design and development</b><p>“We all have this imported into Claude Design. So every time we need to design something, we just go ahead and design on top of it.”</p></div>
+          <h5 class="q">Do we have any metrics or feedback that can help measure its impact?</h5>
+          <div class="callout"><b>Impact</b><p>“For Play and Learn, which is the surface I've handled so far for the last two weeks, we've been releasing a feature pretty much every week or so. So I use it pretty consistently.”</p></div>
+          <h5 class="q">Are there any areas where it has been useful or could be improved?</h5>
+          <div class="callout"><b>Where it helps</b><p>“I think it's been really useful in the sense that we've all been able to speed up our mockups and final designs. Handoffs are also easier.”</p></div>
+          <h4 class="sub">8.1 What this adds up to</h4>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Outcome</th><th>Evidence</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Outcome">The system is the team's default starting point</td><td data-label="Evidence">Used regularly as "the basis on which we build features".</td></tr>
+                <tr><td data-label="Outcome">On-brand mockups through Claude Design</td><td data-label="Evidence">The whole team has it imported and designs on top of it, so AI-assisted mockups match Curie's aesthetic and language.</td></tr>
+                <tr><td data-label="Outcome">Faster mockups and final designs</td><td data-label="Evidence">Reported directly by the team.</td></tr>
+                <tr><td data-label="Outcome">Easier handoffs</td><td data-label="Evidence">Mockups are composed of documented components with states and snippets, so developers receive specifications rather than pictures.</td></tr>
+                <tr><td data-label="Outcome">Supports a weekly release rhythm</td><td data-label="Evidence">Play &amp; Learn has shipped roughly one feature a week while the designer used the system consistently.</td></tr>
+                <tr><td data-label="Outcome">A complete, documented system in sixteen days</td><td data-label="Evidence">114 tokens, 68 desktop + 61 mobile components, 7 charts, 8 golden templates (7 responsive), 100 assets, ~280 generated docs pages.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 class="sub">8.2 Measuring it from here</h4>
+          <p>The team does not yet track formal metrics, and the honest position is that the evidence so far is adoption and qualitative feedback. Useful measures to add next would be: time from brief to approved mockup; number of design-review comments about off-brand details; share of new screens built entirely from existing components; and release frequency per surface. A sibling tool, the Curie drift scanner, already measures how closely the live site's colours, type, spacing and radii match the system's tokens, and could track that trend month by month.</p>
+        </section>
+
+        <section class="cs-sec prose-block" id="s9">
+          <h3>9. What I learned</h3>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Lesson</th><th>How it showed up</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Lesson">Ground the system in what already ships</td><td data-label="How it showed up">Lifting components from golden pages, and testing every change against byte-identical desktop renders, meant the system never drifted from the product — and the team trusted it.</td></tr>
+                <tr><td data-label="Lesson">Design for three readers</td><td data-label="How it showed up">Writing usage judgement into structured JSON is what made the system useful to developers and to Claude Design, not just to designers.</td></tr>
+                <tr><td data-label="Lesson">Generate, don't duplicate</td><td data-label="How it showed up">Because every docs page is generated from the package, adding a component never meant writing documentation separately — the page, nav link and preview appeared on their own.</td></tr>
+                <tr><td data-label="Lesson">Let the users shape the scope</td><td data-label="How it showed up">Most of the growth (36 → 68 components, mobile, states, charts, icons) came from a developer review and a team gap list, not from my initial plan.</td></tr>
+                <tr><td data-label="Lesson">Cut what duplicates</td><td data-label="How it showed up">The Templates section and the standalone Subscribe page were removed as soon as they proved redundant.</td></tr>
+                <tr><td data-label="Lesson">A source of truth must live where things are built</td><td data-label="How it showed up">A system in its own repository is still one step away from the product code. That realisation drives the next phase.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="cs-sec prose-block" id="s10">
+          <h3>10. What comes next</h3>
+          <p>Today the flow is: design system → Claude Design → a developer re-implements the mockup in the product code. Each step is a place where the shipped product can drift from the brand — the three different purples found in the codebase are proof. On 28 July 2026 I prepared a hand-off package to bring the system <b>into the product codebase</b> in three phases:</p>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Phase</th><th>What it does</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td data-label="Phase">1. Tokens</td><td data-label="What it does">Drop-in SCSS: canonical Curie tokens plus a bridge that maps the app's existing token names onto them, so the app picks up the correct brand values with no component changes. Includes a value-by-value reconciliation table.</td><td data-label="Status">Ready to apply; two colour decisions and one radius-scale collision flagged for review</td></tr>
+                <tr><td data-label="Phase">2. Components</td><td data-label="What it does">Extract shared primitives (Button, Modal, Toast, form controls, Badge, App Shell, Page Header) as React components that consume the tokens. Scoped by an inventory mapping all 68 components to the codebase.</td><td data-label="Status">Scoped</td></tr>
+                <tr><td data-label="Phase">3. Design skill</td><td data-label="What it does">A <code>curie-ui</code> skill in the repository that teaches any builder — a developer or an AI agent — to produce on-brand Curie UI by construction: the brand principles, token rules, a worked page and a self-check.</td><td data-label="Status">Drafted</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>The goal is the same as the one this project started with, carried one step further: <b>tokens, components and design rules all living where the product is built</b>, so what is designed and what ships are the same thing.</p>
+          <p><em>Sources: github.com/moumita-roychowdhury-zoomrx/curie-design-system at commit 7073c7d (23 Jul 2026); the codebase hand-off package (28 Jul 2026); team feedback collected October 2026. Counts were read from the package manifests on 2 Oct 2026; the README's status line predates the last release and lists lower figures.</em></p>
+        </section>
+  </div></article>
+
+  <section class="wrap">
+    <a class="next" href="account-setup-banner.html">
+      <div><span class="mono">Next project</span><h2>Account Setup Banner →</h2></div>
+      <span class="mono">(01)</span>
+    </a>
+  </section>
+</main>
+
+<footer class="footer" id="contact">
+  <div class="wrap">
+    <div class="f-top">
+      <h2>Let's work<br>together.</h2>
+      <div class="f-cta">
+        <span class="mono">Drop me a line</span>
+        <span class="mail" id="email">moumita.product.designer@<br>gmail.com</span>
+        <button class="copy" id="copyBtn" type="button">Copy email</button>
+      </div>
+    </div>
+    <div class="f-grid">
+      <div><span class="mono">Location</span><p>Kolkata, India</p></div>
+      <div><span class="mono">Socials</span><ul><li><a href="https://www.linkedin.com/in/moumita-roy-chowdhury-359798179/" target="_blank" rel="noopener">LinkedIn ↗</a></li><li><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></li><li><a href="https://www.behance.net/" target="_blank" rel="noopener">Behance ↗</a></li></ul></div>
+      <div><span class="mono">Menu</span><ul><li><a href="index.html">Home</a></li><li><a href="index.html#work">Works</a></li><li><a href="index.html#skills">Skills</a></li><li><a href="index.html#experience">Experience</a></li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <span class="mono">©2026 Moumita Roy Chowdhury, all rights reserved</span>
+      <a class="mono" href="#top" style="text-decoration:none">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.querySelector('.nav'),mb=document.querySelector('.menu-btn');
+  if(nav&&mb){
+    function setMenu(o){nav.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'Close menu':'Open menu')}
+    mb.addEventListener('click',function(){setMenu(!nav.classList.contains('open'))});
+    nav.querySelectorAll('ul a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+  }
+  var btn=document.getElementById('copyBtn'),el=document.getElementById('email');
+  btn.addEventListener('click',function(){
+    var t=el.textContent.trim();
+    function done(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy email'},1800)}
+    function fb(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected, press Ctrl+C'}
+    try{navigator.clipboard.writeText(t).then(done,fb)}catch(e){fb()}
+  });
+})();
+</script>
+
+</body>
+</html>
