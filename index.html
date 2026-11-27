@@ -1,17 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Moumita Roy Chowdhury</title>
 <meta name="description" content="Moumita Roy Chowdhury, product designer based in Kolkata, India. Designs products and builds the systems behind them.">
+<meta name="theme-color" content="#0B0B0C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261127185236">
+<script>document.documentElement.classList.add('reveal-ready')</script>
 </head>
 <body>
-
 
 <header class="nav">
   <div class="wrap">
@@ -21,6 +22,7 @@
       <li><a href="#work">Works</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <a class="btn" href="#contact">Let's talk</a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span></button>
@@ -28,175 +30,317 @@
 </header>
 
 <main id="top">
-  <section class="wrap hero">
-    <div class="hero-text">
-      <span class="year">/ 2026 /</span>
-      <h1>I'm Moumita Roy Chowdhury<sup>®</sup>, <span class="dim">a Product Designer based in Kolkata, India.</span></h1>
-      <div class="hero-foot">
-        <p>I design products for doctors and patients at ZoomRx, and I build the systems behind them: design systems, asset pipelines and AI tools.</p>
-        <a class="btn caps" href="Resume-Moumita.pdf" target="_blank" rel="noopener" type="application/pdf"><span class="dot"></span>Download my resume</a>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"><i class="g6"></i><i class="g5"></i><i class="g4"></i><i class="g3"></i><i class="g2"></i><i class="g1"></i></div>
+    <div class="eternal-grid" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow status"><span class="live"></span>Product Designer · Kolkata, India · Available for work</span>
+          <h1>Designing products, and the <span class="serif">systems</span> behind&nbsp;them.</h1>
+          <div class="hero-sub">
+            <p>I design products for doctors and patients at ZoomRx, and I build the systems that keep them consistent: design systems, asset pipelines and AI tools.</p>
+            <a class="scroll-cue mono" href="#work"><span class="arrow-btn" aria-hidden="true">↓</span>Scroll to work</a>
+          </div>
+        </div>
+        <figure class="hero-fig flip-card" tabindex="0" aria-label="Portrait of Moumita. Hover, tap or focus to flip the card for a short bio.">
+          <span class="flip-ring" aria-hidden="true"></span>
+          <div class="flip-inner">
+            <div class="face face-front">
+              <span class="fig-label tl mono">Fig. 01</span>
+              <span class="fig-label tr mono">Kolkata, IN</span>
+              <img src="images/moumita-hero.webp" width="600" height="780" alt="Portrait of Moumita Roy Chowdhury, smiling, wearing round glasses">
+              <span class="flip-hint mono" aria-hidden="true">Hover to flip ↻</span>
+            </div>
+            <div class="face face-back">
+              <span class="fig-label tl mono">Fig. 01 · Reverse</span>
+              <span class="fig-label tr mono">Kolkata, IN</span>
+              <div class="back-body">
+                <span class="mono back-kicker">Moumita Roy Chowdhury · Product Designer</span>
+                <p class="back-name">Moumita<br><span class="serif">Roy Chowdhury</span></p>
+                <p class="back-bio">Seven years designing for web and mobile, from fintech to healthcare. Today I work across product, brand and design engineering at ZoomRx.</p>
+                <div class="back-links">
+                  <a class="link-sweep" href="Moumita-Roy-Chowdhury-Resume.pdf" target="_blank" rel="noopener" type="application/pdf">Resume ↗</a>
+                  <a class="link-sweep" href="https://www.linkedin.com/in/moumita-roy-chowdhury-359798179/" target="_blank" rel="noopener">LinkedIn ↗</a>
+                  <a class="link-sweep" href="#contact">Email ↓</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </figure>
       </div>
-    </div>
-    <figure class="hero-img">
-      <img src="moumita.png" alt="Cut-out portrait of Moumita Roy Chowdhury, smiling, wearing round glasses">
-      <figcaption><span class="chip"><span class="live"></span>Available for work</span></figcaption>
-    </figure>
-  </section>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="track">
-      <span>Moumita Roy Chowdhury <i>✳</i></span><span class="outline">Product Designer <i>✳</i></span><span>Systems Builder <i>✳</i></span><span class="outline">Kolkata <i>✳</i></span>
-      <span>Moumita Roy Chowdhury <i>✳</i></span><span class="outline">Product Designer <i>✳</i></span><span>Systems Builder <i>✳</i></span><span class="outline">Kolkata <i>✳</i></span>
-    </div>
-  </div>
-
-  <section class="wrap sec" id="work">
-    <div class="head">
-      <h2>Selected Works<sup>(04)</sup></h2>
-      <span class="mono">2024 — 2026 · click a project to read the case study</span>
-    </div>
-    <div class="grid">
-      <a class="card" href="account-setup-banner.html">
-        <div class="cover"><img class="thumb" src="images/account-setup-banner.webp" alt="Laptop showing the ZoomRx Account Setup banner with Email Verification in progress"><div class="tags"><small>ZoomRx Community · HCP &amp; patient onboarding</small><div class="steps"><b class="on">Email ✓</b><b class="on">Identity ✓</b><b>Payment · In progress</b></div></div><span class="view">View</span></div>
-        <div class="card-row"><h3><span>(01)</span>Account Setup Banner</h3><span class="mono">2024</span></div>
-        <p>Turning a scattered verification process into one clear step. Credited with lifting patient conversion, still live in 2026.</p>
-      </a>
-      <a class="card" href="curie.html">
-        <div class="cover"><img class="thumb" src="images/curie.webp" alt="Tablet showing the Curie Briefs page with a featured brief, specialty filters and a newsletter prompt"><div class="tags"><small>curie.md · Medical media for doctors</small></div><span class="view">View</span></div>
-        <div class="card-row"><h3><span>(02)</span>Curie</h3><span class="mono">2024–25</span></div>
-        <p>Building a daily habit for doctors out of a market research panel. Monthly active users grew from 242 to 16.3K.</p>
-      </a>
-      <a class="card" href="brand-asset-pipeline.html">
-        <div class="cover"><img class="thumb" src="images/brand-asset-pipeline.webp" alt="Figma, Claude, GitHub and AWS icons connected in a row beside a tilted grid of the design team's illustrations"><div class="tags"><small>Figma → GitHub → Claude → AWS</small><div class="steps"><b>Stage</b><b>Tag</b><b>Check</b><b class="on">Approve</b><b>Publish</b></div></div><span class="view">View</span></div>
-        <div class="card-row"><h3><span>(03)</span>Brand Asset Pipeline</h3><span class="mono">2026</span></div>
-        <p>Getting the design team's icons and illustrations out of Figma and into every internal AI tool. Designed, built and run by me.</p>
-      </a>
-      <a class="card" href="curie-design-system.html">
-        <div class="cover"><img class="thumb" src="images/curie-design-system.webp" alt="Curie and Claude app icons joined by a line beside a tilted list of Curie colour tokens with their hex values"><div class="tags"><small>Curie Design System · Claude Design</small><div class="steps"><b>114 tokens</b><b>68 + 61 components</b><b>8 templates</b></div></div><span class="view">View</span></div>
-        <div class="card-row"><h3><span>(04)</span>Curie Design System for Claude Design</h3><span class="mono">2026</span></div>
-        <p>One source of truth for Curie that people, code and AI design tools all build from. The whole team designs on top of it in Claude Design.</p>
-      </a>
     </div>
   </section>
 
-  <section class="wrap">
-    <div class="manifesto">
-      <span class="mono">(Approach)</span>
-      <p class="big">Most designers hand off a file. <span>I hand off the system that keeps it consistent: the components, the tokens, the pipelines and the AI tools that use them.</span></p>
+  <!-- § 01 Work -->
+  <section class="band tint" id="work">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow sec-num">§ 01 · Selected work</span>
+        <div>
+          <h2>Five projects, <span class="serif">2024–2026</span>.</h2>
+          <p>A daily habit for physicians, onboarding, a media product for doctors, and the design system and asset pipeline that sit underneath them. Each one opens a full case study.</p>
+        </div>
+      </div>
+      <div class="works">
+        <article class="work feature" data-reveal>
+          <div class="work-media demo">
+            <picture>
+              <source srcset="images/curie-briefs-for-you/todays-pack-showcase.webp" type="image/webp">
+              <img src="images/curie-briefs-for-you/todays-pack-showcase.gif" width="1440" height="900" loading="lazy" decoding="async" alt="Looping demo of the Daily For You pack on curie.md: today's specialty briefs playing as stories on a phone">
+            </picture>
+          </div>
+          <div class="work-body">
+            <div class="work-meta"><span class="mono badge"><span class="live"></span>01 · Latest · Curie Briefs</span><span class="mono">Nov 2026</span></div>
+            <h3><a class="stretch" href="curie-briefs-for-you.html">Daily For You pack</a></h3>
+            <p>Turning a news feed into a daily ritual for physicians: four briefs picked for your specialty, read like stories. Identified impressions went from 1 to 54 a week.</p>
+            <div class="work-foot"><div class="tagrow"><span class="tag">Product</span><span class="tag">Research</span><span class="tag">Growth</span></div><span class="open">Open case study <i>→</i></span></div>
+          </div>
+        </article>
+        <a class="work" href="account-setup-banner.html" data-reveal>
+          <div class="work-media"><img src="images/account-setup-banner.webp" alt="Laptop showing the ZoomRx Account Setup banner with Email Verification in progress"></div>
+          <div class="work-body">
+            <div class="work-meta"><span class="mono">02 · ZoomRx Community</span><span class="mono">2024</span></div>
+            <h3>Account Setup Banner</h3>
+            <p>Turning a scattered verification process into one clear step. Credited with lifting patient conversion, still live in 2026.</p>
+            <div class="work-foot"><div class="tagrow"><span class="tag">Onboarding</span><span class="tag">HCP &amp; patient</span></div><span class="open">Open case study <i>→</i></span></div>
+          </div>
+        </a>
+        <a class="work" href="curie.html" data-reveal>
+          <div class="work-media"><img src="images/curie.webp" alt="Tablet showing the Curie Briefs page with a featured brief, specialty filters and a newsletter prompt"></div>
+          <div class="work-body">
+            <div class="work-meta"><span class="mono">03 · curie.md</span><span class="mono">2024–25</span></div>
+            <h3>Curie</h3>
+            <p>Building a daily habit for doctors out of a market research panel. Monthly active users grew from 242 to 16.3K.</p>
+            <div class="work-foot"><div class="tagrow"><span class="tag">Medical media</span><span class="tag">Brand &amp; UX</span></div><span class="open">Open case study <i>→</i></span></div>
+          </div>
+        </a>
+        <a class="work" href="brand-asset-pipeline.html" data-reveal>
+          <div class="work-media"><img src="images/brand-asset-pipeline.webp" alt="Figma, Claude, GitHub and AWS icons connected in a row beside a tilted grid of the design team's illustrations"></div>
+          <div class="work-body">
+            <div class="work-meta"><span class="mono">04 · Figma → GitHub → Claude → AWS</span><span class="mono">2026</span></div>
+            <h3>Brand Asset Pipeline</h3>
+            <p>Getting the design team's icons and illustrations out of Figma and into every internal AI tool. Designed, built and run by me.</p>
+            <div class="work-foot"><div class="tagrow"><span class="tag">Pipeline</span><span class="tag">MCP server</span></div><span class="open">Open case study <i>→</i></span></div>
+          </div>
+        </a>
+        <a class="work" href="curie-design-system.html" data-reveal>
+          <div class="work-media"><img src="images/curie-design-system.webp" alt="Curie and Claude app icons joined by a line beside a tilted list of Curie colour tokens with their hex values"></div>
+          <div class="work-body">
+            <div class="work-meta"><span class="mono">05 · Claude Design</span><span class="mono">2026</span></div>
+            <h3>Curie Design System for Claude Design</h3>
+            <p>One source of truth for Curie that people, code and AI design tools all build from. The whole team designs on top of it in Claude Design.</p>
+            <div class="work-foot"><div class="tagrow"><span class="tag">114 tokens</span><span class="tag">8 templates</span></div><span class="open">Open case study <i>→</i></span></div>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
-  <section class="wrap sec" id="skills">
-    <div class="head">
-      <h2>Skills<sup>(04)</sup></h2>
-      <span class="mono">What I bring to a team</span>
-    </div>
-    <div class="skills">
-      <div class="skill"><div class="skill-top"><h3>Product Design</h3><span class="mono">(01)</span></div>
-        <ul><li>Design thinking</li><li>User flows &amp; onboarding</li><li>Wireframes &amp; prototypes</li><li>Interaction design</li><li>Responsive web &amp; mobile</li><li>Research &amp; usability review</li><li>UX writing &amp; content strategy</li></ul></div>
-      <div class="skill"><div class="skill-top"><h3>Visual Design</h3><span class="mono">(02)</span></div>
-        <ul><li>User interface design</li><li>Brand guidelines</li><li>3D assets &amp; mascots</li><li>Web templates &amp; landing pages</li><li>Presentations &amp; marketing visuals</li><li>Figma, Photoshop</li></ul></div>
-      <div class="skill"><div class="skill-top"><h3>Design Systems</h3><span class="mono">(03)</span></div>
-        <ul><li>Tokens &amp; theming</li><li>Component libraries</li><li>Design specs &amp; engineering handoff</li><li>Brand identity systems</li><li>Multi-tenant theming</li></ul></div>
-      <div class="skill"><div class="skill-top"><h3>Claude &amp; Design Engineering</h3><span class="mono">(04)</span></div>
-        <ul><li>Designing with Claude</li><li>Claude Code plugins &amp; skills</li><li>MCP servers</li><li>Asset pipelines</li><li>Vibe coding</li><li>GitHub, AWS</li></ul></div>
+  <!-- § 02 Approach -->
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom:0" data-reveal>
+        <span class="eyebrow sec-num">§ 02 · Approach</span>
+        <p class="statement">Most designers hand off a file. <span>I hand off the system that keeps it consistent: the components, the tokens, the pipelines and the AI tools that use them.</span></p>
+      </div>
     </div>
   </section>
 
-  <section class="wrap sec" style="padding-top:0">
-    <div class="head">
-      <h2>Services<sup>(03)</sup></h2>
-      <span class="mono">How I can help</span>
+  <!-- § 03 A new chapter -->
+  <section class="band tint" id="now">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow sec-num">§ 03 · A new chapter</span>
+        <div>
+          <h2>From designing the product to <span class="serif">owning</span> it.</h2>
+          <p>In 2026 ZoomRx dissolved its design team. I moved into a new role as Associate Product Consultant on Curie, the product I had been designing since 2024, and now own Curie Briefs: AI-generated clinical news summaries for physicians on curie.md.</p>
+        </div>
+      </div>
+
     </div>
-    <div class="services">
-      <div class="svc"><div class="svc-art"><div class="orb"></div></div><h3>Product design</h3><p>End-to-end UX and UI for web and mobile, from flows and research to shipped screens and measurable outcomes.</p></div>
-      <div class="svc"><div class="svc-art"><div class="stack"><i></i><i></i><i></i></div></div><h3>Design systems</h3><p>Tokens, components and documentation that let a small team ship consistent work fast.</p></div>
-      <div class="svc"><div class="svc-art"><div class="nodes"><i></i><i></i><i></i><i></i></div></div><h3>AI design tooling</h3><p>Claude skills, plugins and MCP servers that put a brand's assets and rules inside the tools people already use.</p></div>
+
+    <div class="roadmap" aria-label="Career road map, 2019 to now">
+      <div class="rm-stage">
+        <div class="rm-hud wrap" aria-hidden="true">
+          <span class="mono">Career road map</span>
+          <span class="rm-meter"><i></i></span>
+          <span class="mono rm-year">2019</span>
+        </div>
+        <div class="rm-track">
+          <div class="rm-layer rm-years" data-speed="0.45" aria-hidden="true"><span style="--i:0">2019</span><span style="--i:1">2021</span><span style="--i:2">2022</span><span style="--i:3">2023</span><span style="--i:4">2025</span><span style="--i:5">2026</span><span style="--i:6">2026</span></div>
+          <div class="rm-layer rm-marks" data-speed="1.35" aria-hidden="true"></div>
+          <svg class="rm-road" aria-hidden="true"></svg>
+          <ol class="rm-stops">
+          <li class="rm-stop " style="--i:0"><span class="rm-dot" aria-hidden="true"></span><div class="rm-card"><span class="mono">2019</span><b>UI Designer</b><span class="rm-org">ESolz · Kolkata</span><p>Where it started: web templates, brand guidelines, and design contests won to hit project targets.</p></div></li>
+          <li class="rm-stop " style="--i:1"><span class="rm-dot" aria-hidden="true"></span><div class="rm-card"><span class="mono">2021</span><b>UI Designer</b><span class="rm-org">hugebinary · Kolkata</span><p>Led design on a dedicated website project; templates, brand guidelines and marketing decks.</p></div></li>
+          <li class="rm-stop " style="--i:2"><span class="rm-dot" aria-hidden="true"></span><div class="rm-card"><span class="mono">2022</span><b>UX/UI Designer</b><span class="rm-org">ALMINDS, for Transnova Fintech</span><p>Sole designer on a fintech product, from research and storyboards to 3D mascots and prototypes.</p></div></li>
+          <li class="rm-stop " style="--i:3"><span class="rm-dot" aria-hidden="true"></span><div class="rm-card"><span class="mono">2023</span><b>UI Designer</b><span class="rm-org">ZoomRx · Chennai</span><p>Joined ZoomRx: healthcare interfaces, Curie's web platform, and panelist onboarding for HCPs and patients.</p></div></li>
+          <li class="rm-stop " style="--i:4"><span class="rm-dot" aria-hidden="true"></span><div class="rm-card"><span class="mono">2025</span><b>Product Designer</b><span class="rm-org">ZoomRx</span><p>Title changed to Product Designer. Built the Curie Design System, the brand asset pipeline and Claude tooling.</p></div></li>
+          <li class="rm-stop break" style="--i:5"><span class="rm-dot" aria-hidden="true"></span><div class="rm-card"><span class="mono">2026</span><b>The design team is dissolved</b><span class="rm-org">A fork in the road</span><p>ZoomRx closed its design team. Instead of stepping off, I moved into product.</p></div></li>
+          <li class="rm-stop now" style="--i:6"><span class="rm-dot" aria-hidden="true"></span><div class="rm-card"><span class="mono">Oct 2026</span><b>Associate Product Consultant</b><span class="rm-org">Curie · ZoomRx</span><p>Now: surface owner for Curie Briefs, from problem definition to shipping and measuring.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+
+      <div class="spec stat-tiles" style="--cols:4" data-reveal>
+        <div><span class="n">01 · Own</span><b class="big">1 → 54</b><h3>Identified impressions a week</h3><p>Curie Briefs end to end, measured on real physicians only.</p></div>
+        <div><span class="n">02 · Ship</span><b class="big">Nov 2026</b><h3>Daily “For You” pack</h3><p>Concept to release with engineering.</p><a class="link-sweep open" href="curie-briefs-for-you.html">Read the case study <i>→</i></a></div>
+        <div><span class="n">03 · Listen</span><b class="big">2</b><h3>Physician interviews</h3><p>Plus a survey testing writing styles before rollout.</p></div>
+        <div><span class="n">04 · Grow</span><b class="big">4</b><h3>Specialty email segments</h3><p>Plus Google Search Ads, and a 50-brief dataset for AI quality.</p></div>
+      </div>
     </div>
   </section>
 
-  <section class="wrap sec" id="experience" style="padding-top:0">
-    <div class="head">
-      <h2>Experience<sup>(05)</sup></h2>
-      <span class="mono">Where I've worked</span>
+  <!-- § 04 Skills -->
+  <section class="band" id="skills">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow sec-num">§ 04 · Skills</span>
+        <div>
+          <h2>What I bring to a <span class="serif">team</span>.</h2>
+        </div>
+      </div>
+      <div class="spec skill-chips" style="--cols:4" data-reveal>
+        <div class="wide"><span class="n">01 · Now</span><h3>Product &amp; Growth</h3>
+          <ul><li>Problem framing &amp; prioritisation</li><li>Surface ownership, end to end</li><li>User interviews &amp; surveys</li><li>Email campaigns &amp; segmentation</li><li>Campaign scheduling &amp; personalisation</li><li>Lead capture &amp; sign-up flows</li><li>Re-engagement &amp; retention</li><li>Paid acquisition · Google Ads</li><li>Product analytics · Mixpanel</li><li>Engagement measurement</li><li>Workflow automation</li><li>AI content quality &amp; evaluation</li></ul></div>
+        <div><span class="n">02</span><h3>Product Design</h3>
+          <ul><li>Design thinking</li><li>User flows &amp; onboarding</li><li>Wireframes &amp; prototypes</li><li>Interaction design</li><li>Responsive web &amp; mobile</li><li>Research &amp; usability review</li><li>UX writing &amp; content strategy</li></ul></div>
+        <div><span class="n">03</span><h3>Visual Design</h3>
+          <ul><li>User interface design</li><li>Brand guidelines</li><li>3D assets &amp; mascots</li><li>Web templates &amp; landing pages</li><li>Presentations &amp; marketing visuals</li><li>Figma, Photoshop</li></ul></div>
+        <div><span class="n">04</span><h3>Design Systems</h3>
+          <ul><li>Tokens &amp; theming</li><li>Component libraries</li><li>Design specs &amp; engineering handoff</li><li>Brand identity systems</li><li>Multi-tenant theming</li></ul></div>
+        <div><span class="n">05</span><h3>Claude &amp; Design Engineering</h3>
+          <ul><li>Designing with Claude</li><li>Claude Code plugins &amp; skills</li><li>MCP servers</li><li>Asset pipelines</li><li>Vibe coding</li><li>GitHub, AWS</li></ul></div>
+      </div>
     </div>
-    <div class="exp">
-      <div class="job">
-        <span class="mono">Feb 2025 — Present</span>
-        <div><h3>Product Designer</h3><p class="where">ZoomRx · Chennai (Remote)</p></div>
-        <ul>
-          <li>Built the Curie Design System with full engineering handoff.</li>
-          <li>Designed, built and run the brand asset pipeline and MCP asset server.</li>
-          <li>Build Claude Code plugins and skills used across teams.</li>
-          <li>Contribute to product vision and strategy, and advocate for user-centred design.</li>
-        </ul>
+  </section>
+
+  <!-- § 05 Services -->
+  <section class="band tint">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow sec-num">§ 05 · Services</span>
+        <div>
+          <h2>How I can <span class="serif">help</span>.</h2>
+        </div>
       </div>
-      <div class="job">
-        <span class="mono">Jan 2023 — Jan 2025</span>
-        <div><h3>UI Designer</h3><p class="where">ZoomRx · Chennai</p></div>
-        <ul>
-          <li>Designed interfaces for ZoomRx's healthcare technology products, including Curie's web platform.</li>
-          <li>Redesigned panelist onboarding for HCPs and patients on web and mobile.</li>
-          <li>Created specs, wireframes, prototypes and visual designs for web and mobile, within brand guidelines.</li>
-          <li>Managed design assets and kept the ZoomRx platform's design system consistent.</li>
-          <li>Worked with product managers, developers and UX designers to ship designs as intended.</li>
-        </ul>
+      <div class="spec" style="--cols:4" data-reveal>
+        <div><span class="n">01</span><h3>Product &amp; growth</h3><p>Owning a product surface end to end: user research, prioritisation, experiments, email and paid acquisition, and measurement against real engagement.</p></div>
+        <div><span class="n">02</span><h3>Product design</h3><p>End-to-end UX and UI for web and mobile, from flows and research to shipped screens and measurable outcomes.</p></div>
+        <div><span class="n">03</span><h3>Design systems</h3><p>Tokens, components and documentation that let a small team ship consistent work fast.</p></div>
+        <div><span class="n">04</span><h3>AI design tooling</h3><p>Claude skills, plugins and MCP servers that put a brand's assets and rules inside the tools people already use.</p></div>
       </div>
-      <div class="job">
-        <span class="mono">Jan 2022 — Dec 2022</span>
-        <div><h3>Intermediate UX/UI Designer</h3><p class="where">ALMINDS, for Transnova Fintech · Kolkata</p></div>
-        <ul>
-          <li>Sole designer on an in-house FinTech product, leading design thinking through to implementation.</li>
-          <li>Researched financial technology to find real problems worth solving.</li>
-          <li>Developed concepts and storyboards for 3D assets and mascots.</li>
-          <li>Designed interactions, layouts and low- to high-fidelity prototypes to validate concepts.</li>
-        </ul>
+    </div>
+  </section>
+
+  <!-- § 06 Experience -->
+  <section class="band" id="experience">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <span class="eyebrow sec-num">§ 06 · Experience</span>
+        <div>
+          <h2>Where I've <span class="serif">worked</span>.</h2>
+        </div>
       </div>
-      <div class="job">
-        <span class="mono">Apr 2021 — Nov 2021</span>
-        <div><h3>UI Designer</h3><p class="where">hugebinary · Kolkata</p></div>
-        <ul>
-          <li>Led design for a dedicated website project with cross-functional teams.</li>
-          <li>Created web templates and brand guidelines for multiple projects.</li>
-          <li>Designed marketing presentations built on each brand's guidelines.</li>
-        </ul>
+      <div class="exp">
+        <details class="job" data-reveal>
+          <summary><span class="mono">Oct 2026 — Present</span><div><h3>Associate Product Consultant</h3><p class="where">Curie, ZoomRx</p></div><p class="gist">Surface owner for Curie Briefs: research, shipping and growth against a weekly physician engagement target.</p><span class="toggle" aria-hidden="true"></span></summary>
+          <ul>
+            <li>Own the Curie Briefs surface end to end, from problem definition and prioritisation to tracking outcomes against a weekly identified-physician engagement target.</li>
+            <li>Designed and launched the Daily “For You” personalised story pack (Nov 2026), working with engineering from concept to release.</li>
+            <li>Ran physician interviews on why readers stop using Briefs, and used the findings to rework the For You experience and sign-in flows.</li>
+            <li>Built and ran weekly specialty-targeted email campaigns (oncology, primary care, dermatology, pediatrics), and set up tracking and Mixpanel reporting to compare performance by specialty.</li>
+            <li>Launched Google Search Ads as a new acquisition channel, targeting physicians searching for cardiology guidelines.</li>
+            <li>Defined how “identified impressions” are measured, filtering out internal accounts, bot traffic and email security scanners so engagement numbers reflect real physician readers.</li>
+            <li>Improved AI content quality by rewriting the summary and QC prompts and building a 50-brief golden dataset for evaluation.</li>
+            <li>Designed a physician survey comparing writing styles to validate content direction before rollout.</li>
+          </ul>
+        </details>
+        <details class="job" data-reveal>
+          <summary><span class="mono">Feb 2025 — Oct 2026</span><div><h3>Product Designer</h3><p class="where">ZoomRx · Chennai (Remote)</p></div><p class="gist">Built the Curie Design System, the brand asset pipeline and Claude tooling.</p><span class="toggle" aria-hidden="true"></span></summary>
+          <ul>
+            <li>Built the Curie Design System with full engineering handoff.</li>
+            <li>Designed, built and run the brand asset pipeline and MCP asset server.</li>
+            <li>Build Claude Code plugins and skills used across teams.</li>
+            <li>Contribute to product vision and strategy, and advocate for user-centred design.</li>
+            <li>Role ended when ZoomRx dissolved its design team in 2026.</li>
+          </ul>
+        </details>
+        <details class="job" data-reveal>
+          <summary><span class="mono">Jan 2023 — Jan 2025</span><div><h3>UI Designer</h3><p class="where">ZoomRx · Chennai</p></div><p class="gist">Interfaces for ZoomRx's healthcare products, including Curie's web platform and panelist onboarding.</p><span class="toggle" aria-hidden="true"></span></summary>
+          <ul>
+            <li>Designed interfaces for ZoomRx's healthcare technology products, including Curie's web platform.</li>
+            <li>Redesigned panelist onboarding for HCPs and patients on web and mobile.</li>
+            <li>Created specs, wireframes, prototypes and visual designs for web and mobile, within brand guidelines.</li>
+            <li>Managed design assets and kept the ZoomRx platform's design system consistent.</li>
+            <li>Worked with product managers, developers and UX designers to ship designs as intended.</li>
+          </ul>
+        </details>
+        <details class="job" data-reveal>
+          <summary><span class="mono">Jan 2022 — Dec 2022</span><div><h3>Intermediate UX/UI Designer</h3><p class="where">ALMINDS, for Transnova Fintech · Kolkata</p></div><p class="gist">Sole designer on an in-house fintech product, from research to 3D mascots.</p><span class="toggle" aria-hidden="true"></span></summary>
+          <ul>
+            <li>Sole designer on an in-house FinTech product, leading design thinking through to implementation.</li>
+            <li>Researched financial technology to find real problems worth solving.</li>
+            <li>Developed concepts and storyboards for 3D assets and mascots.</li>
+            <li>Designed interactions, layouts and low- to high-fidelity prototypes to validate concepts.</li>
+          </ul>
+        </details>
+        <details class="job" data-reveal>
+          <summary><span class="mono">Apr 2021 — Nov 2021</span><div><h3>UI Designer</h3><p class="where">hugebinary · Kolkata</p></div><p class="gist">Website design, web templates and brand guidelines.</p><span class="toggle" aria-hidden="true"></span></summary>
+          <ul>
+            <li>Led design for a dedicated website project with cross-functional teams.</li>
+            <li>Created web templates and brand guidelines for multiple projects.</li>
+            <li>Designed marketing presentations built on each brand's guidelines.</li>
+          </ul>
+        </details>
+        <details class="job" data-reveal>
+          <summary><span class="mono">Jun 2019 — Mar 2021</span><div><h3>UI Designer</h3><p class="where">ESolz · Kolkata</p></div><p class="gist">Web templates and brand guidelines for client projects, and design contests won.</p><span class="toggle" aria-hidden="true"></span></summary>
+          <ul>
+            <li>Designed web templates and brand guidelines for client projects.</li>
+            <li>Won design contests on multiple occasions to meet project targets.</li>
+            <li>Helped design and build the company's own website.</li>
+            <li>Designed banners for the company blog.</li>
+          </ul>
+        </details>
       </div>
-      <div class="job">
-        <span class="mono">Jun 2019 — Mar 2021</span>
-        <div><h3>UI Designer</h3><p class="where">ESolz · Kolkata</p></div>
-        <ul>
-          <li>Designed web templates and brand guidelines for client projects.</li>
-          <li>Won design contests on multiple occasions to meet project targets.</li>
-          <li>Helped design and build the company's own website.</li>
-          <li>Designed banners for the company blog.</li>
-        </ul>
+    </div>
+  </section>
+
+  <!-- § 07 Contact -->
+  <section class="contact" id="contact">
+    <div class="wrap" data-reveal>
+      <span class="eyebrow">§ 07 · Get in touch</span>
+      <h2>Let's build something <span class="serif">together</span>.</h2>
+      <span class="mail" id="email">moumita.product.designer@gmail.com</span>
+      <div class="contact-ctas">
+        <button class="btn" id="copyBtn" type="button">Copy email</button>
+        <a class="btn ghost" href="Moumita-Roy-Chowdhury-Resume.pdf" target="_blank" rel="noopener" type="application/pdf">Download resume ↗</a>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="footer" id="contact">
+<footer class="footer">
   <div class="wrap">
-    <div class="f-top">
-      <h2>Let's work<br>together.</h2>
-      <div class="f-cta">
-        <span class="mono">Drop me a line</span>
-        <span class="mail" id="email">moumita.product.designer@<br>gmail.com</span>
-        <button class="copy" id="copyBtn" type="button">Copy email</button>
-      </div>
-    </div>
     <div class="f-grid">
-      <div><span class="mono">Location</span><p>Kolkata, India</p></div>
-      <div><span class="mono">Socials</span><ul><li><a href="https://www.linkedin.com/in/moumita-roy-chowdhury-359798179/" target="_blank" rel="noopener">LinkedIn ↗</a></li><li><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></li><li><a href="https://www.behance.net/" target="_blank" rel="noopener">Behance ↗</a></li></ul></div>
+      <div><span class="mono">Work</span><ul><li><a href="curie-briefs-for-you.html">Daily For You pack</a></li><li><a href="account-setup-banner.html">Account Setup Banner</a></li><li><a href="curie.html">Curie</a></li><li><a href="brand-asset-pipeline.html">Brand Asset Pipeline</a></li><li><a href="curie-design-system.html">Curie Design System</a></li></ul></div>
       <div><span class="mono">Menu</span><ul><li><a href="#top">Home</a></li><li><a href="#work">Works</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li></ul></div>
+      <div><span class="mono">Socials</span><ul><li><a href="https://www.linkedin.com/in/moumita-roy-chowdhury-359798179/" target="_blank" rel="noopener">LinkedIn ↗</a></li><li><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></li><li><a href="https://www.behance.net/moumitaroy73b6" target="_blank" rel="noopener">Behance ↗</a></li></ul></div>
+      <div><span class="mono">Location</span><p>Kolkata · India</p></div>
     </div>
     <div class="f-bottom">
       <span class="mono">©2026 Moumita Roy Chowdhury, all rights reserved</span>
-      <a class="mono" href="#top" style="text-decoration:none">Back to top ↑</a>
+      <a class="mono" href="#top">Back to top ↑</a>
     </div>
+    <span class="wordmark" aria-hidden="true">moumita</span>
   </div>
 </footer>
-
 
 <script>
 (function(){
@@ -214,8 +358,15 @@
     function fb(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected, press Ctrl+C'}
     try{navigator.clipboard.writeText(t).then(done,fb)}catch(e){fb()}
   });
+  var items=document.querySelectorAll('[data-reveal]');
+  if(!('IntersectionObserver' in window)){items.forEach(function(e){e.classList.add('is-visible')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  items.forEach(function(e){io.observe(e)});
 })();
 </script>
 
+<script src="roadmap.js?v=202611271832" defer></script>
+<script src="flipcard.js?v=202611271832" defer></script>
+<script src="parallax.js?v=20261127185852" defer></script>
 </body>
 </html>
