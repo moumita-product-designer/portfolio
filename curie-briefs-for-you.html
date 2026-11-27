@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curie Briefs · Daily For You pack · Moumita Roy Chowdhury</title>
+<meta name="description" content="How a personalised four-brief daily pack took Curie Briefs from 1 to 54 identified physician impressions a week, and what the drop-off after story one taught me.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261127185236">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html">m.rc/</a>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#work">Works</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+    </ul>
+    <a class="btn" href="#contact">Let's talk</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap case-head">
+    <a class="back mono" href="index.html#work">← All works</a>
+    <figure class="case-thumb"><img src="images/curie-briefs-for-you/home.webp" width="1440" height="700" alt="The curie.md home screen with Today's pack as the first card"></figure>
+    <span class="mono" style="display:block">CASE STUDY · CURIE BRIEFS</span>
+    <h1 class="long">Daily For You pack: turning a news feed into a daily ritual for physicians</h1>
+    <p class="lede">I designed and launched the Daily For You pack, a personalised set of four clinical briefs that physicians tap through like stories. It is now the first thing on the curie.md home screen and the default view of Curie Briefs.</p>
+  </section>
+
+  <article class="wrap case-page"><div class="case">
+
+          <div class="facts">
+            <div><span class="mono">Product</span><p>Curie Briefs on <a href="https://curie.md/" target="_blank" rel="noopener">curie.md</a>, AI-written clinical news summaries for US physicians</p></div>
+            <div><span class="mono">My role</span><p>Surface owner and product designer: problem framing, research, UX and UI, launch, measurement</p></div>
+            <div><span class="mono">Team</span><p>Andrew (Curie PM), Gayathri (engineering), Muskan (email sends)</p></div>
+            <div><span class="mono">Timeline</span><p>October 2026 discovery and design, launched 4 November 2026</p></div>
+          </div>
+
+          <div class="big-nums">
+            <div><b>1 → 54</b><span>identified impressions a week, four weeks before launch vs launch week</span></div>
+            <div><b>2.6×</b><span>the week before launch</span></div>
+            <div><b>76%</b><span>of US visitors shown the pack opened it in the first three weeks</span></div>
+            <div><b>~70</b><span>signed-in readers a week, up from under 10</span></div>
+          </div>
+
+        <section class="cs-sec prose-block">
+          <span class="mono sec-label">The problem</span><h3>Readers, but almost no known ones</h3>
+          <p>Curie Briefs had readers but almost no known ones. In the week of 12 October, Briefs logged <b>1 identified impression</b>: one page view from one signed-in, non-team physician in the US.</p>
+          <ul class="doc-list">
+            <li><b>Retention was falling.</b> Physicians who found Briefs rarely came back, and the feed gave them no reason to return on a given day.</li>
+            <li><b>Most readers were anonymous.</b> Curie.md lets anyone read without an account, so traffic didn't turn into physicians we could reach again.</li>
+            <li><b>My hypothesis: the feed asked too much.</b> A long list across every specialty left a busy clinician to do the sorting, with no clear point where they were done.</li>
+          </ul>
+          <p>My target as surface owner was <b>150 identified impressions a week by 31 December 2026</b>. That feeds a company goal of 690 weekly identified impressions across curie.md, the bar for selling ads on the platform.</p>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <span class="mono sec-label">Research and insights</span><h3>Three findings that shaped the design</h3>
+          <p>Three findings from October shaped the design. Each came from data I pulled or tests I ran before writing a spec.</p>
+          <ol class="walk">
+            <li><span><b>Our signed-in numbers were mostly us.</b> When I checked a reported “12 signed-in impressions” in Mixpanel by email domain, most were ZoomRx or test accounts. Real external reach was 1 to 3 physicians. I worked with Srivathsan to strip team accounts from reporting, so every later number is honest.</span></li>
+            <li><span><b>Specialty relevance had evidence; generic content didn't.</b> In my first oncology email campaign, 6 of the 7 identified readers came from the specialty-targeted send. Specialty was the one lever with proof behind it.</span></li>
+            <li><span><b>A short, fixed set beats an open feed.</b> Medscape's “Top 5 For You” builds a daily habit with the same shape every time. Four briefs is enough that one headline lands, and few enough to finish in about four minutes.</span></li>
+          </ol>
+          <div class="callout">
+            <b>One test cut the other way</b>
+            <p>In email, a story-pack layout lost to a plain digest: about 14 visitors and 4 identified physicians, against about 4 and 0. I read that as a lesson about the inbox, not the product. On the site, a story format gives a clear start, progress and finish; in an email it is only a picture of buttons.</p>
+          </div>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <span class="mono sec-label">The design</span><h3>From a feed to a daily ritual</h3>
+          <p>The For You pack turns Briefs from a feed into a daily ritual: four briefs picked for your specialty, read one after another, with a clear finish line.</p>
+
+          <h4 class="sub">On the home screen</h4>
+          <p>Today's pack is the first card. Four story tiles show the specialty, headline and position (1/4 to 4/4), with a tick on read ones. A summary line reads “1 of 4 read · picked for Obstetrics &amp; Gynecology · about 4 min · Continue reading”. A fifth tile counts down to the next pack.</p>
+          <figure class="doc-fig"><a href="images/curie-briefs-for-you/pack-tiles.webp" target="_blank" rel="noopener"><img src="images/curie-briefs-for-you/pack-tiles.webp" width="1240" height="524" loading="lazy" alt="Today's pack tiles on the home screen: four story cards and a countdown to the next pack"></a><figcaption><em>Figure 1. Today's pack on the home screen: four story tiles and a countdown to the next pack.</em></figcaption></figure>
+
+          <h4 class="sub">In the Briefs tab</h4>
+          <p>For You is the default view, next to Latest. The pack plays as a carousel with a segmented progress bar, one brief per card and a “Dive in” button to the full summary.</p>
+          <figure class="doc-fig"><a href="images/curie-briefs-for-you/for-you-tab.webp" target="_blank" rel="noopener"><img src="images/curie-briefs-for-you/for-you-tab.webp" width="1440" height="700" loading="lazy" alt="For You tab in Curie Briefs with the pack carousel and segmented progress bar"></a><figcaption><em>Figure 2. The For You tab: the pack as a carousel with a segmented progress bar.</em></figcaption></figure>
+
+          <h4 class="sub">In the reader</h4>
+          <p>The brief opens with “Brief 2 of 4 · today's pack”, the same progress bar and arrows to move through the set.</p>
+          <figure class="doc-fig"><a href="images/curie-briefs-for-you/reader.webp" target="_blank" rel="noopener"><img src="images/curie-briefs-for-you/reader.webp" width="1440" height="700" loading="lazy" alt="Brief reader showing Brief 2 of 4 with progress and navigation arrows"></a><figcaption><em>Figure 3. The reader keeps the pack's progress and lets you step through the set.</em></figcaption></figure>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <span class="mono sec-label">Key decisions</span><h3>What I chose, and what it cost</h3>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Decision</th><th>Why</th><th>Trade-off</th></tr></thead>
+              <tbody>
+                <tr><td>Four briefs a day, not a feed</td><td data-label="Why">A finish line is what turns reading into a habit</td><td data-label="Trade-off">Fewer briefs seen per visit</td></tr>
+                <tr><td>Picked by specialty</td><td data-label="Why">The one lever with evidence from the October campaigns</td><td data-label="Trade-off">Thin news days in small specialties</td></tr>
+                <tr><td>Story-style progress (1 of 4, segmented bar)</td><td data-label="Why">Shows how close you are to done, so finishing feels worth it</td><td data-label="Trade-off">Extra build effort over a plain list</td></tr>
+                <tr><td>Countdown to the next pack</td><td data-label="Why">Gives a reason to come back tomorrow</td><td data-label="Trade-off">Nothing new to read until then</td></tr>
+                <tr><td>Fourth brief behind a free sign-in</td><td data-label="Why">Asks for an account only after three briefs have shown value</td><td data-label="Trade-off">Some anonymous readers stop at three</td></tr>
+                <tr><td>Reading stays open, sign-in only unlocks extras</td><td data-label="Why">Curie.md has many anonymous readers; a hard wall would lose them</td><td data-label="Trade-off">Slower growth in accounts</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>The sign-in prompt on the fourth brief says “Sign in to read your last brief. Free, no password. Keeps your pack and progress on every device.” It names what the reader gets, not what we want.</p>
+          <figure class="doc-fig"><a href="images/curie-briefs-for-you/sign-in.webp" target="_blank" rel="noopener"><img src="images/curie-briefs-for-you/sign-in.webp" width="1440" height="700" loading="lazy" alt="Sign-in prompt on the fourth brief of the pack"></a><figcaption><em>Figure 4. The sign-in prompt on the fourth brief.</em></figcaption></figure>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <span class="mono sec-label">Launch and results</span><h3>From 1 to 54 identified impressions a week</h3>
+          <p>In its launch week, Briefs hit <b>54 identified impressions</b>, up from 1 four weeks earlier and 2.6 times the week before. That is 36% of the 150-a-week target.</p>
+          <figure class="bars" aria-label="Identified impressions per week">
+            <div class="bar-row"><span class="mono">12 Oct</span><div class="bar-track"><i style="--v:1.85%"></i></div><b>1</b></div>
+            <div class="bar-row"><span class="mono">19 Oct</span><div class="bar-track"><i style="--v:22.2%"></i></div><b>12</b></div>
+            <div class="bar-row"><span class="mono">26 Oct</span><div class="bar-track"><i style="--v:38.9%"></i></div><b>21</b></div>
+            <div class="bar-row hl"><span class="mono">2 Nov</span><div class="bar-track"><i style="--v:100%"></i></div><b>54</b></div>
+            <figcaption class="mono">Identified impressions per week · For You launched 4 Nov 2026</figcaption>
+          </figure>
+          <div class="scroll">
+            <table class="tbl">
+              <thead><tr><th>Week starting</th><th>Identified impressions</th><th>Identified physicians</th></tr></thead>
+              <tbody>
+                <tr><td>2 Nov 2026 (For You launched 4 Nov)</td><td data-label="Identified impressions">54</td><td data-label="Identified physicians">18</td></tr>
+                <tr><td>26 Oct 2026</td><td data-label="Identified impressions">21</td><td data-label="Identified physicians">11</td></tr>
+                <tr><td>19 Oct 2026</td><td data-label="Identified impressions">12</td><td data-label="Identified physicians">6</td></tr>
+                <tr><td>12 Oct 2026</td><td data-label="Identified impressions">1</td><td data-label="Identified physicians">1</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="meta">These are Curie's numbers of record: signed-in, non-team physicians in the US, with scanner bursts removed. The counting rule was tightened from 2 November, so the launch week is counted more strictly than the weeks before it.</p>
+          <p>Broader reach grew too. Across the three full weeks after launch, about 900 US visitors a week opened a brief, against about 250 a week in October. Signed-in readers went from under 10 a week to about 70. In the first three weeks, 1,287 US visitors were shown the pack, 983 opened it (76%) and 83 of those were signed in.</p>
+          <p>The pack didn't do this alone. Specialty email campaigns ran in the same weeks and send readers straight into the pack, so the gain belongs to the two together. The broader reach figures are raw Mixpanel counts and still include some team and scanner traffic.</p>
+        </section>
+
+        <section class="cs-sec prose-block">
+          <span class="mono sec-label">What I learned and what's next</span><h3>A front door, not yet a ritual</h3>
+          <p>The pack works as a front door but not yet as a ritual. Most readers open the first story and stop there.</p>
+          <figure class="bars funnel" aria-label="US visitors who viewed each story of the For You pack">
+            <div class="bar-row"><span class="mono">Story 1</span><div class="bar-track"><i style="--v:100%"></i></div><b>983</b></div>
+            <div class="bar-row hl"><span class="mono">Story 2</span><div class="bar-track"><i style="--v:4.17%"></i></div><b>41 · 4%</b></div>
+            <div class="bar-row"><span class="mono">Story 3</span><div class="bar-track"><i style="--v:2.24%"></i></div><b>22 · 2%</b></div>
+            <div class="bar-row"><span class="mono">Story 4 (sign-in)</span><div class="bar-track"><i style="--v:.61%"></i></div><b>6 · 1%</b></div>
+            <figcaption class="mono">Only 4% of pack readers reach the second story · US visitors who viewed each story, 4–26 Nov 2026 (Mixpanel, Curie web)</figcaption>
+          </figure>
+          <p>The drop is too steep to be content alone, so I went looking for product causes:</p>
+          <ul class="doc-list">
+            <li><b>Bugs I found and logged.</b> From a screen recording, I found the pack reshuffled depending on who opened a link and when, which broke email campaigns that promised specific stories. About 1 in 6 visitors also saw the pack fail to load. I logged both in Planner for Gayathri and Vignesh.</li>
+            <li><b>Physician interviews.</b> I interviewed a cardiologist and a primary care physician on first use of the pack. Their feedback is shaping a rework of the For You page.</li>
+            <li><b>Next experiments.</b> A short questionnaire at the end of the pack to drive sign-ins, a lighter guest login that captures email, and Google Search ads that land on cardiology briefs.</li>
+          </ul>
+          <div class="callout">
+            <b>What I'd do differently</b>
+            <p>Ship a pack-completion event on day one and lock the baseline before launch. Separating the pack's effect from the email campaigns took more work than it should have.</p>
+          </div>
+        </section>
+
+          <div>
+            <h3>Sources</h3>
+            <ul class="sources">
+              <li>Identified impressions: Curie weekly impressions readouts (Monday Q1 dashboard collector), weeks of 12 Oct to 2 Nov 2026</li>
+              <li>Mixpanel, Curie web, US only: pack totals since launch, story viewers by position, weekly readers Oct to Nov 2026</li>
+              <li>UI: screenshots of curie.md and curie.md/briefs, taken 27 Nov 2026</li>
+            </ul>
+          </div>
+  </div></article>
+
+  <section class="wrap">
+    <a class="next" href="account-setup-banner.html">
+      <div><span class="mono">Next project</span><h2>Account Setup Banner →</h2></div>
+      <span class="mono">(02)</span>
+    </a>
+  </section>
+</main>
+
+
+<footer class="footer" id="contact">
+  <div class="wrap">
+    <div class="f-top">
+      <h2>Let's work<br>together.</h2>
+      <div class="f-cta">
+        <span class="mono">Drop me a line</span>
+        <span class="mail" id="email">moumita.product.designer@<br>gmail.com</span>
+        <button class="copy" id="copyBtn" type="button">Copy email</button>
+      </div>
+    </div>
+    <div class="f-grid">
+      <div><span class="mono">Location</span><p>Kolkata, India</p></div>
+      <div><span class="mono">Socials</span><ul><li><a href="https://www.linkedin.com/in/moumita-roy-chowdhury-359798179/" target="_blank" rel="noopener">LinkedIn ↗</a></li><li><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a></li><li><a href="https://www.behance.net/moumitaroy73b6" target="_blank" rel="noopener">Behance ↗</a></li></ul></div>
+      <div><span class="mono">Menu</span><ul><li><a href="index.html">Home</a></li><li><a href="index.html#work">Works</a></li><li><a href="index.html#skills">Skills</a></li><li><a href="index.html#experience">Experience</a></li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <span class="mono">©2026 Moumita Roy Chowdhury, all rights reserved</span>
+      <a class="mono" href="#top" style="text-decoration:none">Back to top ↑</a>
+    </div>
+    <span class="wordmark" aria-hidden="true">moumita</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.querySelector('.nav'),mb=document.querySelector('.menu-btn');
+  if(nav&&mb){
+    function setMenu(o){nav.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'Close menu':'Open menu')}
+    mb.addEventListener('click',function(){setMenu(!nav.classList.contains('open'))});
+    nav.querySelectorAll('ul a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+  }
+  var btn=document.getElementById('copyBtn'),el=document.getElementById('email');
+  btn.addEventListener('click',function(){
+    var t=el.textContent.trim();
+    function done(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy email'},1800)}
+    function fb(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='Selected, press Ctrl+C'}
+    try{navigator.clipboard.writeText(t).then(done,fb)}catch(e){fb()}
+  });
+})();
+</script>
+
+<script src="parallax.js?v=20261127185852" defer></script>
+</body>
+</html>
